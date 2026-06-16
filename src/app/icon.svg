@@ -1,4 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <rect width="32" height="32" rx="7" fill="#0B132B"/>
-  <path d="M19 4L9 18h8l-4 10 14-14h-9l3-10z" fill="#0066FF" stroke="#0066FF" stroke-width="0.5" stroke-linejoin="round"/>
+  <!-- Left half: electric blue -->
+  <path d="M16 1 A15 15 0 0 0 16 31 Z" fill="#0066FF"/>
+  <!-- Right half: deep navy -->
+  <path d="M16 1 A15 15 0 0 1 16 31 Z" fill="#0B132B"/>
+  <!-- Simplified EV connector (left, white) — 3 pin circles + handle -->
+  <circle cx="10" cy="11.5" r="1.2" fill="white"/>
+  <circle cx="13.5" cy="10" r="1.2" fill="white"/>
+  <circle cx="13.5" cy="14" r="1.2" fill="white"/>
+  <rect x="11.5" y="17" width="4" height="2" rx="1" fill="white"/>
+  <!-- Simplified petrol pump (right, white) — body + screen + nozzle -->
+  <rect x="18" y="9" width="7" height="10" rx="1" fill="none" stroke="white" stroke-width="1"/>
+  <rect x="19.5" y="10.5" width="4" height="2.5" rx="0.5" fill="white" fill-opacity="0.4"/>
+  <path d="M25 12 L27 12 L27 15 L26 15" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="18" y="18.5" width="7" height="1.5" rx="0.75" fill="white" fill-opacity="0.6"/>
+  <!-- Outer ring -->
+  <circle cx="16" cy="16" r="15" stroke="#0B132B" stroke-width="1" fill="none"/>
+  <!-- Centre divider -->
+  <line x1="16" y1="1" x2="16" y2="31" stroke="white" stroke-width="1" stroke-opacity="0.45"/>
 </svg>

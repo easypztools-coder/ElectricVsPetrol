@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>ElectricVsPetrol.co.uk</title>
+  <!-- Rounded square background -->
+  <rect width="512" height="512" rx="114" fill="#F7F8FA"/>
+  <!-- Split circle centred at 256,256 r=200 -->
+  <!-- Left half: electric blue -->
+  <path d="M256 56 A200 200 0 0 0 256 456 Z" fill="#0066FF"/>
+  <!-- Right half: deep navy -->
+  <path d="M256 56 A200 200 0 0 1 256 456 Z" fill="#0B132B"/>
+  <!-- EV Type 2 connector (left, white) scaled up ~3.125× from 64px mark -->
+  <!-- Housing -->
+  <path d="M118 215 C118 183 143 158 175 158 L215 158 C247 158 272 183 272 215 L272 295 C272 327 247 345 215 345 L175 345 C143 345 118 327 118 295 Z"
+        stroke="white" stroke-width="9" fill="white" fill-opacity="0.18"/>
+  <!-- 7 pin holes -->
+  <circle cx="161" cy="211" r="14" fill="white"/>
+  <circle cx="208" cy="196" r="14" fill="white"/>
+  <circle cx="255" cy="211" r="14" fill="white"/>
+  <circle cx="161" cy="258" r="14" fill="white"/>
+  <circle cx="255" cy="258" r="14" fill="white"/>
+  <circle cx="180" cy="303" r="11" fill="white"/>
+  <circle cx="230" cy="303" r="11" fill="white"/>
+  <!-- Handle + cable -->
+  <rect x="175" y="345" width="66" height="28" rx="14" fill="white"/>
+  <rect x="197" y="373" width="28" height="46" rx="14" fill="white"/>
+  <!-- Petrol pump (right, white) -->
+  <!-- Body -->
+  <rect x="290" y="164" width="120" height="196" rx="10"
+        stroke="white" stroke-width="9" fill="white" fill-opacity="0.1"/>
+  <!-- Screen -->
+  <rect x="307" y="183" width="86" height="56" rx="8" fill="white" fill-opacity="0.35"/>
+  <!-- Nozzle arm -->
+  <path d="M410 215 L448 215 L448 271 L428 271"
+        stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Nozzle head -->
+  <rect x="400" y="256" width="40" height="23" rx="8" fill="white"/>
+  <!-- Base -->
+  <rect x="290" y="350" width="120" height="23" rx="8" fill="white" fill-opacity="0.6"/>
+  <!-- Outer ring -->
+  <circle cx="256" cy="256" r="200" stroke="#0B132B" stroke-width="10" fill="none"/>
+  <!-- Centre divider -->
+  <line x1="256" y1="56" x2="256" y2="456" stroke="white" stroke-width="10" stroke-opacity="0.45"/>
+</svg>

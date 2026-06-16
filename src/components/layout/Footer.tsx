@@ -30,7 +30,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
           {/* Brand col */}
           <div className="md:col-span-1">
-            <Logo size="md" />
+            <Logo size="md" variant="footer" />
             <p className="mt-3 text-sm text-white/60 max-w-xs">
               The UK EV True Cost Calculator. Independent, transparent, and
               data-led. Built for UK drivers.
