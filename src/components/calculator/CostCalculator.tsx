@@ -4,6 +4,7 @@ import { useState, useCallback, useRef } from "react";
 import type {
   CalculatorInputs,
   CalculatorResults,
+  LocalPrices,
   ValidationErrors,
 } from "@/lib/types/costCalculator";
 import {
@@ -12,7 +13,9 @@ import {
   DEFAULT_EV_PRICE_PREMIUM,
 } from "@/lib/calculations/evPetrolCost";
 import { lookupPostcode } from "@/lib/data/postcodeProvider";
+import { FALLBACK_PRICES } from "@/lib/data/fuelPriceProvider";
 import CalculatorForm from "./CalculatorForm";
+import LocalPricesPanel from "./LocalPricesPanel";
 import ResultCards from "./ResultCards";
 import CostChart from "./CostChart";
 import Card from "@/components/ui/Card";
@@ -34,6 +37,8 @@ export default function CostCalculator() {
   const [inputs, setInputs] = useState<CalculatorInputs>(DEFAULT_INPUTS);
   const [results, setResults] = useState<CalculatorResults | null>(null);
   const [postcodeRegion, setPostcodeRegion] = useState<string | null>(null);
+  const [localPrices, setLocalPrices] = useState<LocalPrices>(FALLBACK_PRICES);
+  const [livePricesApplied, setLivePricesApplied] = useState(false);
   const [errors, setErrors] = useState<ValidationErrors>({});
   const [isLoading, setIsLoading] = useState(false);
   const [hasCalculated, setHasCalculated] = useState(false);
@@ -62,18 +67,45 @@ export default function CostCalculator() {
 
     setErrors({});
     setIsLoading(true);
+    setLivePricesApplied(false);
 
-    const resolvedInputs = inputs;
+    let resolvedInputs = inputs;
 
-    // Postcode lookup — updates fuel price if a local price comes back
+    // Postcode lookup → live local fuel prices
     if (inputs.postcode.trim()) {
       try {
         const postcodeData = await lookupPostcode(inputs.postcode);
         if (postcodeData.isValid) {
           setPostcodeRegion(postcodeData.region);
+
+          if (postcodeData.latitude !== null && postcodeData.longitude !== null) {
+            const priceRes = await fetch(
+              `/api/fuel-prices?lat=${postcodeData.latitude}&lon=${postcodeData.longitude}`
+            );
+            if (priceRes.ok) {
+              const priceData = await priceRes.json();
+              const livePetrol: number | null = priceData.petrolPencePerLitre;
+              const liveDiesel: number | null = priceData.dieselPencePerLitre;
+              const livePrice =
+                inputs.fuelType === "diesel" ? liveDiesel : livePetrol;
+              if (livePrice !== null) {
+                resolvedInputs = { ...inputs, fuelPricePencePerLitre: livePrice };
+                setInputs(resolvedInputs);
+                setLivePricesApplied(true);
+              }
+              if (livePetrol !== null || liveDiesel !== null) {
+                setLocalPrices({
+                  ...FALLBACK_PRICES,
+                  petrolPencePerLitre: livePetrol ?? FALLBACK_PRICES.petrolPencePerLitre,
+                  dieselPencePerLitre: liveDiesel ?? FALLBACK_PRICES.dieselPencePerLitre,
+                  source: "live",
+                });
+              }
+            }
+          }
         }
       } catch {
-        // Silently use fallback
+        // Silently fall back to user-entered price
       }
     }
 
@@ -89,6 +121,7 @@ export default function CostCalculator() {
   }, [inputs]);
 
   return (
+    <>
     <div id="calculator" className="scroll-mt-20">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
         {/* ── Calculator form column ── */}
@@ -102,6 +135,12 @@ export default function CostCalculator() {
               {postcodeRegion && (
                 <span className="ml-2 text-sm font-normal text-ev-grey">
                   — {postcodeRegion}
+                </span>
+              )}
+              {livePricesApplied && (
+                <span className="ml-2 inline-flex items-center gap-1 text-xs font-medium text-ev-green bg-ev-green/10 border border-ev-green/30 rounded-full px-2 py-0.5">
+                  <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><circle cx="4" cy="4" r="4"/></svg>
+                  Live local prices
                 </span>
               )}
             </h2>
@@ -191,6 +230,22 @@ export default function CostCalculator() {
         </div>
       )}
     </div>
+
+    {/* ── Reference prices panel ── */}
+    <section
+      aria-label="Reference fuel and electricity prices"
+      className="py-12 bg-off-white"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-xl mx-auto lg:mx-0">
+          <LocalPricesPanel
+            prices={localPrices}
+            region={postcodeRegion ?? undefined}
+          />
+        </div>
+      </div>
+    </section>
+    </>
   );
 }
 

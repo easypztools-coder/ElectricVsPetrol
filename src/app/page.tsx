@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import CostCalculator from "@/components/calculator/CostCalculator";
-import LocalPricesPanel from "@/components/calculator/LocalPricesPanel";
 import HowItWorks from "@/components/sections/HowItWorks";
 import TrustStrip from "@/components/sections/TrustStrip";
 import WhyLocalPrices from "@/components/sections/WhyLocalPrices";
-import { FALLBACK_PRICES } from "@/lib/data/fuelPriceProvider";
 
 export const metadata: Metadata = {
   title: "EV vs Petrol Cost Calculator UK | ElectricVsPetrol.co.uk",
@@ -112,24 +110,6 @@ export default function HomePage() {
             <div>
               <CostCalculator />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Local prices panel ──────────────────────────────────── */}
-      <section
-        aria-label="Reference fuel and electricity prices"
-        className="py-12 bg-off-white"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-xl mx-auto lg:mx-0">
-            <h2
-              className="text-2xl font-bold text-navy mb-6 font-display"
-              style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
-            >
-              Reference prices
-            </h2>
-            <LocalPricesPanel prices={FALLBACK_PRICES} />
           </div>
         </div>
       </section>
