@@ -46,7 +46,7 @@ export default function CalculatorForm({
       noValidate
       aria-label="EV vs petrol cost calculator"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:items-end">
         {/* ── Postcode ── */}
         <div className="sm:col-span-2">
           <Input
