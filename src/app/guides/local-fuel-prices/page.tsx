@@ -37,6 +37,14 @@ export default function LocalFuelPricesGuidePage() {
         UK Local Fuel Prices: Why They Matter
       </h1>
 
+      <p className="text-sm text-ev-grey mb-6 flex items-center gap-1.5">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
+          <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+        </svg>
+        Last updated: May 2025
+      </p>
+
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">
         Petrol prices vary by up to 20p per litre across the UK. Electricity
         tariffs can differ even more dramatically. Using a national average gives
@@ -224,8 +232,8 @@ export default function LocalFuelPricesGuidePage() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-ev-blue mt-1" aria-hidden="true">→</span>
-              Apply regional fuel price adjustments (live integration in
-              development)
+              Fetch live local petrol and diesel prices from forecourts within
+              10 km of your postcode
             </li>
             <li className="flex items-start gap-2">
               <span className="text-ev-blue mt-1" aria-hidden="true">→</span>
@@ -250,10 +258,11 @@ export default function LocalFuelPricesGuidePage() {
             for details.
           </p>
           <p>
-            Live fuel price lookup near your postcode using official Fuel Finder
-            / BEIS data is planned for a future release. Until then, enter your
-            local pump price manually — check PetrolPrices.com or your local
-            supermarket app for the most accurate current price.
+            When you enter your postcode and click Calculate, the calculator
+            fetches live local petrol and diesel prices from forecourts near
+            you using official CMA Fuel Finder data. If no nearby stations are
+            found, it falls back to national averages — you can then adjust the
+            price manually using PetrolPrices.com or your local supermarket app.
           </p>
         </section>
 
@@ -266,8 +275,8 @@ export default function LocalFuelPricesGuidePage() {
             Adjusting prices manually
           </h2>
           <p className="mb-4">
-            While live local pricing is being developed, you can get the most
-            accurate results by:
+            For even more accuracy beyond the automatic postcode lookup, you can
+            also override prices manually:
           </p>
           <ol className="space-y-3 list-decimal list-inside">
             <li className="text-sm">
@@ -293,6 +302,21 @@ export default function LocalFuelPricesGuidePage() {
           </ol>
         </section>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://electricvspetrol.co.uk" },
+              { "@type": "ListItem", position: 2, name: "Guides", item: "https://electricvspetrol.co.uk/guides" },
+              { "@type": "ListItem", position: 3, name: "Local Fuel Prices", item: "https://electricvspetrol.co.uk/guides/local-fuel-prices" },
+            ],
+          }),
+        }}
+      />
 
       {/* Internal links */}
       <div className="mt-12 pt-8 border-t border-border-light">

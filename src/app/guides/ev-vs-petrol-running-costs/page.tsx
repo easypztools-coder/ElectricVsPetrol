@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "EV vs Petrol Running Costs UK: The Complete 2024 Guide",
+  title: "EV vs Petrol Running Costs UK: The Complete 2025 Guide",
   description:
     "A practical UK guide to comparing electric and petrol car running costs. Covers fuel costs, home vs public charging, real-world efficiency, and when an EV saves money.",
   alternates: {
@@ -57,6 +57,14 @@ export default function EvVsPetrolGuidePage() {
         EV vs Petrol Running Costs: The UK Driver&apos;s Guide
       </h1>
 
+      <p className="text-sm text-ev-grey mb-6 flex items-center gap-1.5">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
+          <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+        </svg>
+        Last updated: May 2025
+      </p>
+
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">
         Fuel prices, electricity tariffs, real-world efficiency, and charging
         behaviour all affect whether switching to an EV saves you money. This
@@ -108,7 +116,7 @@ export default function EvVsPetrolGuidePage() {
           </p>
           <p className="mb-4">
             <strong className="text-navy">Home charging</strong> on a standard
-            tariff costs around 24–32p/kWh in 2024. On a dedicated EV overnight
+            tariff costs around 24–32p/kWh in 2025. On a dedicated EV overnight
             tariff (like Octopus Go), this can fall to 7–10p/kWh during off-peak
             hours. At 28p/kWh and 3.5 miles/kWh, home charging costs about{" "}
             <strong className="text-navy">8p per mile</strong>.
@@ -118,7 +126,7 @@ export default function EvVsPetrolGuidePage() {
             networks like Pod Point, Osprey, or Gridserve typically costs
             60–80p/kWh. At 75p/kWh, that&apos;s{" "}
             <strong className="text-navy">21p per mile</strong> — more expensive
-            than most petrol cars at 2024 pump prices.
+            than most petrol cars at current UK pump prices.
           </p>
         </section>
 
@@ -274,6 +282,21 @@ export default function EvVsPetrolGuidePage() {
                 text: item.a,
               },
             })),
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://electricvspetrol.co.uk" },
+              { "@type": "ListItem", position: 2, name: "Guides", item: "https://electricvspetrol.co.uk/guides" },
+              { "@type": "ListItem", position: 3, name: "EV vs Petrol Running Costs", item: "https://electricvspetrol.co.uk/guides/ev-vs-petrol-running-costs" },
+            ],
           }),
         }}
       />

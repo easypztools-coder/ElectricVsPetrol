@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CostCalculator from "@/components/calculator/CostCalculator";
+import HomepageFAQ from "@/components/sections/HomepageFAQ";
 import HowItWorks from "@/components/sections/HowItWorks";
 import TrustStrip from "@/components/sections/TrustStrip";
 import WhyLocalPrices from "@/components/sections/WhyLocalPrices";
@@ -18,13 +19,13 @@ export default function HomePage() {
     <>
       {/* ── Hero + Calculator ──────────────────────────────────── */}
       <section
-        className="bg-white border-b border-border-light"
+        className="bg-gradient-to-br from-white via-white to-ev-blue/5 border-b border-border-light"
         aria-labelledby="hero-heading"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* ── Hero copy ── */}
-            <div className="lg:sticky lg:top-24">
+            <div>
               <div className="inline-flex items-center gap-2 text-xs font-semibold text-ev-blue bg-ev-blue/8 px-3 py-1.5 rounded-full mb-6">
                 <span
                   className="inline-block w-1.5 h-1.5 rounded-full bg-ev-blue"
@@ -48,56 +49,72 @@ export default function HomePage() {
                 break-even point.
               </p>
 
-              {/* Trust microcopy */}
-              <div className="mt-8 flex flex-col gap-2">
-                {[
-                  "Independent. Transparent. Data-led.",
-                  "Built for UK drivers.",
-                  "Calculations run in your browser — nothing stored.",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <svg
-                      className="text-ev-green flex-shrink-0"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M3 8l3.5 3.5L13 5"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    <span className="text-sm text-ev-grey">{item}</span>
-                  </div>
-                ))}
+              {/* What you'll see */}
+              <div className="mt-8">
+                <p className="text-xs font-semibold text-ev-grey uppercase tracking-wide mb-3">
+                  What you&apos;ll see
+                </p>
+                <ul className="flex flex-col gap-2.5">
+                  {[
+                    "Cost per mile: EV vs petrol",
+                    "Annual and 5-year savings",
+                    "Break-even point",
+                    "10-year cumulative cost chart",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-2.5">
+                      <svg
+                        className="text-ev-blue flex-shrink-0"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M3 8l3.5 3.5L13 5"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <span className="text-sm text-ev-grey">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* Key stats callout */}
-              <div className="mt-10 grid grid-cols-2 gap-4 max-w-sm">
+              <div className="mt-10 grid grid-cols-3 gap-3">
                 <div className="bg-off-white border border-border-light rounded-xl p-4">
-                  <p className="text-xs text-ev-grey mb-1">Avg. EV saving/yr</p>
+                  <p className="text-xs text-ev-grey mb-1.5">Avg. EV saving/yr</p>
                   <p
-                    className="text-xl font-bold text-ev-green font-display"
+                    className="text-2xl font-bold text-ev-green font-display"
                     style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
                   >
                     ~£900
                   </p>
-                  <p className="text-xs text-ev-grey">10k miles, 80% home</p>
+                  <p className="text-xs text-ev-grey mt-1">10k mi, 80% home</p>
                 </div>
                 <div className="bg-off-white border border-border-light rounded-xl p-4">
-                  <p className="text-xs text-ev-grey mb-1">EV cost per mile</p>
+                  <p className="text-xs text-ev-grey mb-1.5">EV cost per mile</p>
                   <p
-                    className="text-xl font-bold text-ev-blue font-display"
+                    className="text-2xl font-bold text-ev-blue font-display"
                     style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
                   >
                     ~4.3p
                   </p>
-                  <p className="text-xs text-ev-grey">vs ~14p petrol</p>
+                  <p className="text-xs text-ev-grey mt-1">vs ~14p petrol</p>
+                </div>
+                <div className="bg-off-white border border-border-light rounded-xl p-4">
+                  <p className="text-xs text-ev-grey mb-1.5">Data privacy</p>
+                  <p
+                    className="text-2xl font-bold text-navy font-display"
+                    style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
+                  >
+                    100%
+                  </p>
+                  <p className="text-xs text-ev-grey mt-1">Browser-only calc.</p>
                 </div>
               </div>
 
@@ -114,14 +131,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Trust strip ─────────────────────────────────────────── */}
+      <TrustStrip />
+
       {/* ── How it works ────────────────────────────────────────── */}
       <HowItWorks />
 
       {/* ── Why local prices matter ─────────────────────────────── */}
       <WhyLocalPrices />
 
-      {/* ── Trust strip ─────────────────────────────────────────── */}
-      <TrustStrip />
+      {/* ── Common questions ────────────────────────────────────── */}
+      <HomepageFAQ />
 
       {/* ── Bottom CTA ──────────────────────────────────────────── */}
       <section className="py-16 bg-off-white">

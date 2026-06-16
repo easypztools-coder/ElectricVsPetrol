@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://electricvspetrol.co.uk/sitemap.xml

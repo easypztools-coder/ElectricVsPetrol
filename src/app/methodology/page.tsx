@@ -259,7 +259,7 @@ export default function MethodologyPage() {
             "EV real-world efficiency varies significantly with speed, temperature, load, and driving style. Winter efficiency can be 20–30% lower.",
             "Public charging prices change frequently and vary by network, location, and subscription. Check Zap-Map or individual network apps for current pricing.",
             "Home electricity rates depend on your tariff. EV-specific overnight tariffs (e.g. Octopus Go) can reduce home charging costs to 7–10p/kWh — dramatically improving EV economics.",
-            "Fuel prices are national averages. Local prices vary by up to 20p/litre. Enter your postcode for local pricing (live integration planned).",
+            "Fuel prices are national averages. Local prices vary by up to 20p/litre. Enter your postcode for live local pricing from nearby forecourts.",
             "This tool does not constitute financial advice. Always verify costs with your own research before making purchasing decisions.",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
@@ -275,7 +275,7 @@ export default function MethodologyPage() {
           <li>
             <strong className="text-navy">Fuel prices:</strong> BEIS Weekly Road
             Fuel Prices, RAC Fuel Watch — updated manually in fallback data.
-            Live integration via Fuel Finder API is planned.
+            Live local prices are fetched via the CMA Fuel Finder API when a postcode is entered.
           </li>
           <li>
             <strong className="text-navy">Electricity rates:</strong> Ofgem

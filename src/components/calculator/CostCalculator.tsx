@@ -121,7 +121,6 @@ export default function CostCalculator() {
   }, [inputs]);
 
   return (
-    <>
     <div id="calculator" className="scroll-mt-20">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
         {/* ── Calculator form column ── */}
@@ -155,7 +154,7 @@ export default function CostCalculator() {
         </div>
 
         {/* ── Right column: pre-result state or key callout ── */}
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 space-y-4">
           {!hasCalculated ? (
             <PreCalculatePrompt />
           ) : (
@@ -219,6 +218,8 @@ export default function CostCalculator() {
               </div>
             )
           )}
+
+          <LocalPricesPanel prices={localPrices} region={postcodeRegion ?? undefined} />
         </div>
       </div>
 
@@ -230,22 +231,6 @@ export default function CostCalculator() {
         </div>
       )}
     </div>
-
-    {/* ── Reference prices panel ── */}
-    <section
-      aria-label="Reference fuel and electricity prices"
-      className="py-12 bg-off-white"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-xl mx-auto lg:mx-0">
-          <LocalPricesPanel
-            prices={localPrices}
-            region={postcodeRegion ?? undefined}
-          />
-        </div>
-      </div>
-    </section>
-    </>
   );
 }
 

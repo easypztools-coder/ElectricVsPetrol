@@ -30,8 +30,8 @@ export default function WhyLocalPrices() {
               <p>
                 Using a national average disguises the real answer for your
                 situation. That&apos;s why we let you adjust every assumption —
-                and will add postcode-level live fuel prices as our data
-                integrations mature.
+                and why the calculator now looks up live local fuel prices near
+                your postcode automatically when you enter it and click Calculate.
               </p>
             </div>
             <div className="mt-6">
