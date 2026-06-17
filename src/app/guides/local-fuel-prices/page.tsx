@@ -4,11 +4,30 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "UK Local Fuel Prices: Why They Matter for EV vs Petrol Savings",
   description:
-    "Petrol and electricity prices vary significantly across the UK. Find out why local pricing matters for accurate EV vs petrol cost comparisons.",
+    "Petrol varies by 20p/litre across the UK — enough to shift your annual fuel bill by £200. Discover why local prices (not national averages) give you a far more accurate EV vs petrol result.",
   alternates: {
     canonical: "https://electricvspetrol.co.uk/guides/local-fuel-prices",
   },
 };
+
+const faqItems = [
+  {
+    q: "How much do petrol prices vary across the UK?",
+    a: "According to BEIS data, petrol prices at UK forecourts vary by as much as 15–20p per litre between the cheapest and most expensive areas. Supermarket forecourts typically undercut branded forecourts by 5–8p/litre. In remote areas of Scotland, Northern Ireland and rural Wales prices can be 10–15p higher than major urban centres.",
+  },
+  {
+    q: "Why does my postcode affect my EV vs petrol calculation?",
+    a: "Petrol prices vary by up to 20p/litre across the UK — that difference alone shifts your annual fuel bill by £100–£200 on a 10,000-mile, 45-MPG car. When you enter your postcode the calculator fetches live local prices from nearby forecourts using official CMA Fuel Finder data, giving you a result based on prices you'd actually pay.",
+  },
+  {
+    q: "What is the cheapest way to charge an EV at home in the UK?",
+    a: "A specialist EV overnight tariff such as Octopus Go offers rates as low as 7p/kWh during off-peak hours (typically midnight to 5am). Compared to a standard tariff at ~28p/kWh, this cuts home-charging cost from ~8p/mile to ~2p/mile — making home overnight charging dramatically cheaper than any alternative.",
+  },
+  {
+    q: "Is public rapid charging cheaper or more expensive than petrol?",
+    a: "At current UK public rapid-charging prices of 60–80p/kWh, the electricity cost is 17–23p/mile for an EV doing 3.5 miles/kWh — comparable to or more expensive than a petrol car at ~14p/mile. EV economics depend heavily on home-charging access.",
+  },
+];
 
 export default function LocalFuelPricesGuidePage() {
   return (
@@ -22,7 +41,9 @@ export default function LocalFuelPricesGuidePage() {
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li>Guides</li>
+          <li>
+            <Link href="/guides" className="text-ev-blue hover:underline">Guides</Link>
+          </li>
           <li aria-hidden="true">/</li>
           <li aria-current="page" className="text-navy">
             Local Fuel Prices
@@ -42,7 +63,7 @@ export default function LocalFuelPricesGuidePage() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Last updated: May 2025
+        Last updated: June 2026
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">
@@ -302,6 +323,80 @@ export default function LocalFuelPricesGuidePage() {
           </ol>
         </section>
       </div>
+
+      {/* FAQ section */}
+      <section aria-labelledby="faq-heading" className="mt-12 pt-10 border-t border-border-light">
+        <h2
+          id="faq-heading"
+          className="text-2xl font-bold text-navy mb-6 font-display"
+          style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
+        >
+          Frequently asked questions
+        </h2>
+        <div className="space-y-6">
+          {faqItems.map((item) => (
+            <div key={item.q}>
+              <h3 className="text-base font-semibold text-navy mb-2">{item.q}</h3>
+              <p className="text-sm text-ev-grey leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQPage structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqItems.map((item) => ({
+              "@type": "Question",
+              name: item.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.a,
+              },
+            })),
+          }),
+        }}
+      />
+
+      {/* Article structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "UK Local Fuel Prices: Why They Matter for EV vs Petrol Savings",
+            description:
+              "Petrol varies by 20p/litre across the UK — enough to shift your annual fuel bill by £200. Discover why local prices (not national averages) give you a far more accurate EV vs petrol result.",
+            url: "https://electricvspetrol.co.uk/guides/local-fuel-prices",
+            datePublished: "2025-05-01",
+            dateModified: "2026-06-17",
+            author: {
+              "@type": "Organization",
+              name: "ElectricVsPetrol.co.uk",
+              url: "https://electricvspetrol.co.uk",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "ElectricVsPetrol.co.uk",
+              url: "https://electricvspetrol.co.uk",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://electricvspetrol.co.uk/favicon.svg",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://electricvspetrol.co.uk/guides/local-fuel-prices",
+            },
+            image: "https://electricvspetrol.co.uk/opengraph-image",
+          }),
+        }}
+      />
 
       <script
         type="application/ld+json"

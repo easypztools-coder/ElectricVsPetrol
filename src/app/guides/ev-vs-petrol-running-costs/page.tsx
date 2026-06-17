@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "EV vs Petrol Running Costs UK: The Complete 2025 Guide",
+  title: "EV vs Petrol Running Costs UK: The Complete 2026 Guide",
   description:
-    "A practical UK guide to comparing electric and petrol car running costs. Covers fuel costs, home vs public charging, real-world efficiency, and when an EV saves money.",
+    "Could you save £900 a year switching to an EV? This UK guide explains exactly what drives the difference — home vs public charging, real-world efficiency, and the break-even point. Updated 2026.",
   alternates: {
     canonical:
       "https://electricvspetrol.co.uk/guides/ev-vs-petrol-running-costs",
@@ -42,7 +42,9 @@ export default function EvVsPetrolGuidePage() {
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li>Guides</li>
+          <li>
+            <Link href="/guides" className="text-ev-blue hover:underline">Guides</Link>
+          </li>
           <li aria-hidden="true">/</li>
           <li aria-current="page" className="text-navy">
             EV vs Petrol Running Costs
@@ -62,7 +64,7 @@ export default function EvVsPetrolGuidePage() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Last updated: May 2025
+        Last updated: June 2026
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">
@@ -116,7 +118,7 @@ export default function EvVsPetrolGuidePage() {
           </p>
           <p className="mb-4">
             <strong className="text-navy">Home charging</strong> on a standard
-            tariff costs around 24–32p/kWh in 2025. On a dedicated EV overnight
+            tariff costs around 24–32p/kWh in 2026. On a dedicated EV overnight
             tariff (like Octopus Go), this can fall to 7–10p/kWh during off-peak
             hours. At 28p/kWh and 3.5 miles/kWh, home charging costs about{" "}
             <strong className="text-navy">8p per mile</strong>.
@@ -297,6 +299,43 @@ export default function EvVsPetrolGuidePage() {
               { "@type": "ListItem", position: 2, name: "Guides", item: "https://electricvspetrol.co.uk/guides" },
               { "@type": "ListItem", position: 3, name: "EV vs Petrol Running Costs", item: "https://electricvspetrol.co.uk/guides/ev-vs-petrol-running-costs" },
             ],
+          }),
+        }}
+      />
+
+      {/* Article structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "EV vs Petrol Running Costs: The Complete 2026 UK Guide",
+            description:
+              "Could you save £900 a year switching to an EV? This UK guide explains exactly what drives the difference — home vs public charging, real-world efficiency, and the break-even point.",
+            url: "https://electricvspetrol.co.uk/guides/ev-vs-petrol-running-costs",
+            datePublished: "2025-05-01",
+            dateModified: "2026-06-17",
+            author: {
+              "@type": "Organization",
+              name: "ElectricVsPetrol.co.uk",
+              url: "https://electricvspetrol.co.uk",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "ElectricVsPetrol.co.uk",
+              url: "https://electricvspetrol.co.uk",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://electricvspetrol.co.uk/favicon.svg",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id":
+                "https://electricvspetrol.co.uk/guides/ev-vs-petrol-running-costs",
+            },
+            image: "https://electricvspetrol.co.uk/opengraph-image",
           }),
         }}
       />

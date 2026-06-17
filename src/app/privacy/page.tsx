@@ -51,7 +51,7 @@ export default function PrivacyPage() {
                 "The cost calculator runs entirely in your browser. Your mileage, MPG, fuel prices, and electricity rates are never sent to or stored on our servers.",
                 "If you enter a postcode, it is sent to the free postcodes.io API to look up your geographic location. We do not store your postcode.",
                 "We do not require you to create an account or provide personal information to use the calculator.",
-                "We may use basic, privacy-respecting analytics to understand how the site is used, with no personally identifiable data collected.",
+                "We use Vercel Analytics, a cookieless, privacy-respecting analytics tool, to understand how the site is used. No cookies are set and no personally identifiable data is collected.",
                 "We do not sell data to third parties.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
@@ -129,11 +129,10 @@ export default function PrivacyPage() {
             Analytics
           </h3>
           <p className="text-sm">
-            We may use privacy-respecting web analytics (such as Plausible
-            Analytics or similar cookieless tools) to understand aggregate usage
-            patterns — for example, how many visitors use the calculator and
-            which pages are most visited. No cookies are set and no personally
-            identifiable information is collected through analytics.
+            We use Vercel Analytics to understand aggregate usage patterns — for
+            example, how many visitors use the calculator and which pages are
+            most visited. Vercel Analytics is cookieless and collects no
+            personally identifiable information. No tracking cookies are set.
           </p>
         </section>
 
@@ -188,12 +187,10 @@ export default function PrivacyPage() {
                   <td className="py-2.5 text-ev-grey">IP address (on font load)</td>
                 </tr>
                 <tr>
-                  <td className="py-2.5 pr-4 font-medium">
-                    Analytics (if enabled)
-                  </td>
-                  <td className="py-2.5 pr-4">Aggregate usage statistics</td>
+                  <td className="py-2.5 pr-4 font-medium">Vercel Analytics</td>
+                  <td className="py-2.5 pr-4">Aggregate page view statistics</td>
                   <td className="py-2.5 text-ev-grey">
-                    No personally identifiable data
+                    No cookies, no personally identifiable data
                   </td>
                 </tr>
               </tbody>

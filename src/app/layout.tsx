@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -48,6 +49,7 @@ export const metadata: Metadata = {
     title: "EV vs Petrol Cost Calculator UK",
     description:
       "Compare electric and petrol running costs using real UK prices.",
+    site: "@ElectricVsPetrol",
   },
   icons: {
     icon: [
@@ -77,6 +79,22 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "ElectricVsPetrol.co.uk",
+              url: "https://electricvspetrol.co.uk",
+              logo: "https://electricvspetrol.co.uk/favicon.svg",
+              description:
+                "Independent UK EV vs petrol running cost calculator and guides. Data-led, transparent, built for UK drivers.",
+              sameAs: [],
+            }),
+          }}
+        />
       </body>
     </html>
   );
