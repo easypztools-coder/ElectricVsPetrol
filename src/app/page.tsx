@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import CostCalculator from "@/components/calculator/CostCalculator";
+import CostCalculatorWithParams from "@/components/calculator/CostCalculatorWithParams";
 import HomepageFAQ from "@/components/sections/HomepageFAQ";
 import HowItWorks from "@/components/sections/HowItWorks";
 import TrustStrip from "@/components/sections/TrustStrip";
@@ -125,7 +125,7 @@ export default function HomePage() {
 
             {/* ── Calculator ── */}
             <div>
-              <CostCalculator />
+              <CostCalculatorWithParams />
             </div>
           </div>
         </div>

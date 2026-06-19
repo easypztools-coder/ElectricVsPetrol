@@ -6,6 +6,8 @@ const footerLinks = [
     heading: "Tools",
     links: [
       { href: "/#calculator", label: "EV vs Petrol Calculator" },
+      { href: "/ev", label: "EV Running Costs" },
+      { href: "/compare", label: "Car Comparisons" },
       { href: "/methodology", label: "Methodology" },
     ],
   },
@@ -13,12 +15,36 @@ const footerLinks = [
     heading: "Guides",
     links: [
       { href: "/guides/ev-vs-petrol-running-costs", label: "EV Running Costs" },
-      { href: "/guides/local-fuel-prices", label: "Local Fuel Prices" },
+      { href: "/guides/cheapest-evs-to-run-uk-2026", label: "Cheapest EVs 2026" },
+      { href: "/guides/best-ev-for-high-mileage", label: "Best EV for High Mileage" },
+      { href: "/guides/is-ev-worth-it-without-home-charger", label: "No Home Charger?" },
+    ],
+  },
+  {
+    heading: "Compare",
+    links: [
+      { href: "/compare/tesla-model-3-vs-bmw-3-series", label: "Model 3 vs 3 Series" },
+      { href: "/compare/tesla-model-y-vs-bmw-x3", label: "Model Y vs X3" },
+      { href: "/compare/mg4-vs-volkswagen-golf", label: "MG4 vs Golf" },
+      { href: "/compare/hyundai-ioniq-5-vs-bmw-x3", label: "Ioniq 5 vs X3" },
+    ],
+  },
+  {
+    heading: "Blog & FAQ",
+    links: [
+      { href: "/blog", label: "EV Ian's Blog" },
+      { href: "/faq/is-ev-cheaper-than-petrol-uk", label: "Is EV cheaper than petrol?" },
+      { href: "/faq/cheapest-ev-to-run-uk", label: "Cheapest EV to run UK" },
+      { href: "/faq/how-much-does-it-cost-to-charge-a-tesla-at-home-uk", label: "Tesla home charging cost" },
     ],
   },
   {
     heading: "Legal",
-    links: [{ href: "/privacy", label: "Privacy Policy" }],
+    links: [
+      { href: "/privacy", label: "Privacy Policy" },
+      { href: "/about", label: "About" },
+      { href: "/contact", label: "Contact" },
+    ],
   },
 ];
 
@@ -27,7 +53,7 @@ export default function Footer() {
     <footer className="bg-navy text-white mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Top: logo + links */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 pb-8 border-b border-white/10">
           {/* Brand col */}
           <div className="md:col-span-1">
             <Logo size="md" variant="footer" />

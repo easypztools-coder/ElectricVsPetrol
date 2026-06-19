@@ -354,6 +354,14 @@ export default function EvVsPetrolGuidePage() {
           </li>
           <li>
             <Link
+              href="/compare"
+              className="text-ev-blue hover:underline"
+            >
+              Specific car comparisons: Tesla Model 3, MG4, Ioniq 5 and more →
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/guides/local-fuel-prices"
               className="text-ev-blue hover:underline"
             >

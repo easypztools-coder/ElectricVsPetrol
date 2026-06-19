@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "UK Local Fuel Prices: Why They Matter for EV vs Petrol Savings",
+  title: "UK Local Fuel Prices: Why They Matter for EV vs Petrol Savings 2026",
   description:
     "Petrol varies by 20p/litre across the UK — enough to shift your annual fuel bill by £200. Discover why local prices (not national averages) give you a far more accurate EV vs petrol result.",
   alternates: {
@@ -369,7 +369,7 @@ export default function LocalFuelPricesGuidePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "UK Local Fuel Prices: Why They Matter for EV vs Petrol Savings",
+            headline: "UK Local Fuel Prices: Why They Matter for EV vs Petrol Savings 2026",
             description:
               "Petrol varies by 20p/litre across the UK — enough to shift your annual fuel bill by £200. Discover why local prices (not national averages) give you a far more accurate EV vs petrol result.",
             url: "https://electricvspetrol.co.uk/guides/local-fuel-prices",
@@ -423,6 +423,14 @@ export default function LocalFuelPricesGuidePage() {
               className="text-ev-blue hover:underline"
             >
               EV vs Petrol Cost Calculator →
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/compare"
+              className="text-ev-blue hover:underline"
+            >
+              Specific car comparisons: see how local prices affect each model →
             </Link>
           </li>
           <li>

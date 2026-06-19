@@ -33,8 +33,15 @@ const DEFAULT_INPUTS: CalculatorInputs = {
   evPricePremium: DEFAULT_EV_PRICE_PREMIUM,
 };
 
-export default function CostCalculator() {
-  const [inputs, setInputs] = useState<CalculatorInputs>(DEFAULT_INPUTS);
+export default function CostCalculator({
+  initialOverrides,
+}: {
+  initialOverrides?: Partial<CalculatorInputs>;
+} = {}) {
+  const [inputs, setInputs] = useState<CalculatorInputs>({
+    ...DEFAULT_INPUTS,
+    ...initialOverrides,
+  });
   const [results, setResults] = useState<CalculatorResults | null>(null);
   const [postcodeRegion, setPostcodeRegion] = useState<string | null>(null);
   const [localPrices, setLocalPrices] = useState<LocalPrices>(FALLBACK_PRICES);

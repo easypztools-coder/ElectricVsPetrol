@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://electricvspetrol.co.uk/privacy",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function PrivacyPage() {

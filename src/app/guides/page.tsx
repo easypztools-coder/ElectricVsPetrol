@@ -19,6 +19,27 @@ const guides = [
     badge: "Running Costs",
   },
   {
+    href: "/guides/cheapest-evs-to-run-uk-2026",
+    title: "Cheapest EVs to Run in the UK 2026: Pence Per Mile Ranked",
+    description:
+      "Which electric car costs the least per mile? We rank 20+ EVs by real-world efficiency and annual running cost at current UK electricity prices.",
+    badge: "Running Costs",
+  },
+  {
+    href: "/guides/best-ev-for-high-mileage",
+    title: "Best EV for High Mileage UK 2026: Which Models Save the Most?",
+    description:
+      "High mileage drivers save the most from switching to an EV — but only if they pick the right model. Range, charging speed, and efficiency all matter more at 15,000+ miles per year.",
+    badge: "High Mileage",
+  },
+  {
+    href: "/guides/is-ev-worth-it-without-home-charger",
+    title: "Is an EV Worth It Without a Home Charger? UK Guide 2026",
+    description:
+      "No driveway? The economics change significantly. This guide explains what to expect from public charging costs and who can still make an EV work without off-street parking.",
+    badge: "Charging",
+  },
+  {
     href: "/guides/local-fuel-prices",
     title: "UK Local Fuel Prices: Why They Matter for Your Calculation",
     description:
