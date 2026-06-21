@@ -223,21 +223,21 @@ export default function EvVsPetrolGuidePage() {
             className="text-2xl font-bold text-navy mb-4 font-display"
             style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
           >
-            What this calculator doesn&apos;t cover
+            What this calculator still doesn&apos;t cover
           </h2>
           <p className="mb-4">
-            Running costs are only part of the picture. A full cost comparison
-            should also consider:
+            The new full cost of ownership mode now includes purchase price,
+            maintenance, VED / road tax, and a rough resale value estimate.
+            There are still a few real-world costs and benefits that are left
+            out because they vary too much by driver, location, or insurer:
           </p>
           <ul className="space-y-2">
             {[
-              "Purchase price and EV premium over an equivalent petrol car",
-              "Vehicle Excise Duty (road tax) — EVs are currently exempt from the standard rate",
-              "Servicing and maintenance — EVs have fewer moving parts and lower routine maintenance costs",
-              "Insurance — varies between models and insurers; EVs can be more expensive to insure",
-              "Depreciation — varies widely; EVs are depreciating faster than expected on some models",
-              "Home charger installation — typically £750–£1,200 including the unit, sometimes grant-subsidised",
-              "Congestion charge and ULEZ — EVs are exempt in London's zones",
+              "Insurance — depends heavily on the model, driver history, and insurer",
+              "Home charger installation — the unit and fitting can add a meaningful upfront cost",
+              "Finance costs — PCP, HP, lease deals, and APR all change the true monthly outlay",
+              "Congestion charge, ULEZ, and workplace parking rules — these vary by location and employer",
+              "Charging convenience and downtime — a home charger or workplace charger can change the experience even if the pounds-and-pence maths looks similar",
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
                 <span className="text-ev-amber flex-shrink-0 mt-0.5">⚠</span>

@@ -15,7 +15,7 @@ const steps = [
     number: "03",
     title: "You see the true cost comparison",
     description:
-      "Get a clear annual saving or cost difference, cost per mile for EV vs petrol, break-even point, and a 10-year cumulative cost chart.",
+      "Get a clear annual saving or cost difference in quick mode, or switch to full cost of ownership for a year-by-year chart with purchase price, maintenance, VED, and rough resale value.",
   },
 ];
 

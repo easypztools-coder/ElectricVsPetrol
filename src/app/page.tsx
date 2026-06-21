@@ -6,7 +6,7 @@ import TrustStrip from "@/components/sections/TrustStrip";
 import WhyLocalPrices from "@/components/sections/WhyLocalPrices";
 
 const siteDescription =
-  "Compare electric and petrol running costs using UK mileage, fuel prices, electricity rates and charging assumptions. See cost per mile, annual savings and break-even point.";
+  "Compare electric and petrol running costs using UK mileage, fuel prices, electricity rates and charging assumptions, or switch to a full cost-of-ownership view with purchase price, maintenance, VED and rough resale value. See cost per mile, annual savings, break-even point and year-by-year ownership costs.";
 
 export const metadata: Metadata = {
   title: "EV vs Petrol Cost Calculator UK | ElectricVsPetrol.co.uk",
@@ -51,16 +51,24 @@ export default function HomePage() {
                 break-even point.
               </p>
 
+              <p className="mt-4 text-sm text-ev-grey leading-relaxed max-w-lg">
+                Start with the quick comparison, or switch to full cost over time to factor in purchase price, maintenance, VED, and rough resale value over the years you plan to own the car.
+              </p>
+
               {/* What you'll see */}
               <div className="mt-8">
                 <p className="text-xs font-semibold text-ev-grey uppercase tracking-wide mb-3">
                   What you&apos;ll see
+                </p>
+                <p className="text-sm text-ev-grey mb-3 max-w-lg">
+                  The default view gives you the fast running-cost answer. If you want the whole picture, switch to full cost of ownership and compare year-by-year totals.
                 </p>
                 <ul className="flex flex-col gap-2.5">
                   {[
                     "Cost per mile: EV vs petrol",
                     "Annual and 5-year savings",
                     "Break-even point",
+                    "Full cost of ownership over time",
                     "10-year cumulative cost chart",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5">

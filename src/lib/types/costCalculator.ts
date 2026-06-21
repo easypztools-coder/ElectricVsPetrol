@@ -9,6 +9,14 @@ export interface CalculatorInputs {
   evMilesPerKwh: number;
   fuelPricePencePerLitre: number;
   evPricePremium: number;
+  petrolPurchasePrice: number;
+  ownershipYears: number;
+  petrolMaintenanceAnnual: number;
+  evMaintenanceAnnual: number;
+  petrolVedAnnual: number;
+  evVedAnnual: number;
+  petrolResaleValuePercent: number;
+  evResaleValuePercent: number;
 }
 
 export interface CalculatorResults {
@@ -35,6 +43,29 @@ export interface CostProjection {
   savings: number;
 }
 
+export interface TcoProjection {
+  year: number;
+  evCumulative: number;
+  petrolCumulative: number;
+  difference: number;
+}
+
+export interface TcoCalculationResults {
+  baseResults: CalculatorResults;
+  projections: TcoProjection[];
+  crossoverYear: number | null;
+  totalDifference: number;
+  petrolPurchasePrice: number;
+  evPurchasePrice: number;
+  ownershipYears: number;
+  petrolMaintenanceAnnual: number;
+  evMaintenanceAnnual: number;
+  petrolVedAnnual: number;
+  evVedAnnual: number;
+  petrolResaleValuePercent: number;
+  evResaleValuePercent: number;
+}
+
 export interface LocalPrices {
   petrolPencePerLitre: number;
   dieselPencePerLitre: number;
@@ -54,3 +85,5 @@ export interface PostcodeData {
 }
 
 export type ValidationErrors = Partial<Record<keyof CalculatorInputs, string>>;
+
+export type CalculatorViewMode = "quick" | "tco";

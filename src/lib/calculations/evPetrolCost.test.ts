@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
   calculateEvPetrolCosts,
+  calculateTcoCosts,
   validateInputs,
   LITRES_PER_GALLON,
   DEFAULT_EV_PRICE_PREMIUM,
@@ -18,6 +19,14 @@ const BASE_INPUTS: CalculatorInputs = {
   evMilesPerKwh: 3.5,
   fuelPricePencePerLitre: 143.9,
   evPricePremium: DEFAULT_EV_PRICE_PREMIUM,
+  petrolPurchasePrice: 22000,
+  ownershipYears: 7,
+  petrolMaintenanceAnnual: 550,
+  evMaintenanceAnnual: 350,
+  petrolVedAnnual: 195,
+  evVedAnnual: 195,
+  petrolResaleValuePercent: 35,
+  evResaleValuePercent: 30,
 };
 
 // ── Test 1: Petrol cost calculation ─────────────────────────────────────────
@@ -181,5 +190,68 @@ describe("Validation", () => {
   it("accepts empty postcode without error", () => {
     const errors = validateInputs({ postcode: "" });
     expect(errors.postcode).toBeUndefined();
+  });
+
+  it("does not validate TCO fields in quick mode", () => {
+    const errors = validateInputs({ ownershipYears: 0 }, "quick");
+    expect(errors.ownershipYears).toBeUndefined();
+  });
+
+  it("validates TCO fields in full cost mode", () => {
+    const errors = validateInputs({ ownershipYears: 0 }, "tco");
+    expect(errors.ownershipYears).toBeDefined();
+  });
+});
+
+// ── Test 7: Full cost of ownership calculation ─────────────────────────────
+describe("TCO calculation", () => {
+  it("starts at zero cost in year 0 and includes year-by-year projections", () => {
+    const results = calculateTcoCosts(BASE_INPUTS);
+    expect(results.projections[0].evCumulative).toBeCloseTo(0, 4);
+    expect(results.projections[0].petrolCumulative).toBeCloseTo(0, 4);
+    expect(results.projections).toHaveLength(BASE_INPUTS.ownershipYears + 1);
+  });
+
+  it("finds a crossover year when the EV is strongly advantaged", () => {
+    const results = calculateTcoCosts({
+      ...BASE_INPUTS,
+      annualMiles: 15000,
+      homeChargePercent: 100,
+      fuelPricePencePerLitre: 155,
+      evPricePremium: 0,
+      petrolPurchasePrice: 22000,
+      ownershipYears: 5,
+      petrolMaintenanceAnnual: 850,
+      evMaintenanceAnnual: 250,
+      petrolVedAnnual: 195,
+      evVedAnnual: 0,
+      petrolResaleValuePercent: 30,
+      evResaleValuePercent: 40,
+    });
+
+    expect(results.crossoverYear).not.toBeNull();
+    expect(results.crossoverYear!).toBeGreaterThanOrEqual(1);
+    expect(results.totalDifference).toBeGreaterThan(0);
+  });
+
+  it("returns no crossover when the EV never catches up within 15 years", () => {
+    const results = calculateTcoCosts({
+      ...BASE_INPUTS,
+      homeChargePercent: 0,
+      publicChargingRatePence: 80,
+      evPricePremium: 20000,
+      petrolPurchasePrice: 15000,
+      ownershipYears: 15,
+      petrolMaintenanceAnnual: 450,
+      evMaintenanceAnnual: 500,
+      petrolVedAnnual: 195,
+      evVedAnnual: 195,
+      petrolResaleValuePercent: 40,
+      evResaleValuePercent: 25,
+    });
+
+    expect(results.crossoverYear).toBeNull();
+    expect(results.totalDifference).toBeLessThan(0);
+    expect(results.projections).toHaveLength(16);
   });
 });
