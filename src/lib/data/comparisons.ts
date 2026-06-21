@@ -52,6 +52,24 @@ export const comparisons: ComparisonPair[] = [
       "The budget EV benchmark against the UK's most enduring petrol hatchback.",
   },
   {
+    slug: "tesla-model-3-vs-ford-focus",
+    evSlug: "tesla-model-3",
+    iceSlug: "ford-focus",
+    tier: 1,
+    evPricePremiumGbp: 11000,
+    rationale:
+      "A mainstream family hatchback comparison that shows what happens when a premium EV is measured against a familiar petrol benchmark.",
+  },
+  {
+    slug: "nissan-leaf-vs-volkswagen-golf",
+    evSlug: "nissan-leaf",
+    iceSlug: "volkswagen-golf",
+    tier: 1,
+    evPricePremiumGbp: 4500,
+    rationale:
+      "A practical entry-level EV versus one of Britain's most recognisable petrol hatchbacks.",
+  },
+  {
     slug: "hyundai-ioniq-5-vs-bmw-x3",
     evSlug: "hyundai-ioniq-5",
     iceSlug: "bmw-x3",
@@ -69,6 +87,15 @@ export const comparisons: ComparisonPair[] = [
     evPricePremiumGbp: 4000,
     rationale:
       "Kia's performance crossover EV compared with Audi's premium saloon favourite.",
+  },
+  {
+    slug: "kia-ev6-vs-bmw-3-series",
+    evSlug: "kia-ev6",
+    iceSlug: "bmw-3-series",
+    tier: 2,
+    evPricePremiumGbp: 6000,
+    rationale:
+      "A stylish EV crossover versus a benchmark executive saloon — a useful upper-mid-market comparison.",
   },
   {
     slug: "volkswagen-id4-vs-volkswagen-tiguan",

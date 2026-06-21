@@ -18,6 +18,11 @@ const footerLinks = [
       { href: "/guides/cheapest-evs-to-run-uk-2026", label: "Cheapest EVs 2026" },
       { href: "/guides/best-ev-for-high-mileage", label: "Best EV for High Mileage" },
       { href: "/guides/is-ev-worth-it-without-home-charger", label: "No Home Charger?" },
+      { href: "/guides/hybrid-vs-petrol-running-costs", label: "Hybrid vs Petrol" },
+      { href: "/guides/ev-salary-sacrifice-uk", label: "EV Salary Sacrifice" },
+      { href: "/guides/ev-running-costs-scotland", label: "EV Costs Scotland" },
+      { href: "/guides/ev-running-costs-wales", label: "EV Costs Wales" },
+      { href: "/guides/ev-running-costs-northern-ireland", label: "EV Costs N. Ireland" },
     ],
   },
   {

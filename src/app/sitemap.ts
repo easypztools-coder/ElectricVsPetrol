@@ -32,6 +32,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${base}/guides/hybrid-vs-petrol-running-costs`,
+      lastModified: new Date("2026-06-21"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${base}/guides/ev-salary-sacrifice-uk`,
+      lastModified: new Date("2026-06-21"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${base}/guides/ev-running-costs-scotland`,
+      lastModified: new Date("2026-06-21"),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${base}/guides/ev-running-costs-wales`,
+      lastModified: new Date("2026-06-21"),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${base}/guides/ev-running-costs-northern-ireland`,
+      lastModified: new Date("2026-06-21"),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
       url: `${base}/methodology`,
       lastModified: new Date("2026-06-17"),
       changeFrequency: "monthly",

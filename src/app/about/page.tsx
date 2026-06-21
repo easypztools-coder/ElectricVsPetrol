@@ -36,8 +36,8 @@ export default function AboutPage() {
       </h1>
 
       <p className="text-lg text-ev-grey mb-10 leading-relaxed">
-        An independent UK tool built to give drivers a clear, honest answer to
-        the EV vs petrol question — using real data, not marketing.
+        An independent UK-built tool designed to give drivers a clear, honest
+        answer to the EV vs petrol question — using real data, not marketing.
       </p>
 
       <div className="space-y-10 text-ev-grey leading-relaxed">

@@ -306,6 +306,29 @@ export default function MethodologyPage() {
 
       <div className="border-t border-border-light pt-8 mt-8">
         <p className="text-sm text-ev-grey">
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    itemListElement: [
+                      {
+                        "@type": "ListItem",
+                        position: 1,
+                        name: "Home",
+                        item: "https://electricvspetrol.co.uk",
+                      },
+                      {
+                        "@type": "ListItem",
+                        position: 2,
+                        name: "Methodology",
+                        item: "https://electricvspetrol.co.uk/methodology",
+                      },
+                    ],
+                  }),
+                }}
+              />
           Something not right? Spotted an error in our methodology?{" "}
           <Link href="/contact" className="text-ev-blue hover:underline">
             Get in touch

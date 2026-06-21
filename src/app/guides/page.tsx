@@ -41,10 +41,45 @@ const guides = [
   },
   {
     href: "/guides/local-fuel-prices",
-    title: "UK Local Fuel Prices: Why They Matter for Your Calculation",
+    title: "UK Local Fuel Prices: Why They Matter for EV vs Petrol Savings 2026",
     description:
       "Petrol prices vary by up to 20p/litre across the UK. Electricity tariffs vary even more. Learn how to use local pricing for an accurate EV vs petrol comparison.",
     badge: "Fuel Prices",
+  },
+  {
+    href: "/guides/hybrid-vs-petrol-running-costs",
+    title: "Hybrid vs Petrol Running Costs UK: The Complete 2026 Guide",
+    description:
+      "Standard hybrids, plug-in hybrids, and when they actually make financial sense compared with a petrol car.",
+    badge: "Hybrid",
+  },
+  {
+    href: "/guides/ev-salary-sacrifice-uk",
+    title: "EV Salary Sacrifice UK Guide 2026",
+    description:
+      "How salary sacrifice EV leasing works, who qualifies, and how to stack lease savings with lower running costs.",
+    badge: "Finance",
+  },
+  {
+    href: "/guides/ev-running-costs-scotland",
+    title: "EV Running Costs Scotland 2026",
+    description:
+      "ChargePlace Scotland, rural charging access, local support, and why Scottish fuel prices change the EV comparison.",
+    badge: "Region",
+  },
+  {
+    href: "/guides/ev-running-costs-wales",
+    title: "EV Running Costs Wales 2026",
+    description:
+      "Charging access, rural fuel pricing, and how Wales-specific conditions affect EV running costs.",
+    badge: "Region",
+  },
+  {
+    href: "/guides/ev-running-costs-northern-ireland",
+    title: "EV Running Costs Northern Ireland 2026",
+    description:
+      "Rural charging access, local fuel price variation, and the Northern Ireland EV running-cost picture.",
+    badge: "Region",
   },
 ];
 

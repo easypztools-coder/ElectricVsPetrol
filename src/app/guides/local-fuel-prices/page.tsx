@@ -55,7 +55,7 @@ export default function LocalFuelPricesGuidePage() {
         className="text-4xl font-bold text-navy mb-4 font-display leading-tight"
         style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
       >
-        UK Local Fuel Prices: Why They Matter
+        UK Local Fuel Prices: Why They Matter for EV vs Petrol Savings 2026
       </h1>
 
       <p className="text-sm text-ev-grey mb-6 flex items-center gap-1.5">

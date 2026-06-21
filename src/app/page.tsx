@@ -5,10 +5,12 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import TrustStrip from "@/components/sections/TrustStrip";
 import WhyLocalPrices from "@/components/sections/WhyLocalPrices";
 
+const siteDescription =
+  "Compare electric and petrol running costs using UK mileage, fuel prices, electricity rates and charging assumptions. See cost per mile, annual savings and break-even point.";
+
 export const metadata: Metadata = {
   title: "EV vs Petrol Cost Calculator UK | ElectricVsPetrol.co.uk",
-  description:
-    "Compare electric and petrol running costs using UK mileage, fuel prices, electricity rates and charging assumptions. See cost per mile, annual savings and break-even point.",
+  description: siteDescription,
   alternates: {
     canonical: "https://electricvspetrol.co.uk",
   },
@@ -197,10 +199,10 @@ export default function HomePage() {
             "@type": "WebApplication",
             name: "EV vs Petrol Cost Calculator",
             url: "https://electricvspetrol.co.uk",
-            description:
-              "Compare electric and petrol running costs using UK mileage, fuel prices, electricity rates and charging assumptions.",
+            description: siteDescription,
             applicationCategory: "FinanceApplication",
-            operatingSystem: "Any",
+            operatingSystem: "Web",
+            isAccessibleForFree: true,
             offers: {
               "@type": "Offer",
               price: "0",

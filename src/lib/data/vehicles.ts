@@ -181,6 +181,16 @@ export const iceVehicles: ICEVehicle[] = [
     segment: "compact hatchback",
   },
   {
+    slug: "ford-focus",
+    displayName: "Ford Focus",
+    make: "Ford",
+    model: "Focus",
+    variant: "1.0 EcoBoost Titanium",
+    fuelType: "petrol",
+    realWorldMpg: 45,
+    segment: "family hatchback",
+  },
+  {
     slug: "volkswagen-tiguan",
     displayName: "Volkswagen Tiguan",
     make: "Volkswagen",
