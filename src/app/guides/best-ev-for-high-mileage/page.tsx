@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best EV for High Mileage UK 2026: Which Electric Cars Save the Most?",
+  title: "Best & Highest Mileage Electric Cars UK 2026 | High Mileage EV Guide",
   description:
-    "High mileage drivers save the most from switching to an EV — but only if they pick the right model. This guide covers which EVs have the range, charging speed, and efficiency to suit 15,000–30,000 miles per year.",
+    "Which electric cars get the best real-world range? High mileage drivers save the most from switching to an EV — this guide covers which EVs have the range, charging speed, and efficiency to suit 15,000–30,000 miles per year.",
   alternates: {
     canonical: "https://electricvspetrol.co.uk/guides/best-ev-for-high-mileage",
   },

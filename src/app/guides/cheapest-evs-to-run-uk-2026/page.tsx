@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Cheapest EVs to Run in the UK 2026: Pence Per Mile Ranked",
+  title: "Which EV Gets the Best Mileage? Cheapest EVs to Run UK 2026",
   description:
-    "Which electric car costs the least per mile to run in the UK in 2026? We rank 20+ EVs by pence per mile based on real-world efficiency data and current UK electricity prices.",
+    "Which electric car gets the best mileage and costs the least per mile to run in the UK in 2026? We rank 20+ EVs by pence per mile based on real-world efficiency data and current UK electricity prices.",
   alternates: {
     canonical: "https://electricvspetrol.co.uk/guides/cheapest-evs-to-run-uk-2026",
   },

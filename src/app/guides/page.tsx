@@ -81,6 +81,42 @@ const guides = [
       "Rural charging access, local fuel price variation, and the Northern Ireland EV running-cost picture.",
     badge: "Region",
   },
+  // New Phase 2 pages
+  {
+    href: "/guides/hybrid-vs-petrol-calculator",
+    title: "Hybrid vs Petrol Running Cost Calculator UK",
+    description:
+      "Calculate whether a standard hybrid (HEV) or plug-in hybrid (PHEV) saves you money compared to a petrol car. Enter your own MPG and fuel prices.",
+    badge: "Calculator",
+  },
+  {
+    href: "/guides/ev-vs-diesel-running-costs",
+    title: "Electric Car vs Diesel Running Cost Calculator UK 2026",
+    description:
+      "Compare EV running costs against diesel cars. See how much you save with home charging versus current diesel fuel prices.",
+    badge: "Calculator",
+  },
+  {
+    href: "/guides/electric-car-fuel-cost",
+    title: "Electric Car Fuel Cost UK 2026 | Cost Per Mile & Full Charge",
+    description:
+      "How much does it cost to charge an EV in the UK in 2026? Per-mile costs at home, public, and overnight tariff rates. Annual running cost estimates.",
+    badge: "Running Costs",
+  },
+  {
+    href: "/guides/best-ev-uk-2026",
+    title: "Best EV UK 2026 | Which Electric Car Should You Buy?",
+    description:
+      "The best EV for every buyer: best overall, best value, best range, best for families, best for company car drivers. Real-world data, not marketing.",
+    badge: "Buying Guide",
+  },
+  {
+    href: "/guides/ev-salary-sacrifice-calculator",
+    title: "Salary Sacrifice EV Calculator | Compare Your Savings UK 2026",
+    description:
+      "See how salary sacrifice EV leasing stacks with running-cost savings. Calculator and tax-band comparisons for basic, higher, and additional rate taxpayers.",
+    badge: "Calculator",
+  },
 ];
 
 export default function GuidesIndexPage() {

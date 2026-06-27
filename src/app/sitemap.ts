@@ -142,6 +142,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.75,
     },
+    // New Phase 2 pages
+    {
+      url: `${base}/guides/hybrid-vs-petrol-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${base}/guides/ev-vs-diesel-running-costs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${base}/guides/electric-car-fuel-cost`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    },
+    {
+      url: `${base}/guides/best-ev-uk-2026`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${base}/guides/ev-salary-sacrifice-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    },
     // Fuel prices
     {
       url: `${base}/fuel-prices`,

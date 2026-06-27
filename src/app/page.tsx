@@ -6,10 +6,10 @@ import TrustStrip from "@/components/sections/TrustStrip";
 import WhyLocalPrices from "@/components/sections/WhyLocalPrices";
 
 const siteDescription =
-  "Compare electric and petrol running costs using UK mileage, fuel prices, electricity rates and charging assumptions, or switch to a full cost-of-ownership view with purchase price, maintenance, VED and rough resale value. See cost per mile, annual savings, break-even point and year-by-year ownership costs.";
+  "Compare electric, petrol and diesel car running costs with our UK calculator. Enter your mileage, fuel prices and electricity rates to see your true cost per mile, annual savings and break-even point. Works for EVs, hybrids, petrol and diesel.";
 
 export const metadata: Metadata = {
-  title: "EV vs Petrol Cost Calculator UK | ElectricVsPetrol.co.uk",
+  title: "Petrol vs Electric Car Running Cost Calculator UK 2026 | ElectricVsPetrol.co.uk",
   description: siteDescription,
   alternates: {
     canonical: "https://electricvspetrol.co.uk",
