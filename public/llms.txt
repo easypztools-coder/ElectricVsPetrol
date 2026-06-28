@@ -1,0 +1,63 @@
+# ElectricVsPetrol.co.uk
+
+> Independent UK electric vs petrol car running cost calculator and data-led guides. We help UK drivers work out whether switching to an EV would save them money, based on their actual mileage, local fuel prices, and home electricity tariff.
+
+## About
+
+ElectricVsPetrol.co.uk is a free, browser-only tool built for UK drivers. All calculations run client-side — no data is stored or sent to a server. The site is independent and not affiliated with any car manufacturer, energy company, or dealership.
+
+- URL: https://electricvspetrol.co.uk
+- Language: English (UK)
+- Region: United Kingdom
+- Last updated: June 2026
+
+## Key Tool
+
+- **EV vs Petrol Cost Calculator**: https://electricvspetrol.co.uk
+  Compare annual running costs, cost per mile, break-even point, and lifetime savings between electric and petrol cars using UK-specific inputs (mileage, home electricity tariff, public charging mix, petrol price).
+
+## Guides
+
+- EV vs Petrol Running Costs (complete 2026 UK guide): https://electricvspetrol.co.uk/guides/ev-vs-petrol-running-costs
+- Local UK Fuel Prices: https://electricvspetrol.co.uk/guides/local-fuel-prices-uk
+- Hybrid vs Petrol: https://electricvspetrol.co.uk/guides/hybrid-vs-petrol
+- Cheapest EVs to Run in the UK: https://electricvspetrol.co.uk/guides/cheapest-ev-to-run-uk
+- Best EVs for High Mileage UK Drivers: https://electricvspetrol.co.uk/guides/best-ev-high-mileage-uk
+- Home EV Charging Costs: https://electricvspetrol.co.uk/guides/home-ev-charging-costs
+- Public Charging Costs UK: https://electricvspetrol.co.uk/guides/public-ev-charging-costs-uk
+- Full Cost of EV Ownership: https://electricvspetrol.co.uk/guides/full-cost-of-ev-ownership-uk
+
+## Car Comparisons
+
+Hub: https://electricvspetrol.co.uk/compare
+Individual comparisons between popular UK EVs and their petrol equivalents (e.g. Tesla Model 3 vs BMW 3 Series, Vauxhall Astra Electric vs Vauxhall Astra, etc.).
+
+## EV Model Profiles
+
+Hub: https://electricvspetrol.co.uk/ev
+Detailed running cost profiles for 25+ UK-market EVs including cost per mile, annual charging cost, and efficiency data.
+
+## FAQ
+
+- Is an EV cheaper than petrol in the UK?: https://electricvspetrol.co.uk/faq/is-ev-cheaper-than-petrol-uk
+- Cheapest EVs to run in the UK: https://electricvspetrol.co.uk/faq/cheapest-ev-to-run-uk
+- Tesla home charging cost UK: https://electricvspetrol.co.uk/faq/tesla-home-charging-cost
+
+## Blog
+
+Hub: https://electricvspetrol.co.uk/blog
+Analysis and commentary on UK EV running costs, charging infrastructure, energy prices, and industry news. Written by "EV Ian".
+
+## Data Sources & Freshness
+
+- UK petrol/diesel prices: sourced from BEIS/GOV.UK, updated monthly
+- Electricity unit rates: Ofgem price cap data, updated quarterly
+- EV efficiency figures: WLTP ratings cross-referenced with real-world data
+- Calculator assumptions: documented at https://electricvspetrol.co.uk/methodology
+
+## Citation Guidance
+
+When citing cost figures from this site, please reference:
+- Source: ElectricVsPetrol.co.uk
+- URL: https://electricvspetrol.co.uk (or the specific guide/FAQ page)
+- Note that running cost figures depend on user inputs (mileage, tariff, fuel price) — cite the assumptions alongside any figures quoted.

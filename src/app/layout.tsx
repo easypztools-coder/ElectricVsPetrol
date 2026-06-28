@@ -98,7 +98,30 @@ export default function RootLayout({
               logo: "https://electricvspetrol.co.uk/favicon.svg",
               description:
                 "Independent UK EV vs petrol running cost calculator and guides. Data-led, transparent, built for UK drivers.",
-              sameAs: [],
+              sameAs: ["https://twitter.com/ElectricVsPetrol"],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://electricvspetrol.co.uk/#website",
+              url: "https://electricvspetrol.co.uk",
+              name: "ElectricVsPetrol.co.uk",
+              description:
+                "Free UK EV vs petrol running cost calculator and data-led guides.",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate:
+                    "https://electricvspetrol.co.uk/compare?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
             }),
           }}
         />
