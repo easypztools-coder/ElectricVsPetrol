@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
 import Slider from "@/components/ui/Slider";
@@ -42,10 +43,34 @@ export default function CalculatorForm({
   onChange,
   onCalculate,
 }: CalculatorFormProps) {
+  const [drafts, setDrafts] = useState<Partial<Record<keyof CalculatorInputs, string>>>({});
+
   function numericChange(field: keyof CalculatorInputs) {
     return (e: React.ChangeEvent<HTMLInputElement>) => {
-      const val = parseFloat(e.target.value);
-      onChange(field, isNaN(val) ? 0 : val);
+      const raw = e.target.value;
+      setDrafts((prev) => ({ ...prev, [field]: raw }));
+      const val = parseFloat(raw);
+      if (!isNaN(val)) {
+        onChange(field, val);
+      }
+    };
+  }
+
+  function numericBlur(field: keyof CalculatorInputs) {
+    return () => {
+      setDrafts((prev) => {
+        const next = { ...prev };
+        delete next[field];
+        return next;
+      });
+    };
+  }
+
+  function numericProps(field: keyof CalculatorInputs) {
+    return {
+      value: drafts[field] !== undefined ? drafts[field] : (inputs[field] as number),
+      onChange: numericChange(field),
+      onBlur: numericBlur(field),
     };
   }
 
@@ -86,8 +111,7 @@ export default function CalculatorForm({
           min={1}
           max={200000}
           step={500}
-          value={inputs.annualMiles}
-          onChange={numericChange("annualMiles")}
+          {...numericProps("annualMiles")}
           error={errors.annualMiles}
           suffix="miles/yr"
         />
@@ -109,8 +133,7 @@ export default function CalculatorForm({
           min={1}
           max={500}
           step={1}
-          value={inputs.mpg}
-          onChange={numericChange("mpg")}
+          {...numericProps("mpg")}
           error={errors.mpg}
           suffix="MPG"
           hint={`Official combined MPG for your ${fuelLabel.toLowerCase()} car`}
@@ -123,8 +146,7 @@ export default function CalculatorForm({
           min={0.1}
           max={300}
           step={0.1}
-          value={inputs.fuelPricePencePerLitre}
-          onChange={numericChange("fuelPricePencePerLitre")}
+          {...numericProps("fuelPricePencePerLitre")}
           error={errors.fuelPricePencePerLitre}
           suffix="p/litre"
           hint={`UK average: ~${fallbackPrice}p/l. Adjust to your local price.`}
@@ -137,8 +159,7 @@ export default function CalculatorForm({
           min={0}
           max={100}
           step={0.1}
-          value={inputs.homeElectricityRatePence}
-          onChange={numericChange("homeElectricityRatePence")}
+          {...numericProps("homeElectricityRatePence")}
           error={errors.homeElectricityRatePence}
           suffix="p/kWh"
           hint="Check your energy bill — typically 24–32p/kWh on standard tariff"
@@ -151,8 +172,7 @@ export default function CalculatorForm({
           min={0}
           max={200}
           step={1}
-          value={inputs.publicChargingRatePence}
-          onChange={numericChange("publicChargingRatePence")}
+          {...numericProps("publicChargingRatePence")}
           error={errors.publicChargingRatePence}
           suffix="p/kWh"
           hint="Typically 50–80p/kWh on rapid chargers"
@@ -165,8 +185,7 @@ export default function CalculatorForm({
           min={0.1}
           max={10}
           step={0.1}
-          value={inputs.evMilesPerKwh}
-          onChange={numericChange("evMilesPerKwh")}
+          {...numericProps("evMilesPerKwh")}
           error={errors.evMilesPerKwh}
           suffix="miles/kWh"
           hint="Typical EVs: 2.5–4.5 mi/kWh. Default: 3.5"
@@ -197,8 +216,7 @@ export default function CalculatorForm({
             min={0}
             max={50000}
             step={100}
-            value={inputs.evPricePremium}
-            onChange={numericChange("evPricePremium")}
+            {...numericProps("evPricePremium")}
             prefix="£"
             hint="The extra upfront cost of buying an EV vs an equivalent petrol car. Set to 0 to skip break-even."
           />
@@ -223,8 +241,7 @@ export default function CalculatorForm({
                   min={1}
                   max={250000}
                   step={500}
-                  value={inputs.petrolPurchasePrice}
-                  onChange={numericChange("petrolPurchasePrice")}
+                  {...numericProps("petrolPurchasePrice")}
                   error={errors.petrolPurchasePrice}
                   prefix="£"
                   hint={`Rough default: £${DEFAULT_PETROL_PURCHASE_PRICE.toLocaleString("en-GB")}. Adjust to your comparable car.`}
@@ -249,8 +266,7 @@ export default function CalculatorForm({
                 min={1}
                 max={15}
                 step={1}
-                value={inputs.ownershipYears}
-                onChange={numericChange("ownershipYears")}
+                {...numericProps("ownershipYears")}
                 error={errors.ownershipYears}
                 suffix="years"
                 hint={`Default: ${DEFAULT_OWNERSHIP_YEARS} years. Keep it between 1 and 15.`}
@@ -262,8 +278,7 @@ export default function CalculatorForm({
                 min={0}
                 max={5000}
                 step={25}
-                value={inputs.petrolMaintenanceAnnual}
-                onChange={numericChange("petrolMaintenanceAnnual")}
+                {...numericProps("petrolMaintenanceAnnual")}
                 error={errors.petrolMaintenanceAnnual}
                 prefix="£"
                 hint={`Rough default: £${DEFAULT_PETROL_MAINTENANCE_ANNUAL}/yr.`}
@@ -275,8 +290,7 @@ export default function CalculatorForm({
                 min={0}
                 max={5000}
                 step={25}
-                value={inputs.evMaintenanceAnnual}
-                onChange={numericChange("evMaintenanceAnnual")}
+                {...numericProps("evMaintenanceAnnual")}
                 error={errors.evMaintenanceAnnual}
                 prefix="£"
                 hint={`Rough default: £${DEFAULT_EV_MAINTENANCE_ANNUAL}/yr.`}
@@ -288,8 +302,7 @@ export default function CalculatorForm({
                 min={0}
                 max={1000}
                 step={1}
-                value={inputs.petrolVedAnnual}
-                onChange={numericChange("petrolVedAnnual")}
+                {...numericProps("petrolVedAnnual")}
                 error={errors.petrolVedAnnual}
                 prefix="£"
                 hint={`Default set to current standard rate: £${DEFAULT_PETROL_VED_ANNUAL}/yr.`}
@@ -301,8 +314,7 @@ export default function CalculatorForm({
                 min={0}
                 max={1000}
                 step={1}
-                value={inputs.evVedAnnual}
-                onChange={numericChange("evVedAnnual")}
+                {...numericProps("evVedAnnual")}
                 error={errors.evVedAnnual}
                 prefix="£"
                 hint={`Default set to £${DEFAULT_EV_VED_ANNUAL}/yr, but EV tax rules can change and should be verified before publishing.`}
@@ -314,8 +326,7 @@ export default function CalculatorForm({
                 min={0}
                 max={100}
                 step={1}
-                value={inputs.petrolResaleValuePercent}
-                onChange={numericChange("petrolResaleValuePercent")}
+                {...numericProps("petrolResaleValuePercent")}
                 error={errors.petrolResaleValuePercent}
                 suffix="%"
                 hint={`Rough default: ${DEFAULT_PETROL_RESALE_VALUE_PERCENT}% of purchase price after the ownership period.`}
@@ -327,8 +338,7 @@ export default function CalculatorForm({
                 min={0}
                 max={100}
                 step={1}
-                value={inputs.evResaleValuePercent}
-                onChange={numericChange("evResaleValuePercent")}
+                {...numericProps("evResaleValuePercent")}
                 error={errors.evResaleValuePercent}
                 suffix="%"
                 hint={`Rough default: ${DEFAULT_EV_RESALE_VALUE_PERCENT}% of purchase price after the ownership period.`}
