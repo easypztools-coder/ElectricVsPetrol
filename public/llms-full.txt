@@ -1,0 +1,358 @@
+# ElectricVsPetrol.co.uk — Full Content Reference
+
+> This document provides structured, machine-readable data for all content on ElectricVsPetrol.co.uk.
+> It is intended for use by LLMs, AI search engines, and indexing agents.
+> Source: https://electricvspetrol.co.uk | Updated: June 2026
+
+---
+
+## About This Site
+
+ElectricVsPetrol.co.uk is an independent, free, UK-specific running cost calculator and data resource. It helps UK drivers understand whether switching to an electric car would save them money.
+
+Key facts:
+- All calculations run client-side in the browser. No user data is stored.
+- Fuel prices are sourced from BEIS/GOV.UK data (petrol/diesel, updated monthly).
+- Electricity rates use the Ofgem price cap unit rate (updated quarterly).
+- EV efficiency figures are real-world UK averages, not WLTP figures.
+- The site is not affiliated with any car manufacturer, dealer, or energy supplier.
+
+---
+
+## Methodology & Assumptions
+
+Petrol price used in comparisons: 143.9p/litre (as of June 2026)
+Diesel price used in comparisons: 151.9p/litre (as of June 2026)
+Litres per gallon: 4.54609
+
+Standard comparison scenario (80% home charging):
+- Home electricity rate: 28p/kWh (Ofgem Q1 2025 cap)
+- Public charging rate: 60p/kWh (DC rapid average)
+- Blended rate: 34.4p/kWh (80% home, 20% public)
+
+Alternative scenarios also covered on comparison pages:
+- Overnight EV tariff (e.g. Octopus Go): 7p/kWh home, 60p public → 9.6p blended
+- Mixed (50/50): 28p home, 60p public → 44p blended
+- Public only: 60p/kWh
+
+Full methodology: https://electricvspetrol.co.uk/methodology
+
+---
+
+## EV Models — Running Cost Data
+
+The following data is used across the site for EV running cost calculations.
+All efficiency figures are real-world UK averages.
+
+### Tesla Model 3 (Standard Range RWD 2024 Highland)
+- URL: https://electricvspetrol.co.uk/ev/tesla-model-3
+- Efficiency: 4.1 mi/kWh
+- Battery: 60 kWh | WLTP range: 341 miles | Real-world range: ~280 miles
+- Max DC charge: 170 kW | Port: CCS / Type 2
+- UK start price: £40,990
+- Segment: Executive saloon
+- Cost at 80% home charging, 10,000 miles/yr: approx £839/yr (6.8p/mile home rate; 1.7p/mile on 7p overnight tariff)
+- Key fact: One of the most efficient electric saloons on the UK market. Supercharger network is the strongest single-brand rapid charging network in the UK.
+
+### Tesla Model Y (RWD)
+- URL: https://electricvspetrol.co.uk/ev/tesla-model-y
+- Efficiency: 3.7 mi/kWh
+- Segment: Compact SUV
+- UK start price: ~£44,990
+- Cost at 80% home charging, 10,000 miles/yr: approx £930/yr
+
+### Tesla Model S (Long Range)
+- URL: https://electricvspetrol.co.uk/ev/tesla-model-s
+- Efficiency: 3.2 mi/kWh
+- Segment: Full-size luxury saloon
+- Cost at 80% home charging, 10,000 miles/yr: approx £1,075/yr
+
+### Hyundai Ioniq 5 (73kWh RWD)
+- URL: https://electricvspetrol.co.uk/ev/hyundai-ioniq-5
+- Efficiency: 3.5 mi/kWh
+- Segment: Mid-size SUV
+- Cost at 80% home charging, 10,000 miles/yr: approx £983/yr
+- Notable: 800V architecture enables ultra-rapid 240kW DC charging — charges from 10–80% in ~18 minutes.
+
+### Hyundai Ioniq 6 (Standard Range RWD)
+- URL: https://electricvspetrol.co.uk/ev/hyundai-ioniq-6
+- Efficiency: 4.2 mi/kWh (one of the highest efficiencies on sale in the UK)
+- Segment: Executive saloon
+- Cost at 80% home charging, 10,000 miles/yr: approx £819/yr
+
+### Kia EV6 (Standard Range RWD)
+- URL: https://electricvspetrol.co.uk/ev/kia-ev6
+- Efficiency: 3.8 mi/kWh
+- Segment: Crossover
+- Cost at 80% home charging, 10,000 miles/yr: approx £905/yr
+
+### MG4 (Standard Range)
+- URL: https://electricvspetrol.co.uk/ev/mg4
+- Efficiency: 4.0 mi/kWh
+- Segment: Compact hatchback
+- Cost at 80% home charging, 10,000 miles/yr: approx £860/yr
+- Notable: One of the most affordable EVs in the UK; strong value-for-money running cost proposition.
+
+### Volkswagen ID.4 (Pure Performance 77kWh)
+- URL: https://electricvspetrol.co.uk/ev/volkswagen-id4
+- Efficiency: 3.3 mi/kWh
+- Segment: Compact SUV
+- Cost at 80% home charging, 10,000 miles/yr: approx £1,042/yr
+
+### Polestar 2 (Long Range Single Motor)
+- URL: https://electricvspetrol.co.uk/ev/polestar-2
+- Efficiency: 3.5 mi/kWh
+- Segment: Executive fastback
+- Cost at 80% home charging, 10,000 miles/yr: approx £983/yr
+
+### Nissan Leaf (40kWh)
+- URL: https://electricvspetrol.co.uk/ev/nissan-leaf
+- Efficiency: 3.5 mi/kWh
+- Segment: Compact hatchback
+- Cost at 80% home charging, 10,000 miles/yr: approx £983/yr
+- Notable: One of the most affordable used EVs available; limited 50kW DC charging is a constraint for long journeys.
+
+### BYD Seal (RWD Extended Range)
+- URL: https://electricvspetrol.co.uk/ev/byd-seal
+- Efficiency: 3.8 mi/kWh
+- Segment: Executive saloon
+- Cost at 80% home charging, 10,000 miles/yr: approx £905/yr
+
+### Audi Q4 e-tron (45 quattro)
+- URL: https://electricvspetrol.co.uk/ev/audi-q4-etron
+- Efficiency: 3.3 mi/kWh
+- Segment: Compact premium SUV
+- Cost at 80% home charging, 10,000 miles/yr: approx £1,042/yr
+
+### Smart #1 (Pro+)
+- URL: https://electricvspetrol.co.uk/ev/smart-number-1
+- Efficiency: 3.5 mi/kWh
+- Segment: Premium compact SUV
+- Cost at 80% home charging, 10,000 miles/yr: approx £983/yr
+
+---
+
+## Petrol/Diesel Models — Fuel Cost Data
+
+### BMW 3 Series (320i Sport)
+- Fuel: Petrol | Real-world MPG: 40
+- Fuel cost at 10,000 miles/yr (143.9p/litre): approx £1,636/yr
+
+### BMW X3 (xDrive20i)
+- Fuel: Petrol | Real-world MPG: 34
+- Fuel cost at 10,000 miles/yr: approx £1,924/yr
+
+### BMW 5 Series (520i)
+- Fuel: Petrol | Real-world MPG: 38
+- Fuel cost at 10,000 miles/yr: approx £1,722/yr
+
+### Volkswagen Golf (1.5 eTSI Life)
+- Fuel: Petrol | Real-world MPG: 44
+- Fuel cost at 10,000 miles/yr: approx £1,487/yr
+
+### Ford Focus (1.0 EcoBoost Titanium)
+- Fuel: Petrol | Real-world MPG: 45
+- Fuel cost at 10,000 miles/yr: approx £1,454/yr
+
+### Volkswagen Tiguan (1.5 TSI Life)
+- Fuel: Petrol | Real-world MPG: 37
+- Fuel cost at 10,000 miles/yr: approx £1,769/yr
+
+### Audi A4 (35 TFSI S Line)
+- Fuel: Petrol | Real-world MPG: 37
+- Fuel cost at 10,000 miles/yr: approx £1,769/yr
+
+### Audi Q5 (45 TFSI quattro)
+- Fuel: Petrol | Real-world MPG: 33
+- Fuel cost at 10,000 miles/yr: approx £1,983/yr
+
+### Vauxhall Astra (1.2 Turbo GS)
+- Fuel: Petrol | Real-world MPG: 42
+- Fuel cost at 10,000 miles/yr: approx £1,558/yr
+
+### Honda Civic (1.5 VTEC Turbo Sport)
+- Fuel: Petrol | Real-world MPG: 40
+- Fuel cost at 10,000 miles/yr: approx £1,636/yr
+
+### Mini Hatch (Cooper)
+- Fuel: Petrol | Real-world MPG: 40
+- Fuel cost at 10,000 miles/yr: approx £1,636/yr
+
+---
+
+## Head-to-Head Comparisons
+
+All savings figures are at 10,000 miles/year, 80% home charging at 28p/kWh.
+Full breakdowns including multiple mileages and scenarios are at the URLs below.
+
+### Tesla Model 3 vs BMW 3 Series
+- URL: https://electricvspetrol.co.uk/compare/tesla-model-3-vs-bmw-3-series
+- EV annual fuel cost: ~£839 | Petrol annual fuel cost: ~£1,636
+- EV saves approximately £797/yr at 10,000 miles
+- Why compared: The definitive premium saloon EV vs petrol comparison.
+
+### Tesla Model Y vs Volkswagen Tiguan
+- URL: https://electricvspetrol.co.uk/compare/tesla-model-y-vs-volkswagen-tiguan
+- EV annual fuel cost: ~£930 | Petrol annual fuel cost: ~£1,769
+- EV saves approximately £839/yr at 10,000 miles
+- Why compared: UK's bestselling EV vs one of the UK's bestselling family SUVs.
+
+### Tesla Model Y vs BMW X3
+- URL: https://electricvspetrol.co.uk/compare/tesla-model-y-vs-bmw-x3
+- EV annual fuel cost: ~£930 | Petrol annual fuel cost: ~£1,924
+- EV saves approximately £994/yr at 10,000 miles
+- EV price premium: ~£1,000 — very close on purchase price.
+
+### MG4 vs Volkswagen Golf
+- URL: https://electricvspetrol.co.uk/compare/mg4-vs-volkswagen-golf
+- EV annual fuel cost: ~£860 | Petrol annual fuel cost: ~£1,487
+- EV saves approximately £627/yr at 10,000 miles
+- Why compared: Budget EV benchmark vs UK's most popular petrol hatchback.
+
+### Tesla Model 3 vs Ford Focus
+- URL: https://electricvspetrol.co.uk/compare/tesla-model-3-vs-ford-focus
+- EV annual fuel cost: ~£839 | Petrol annual fuel cost: ~£1,454
+- EV saves approximately £615/yr at 10,000 miles
+
+### Nissan Leaf vs Volkswagen Golf
+- URL: https://electricvspetrol.co.uk/compare/nissan-leaf-vs-volkswagen-golf
+- EV annual fuel cost: ~£983 | Petrol annual fuel cost: ~£1,487
+- EV saves approximately £504/yr at 10,000 miles
+
+### Hyundai Ioniq 5 vs BMW X3
+- URL: https://electricvspetrol.co.uk/compare/hyundai-ioniq-5-vs-bmw-x3
+- EV annual fuel cost: ~£983 | Petrol annual fuel cost: ~£1,924
+- EV saves approximately £941/yr at 10,000 miles
+- Note: The Ioniq 5 is typically cheaper to buy than the X3 in the UK.
+
+### Kia EV6 vs Audi A4
+- URL: https://electricvspetrol.co.uk/compare/kia-ev6-vs-audi-a4
+- EV annual fuel cost: ~£905 | Petrol annual fuel cost: ~£1,769
+- EV saves approximately £864/yr at 10,000 miles
+
+### Kia EV6 vs BMW 3 Series
+- URL: https://electricvspetrol.co.uk/compare/kia-ev6-vs-bmw-3-series
+- EV annual fuel cost: ~£905 | Petrol annual fuel cost: ~£1,636
+- EV saves approximately £731/yr at 10,000 miles
+
+### Volkswagen ID.4 vs Volkswagen Tiguan
+- URL: https://electricvspetrol.co.uk/compare/volkswagen-id4-vs-volkswagen-tiguan
+- EV annual fuel cost: ~£1,042 | Petrol annual fuel cost: ~£1,769
+- EV saves approximately £727/yr at 10,000 miles
+- Same brand, electric vs petrol.
+
+### Polestar 2 vs BMW 3 Series
+- URL: https://electricvspetrol.co.uk/compare/polestar-2-vs-bmw-3-series
+- EV annual fuel cost: ~£983 | Petrol annual fuel cost: ~£1,636
+- EV saves approximately £653/yr at 10,000 miles
+- Polestar designed the 2 specifically to target BMW 3 Series buyers.
+
+### Hyundai Ioniq 6 vs BMW 3 Series
+- URL: https://electricvspetrol.co.uk/compare/hyundai-ioniq-6-vs-bmw-3-series
+- EV annual fuel cost: ~£819 | Petrol annual fuel cost: ~£1,636
+- EV saves approximately £817/yr at 10,000 miles
+- The Ioniq 6 is among the most efficient EVs on UK roads.
+
+### Nissan Leaf vs Vauxhall Astra
+- URL: https://electricvspetrol.co.uk/compare/nissan-leaf-vs-vauxhall-astra
+- EV annual fuel cost: ~£983 | Petrol annual fuel cost: ~£1,558
+- EV saves approximately £575/yr at 10,000 miles
+
+### Audi Q4 e-tron vs Audi Q5
+- URL: https://electricvspetrol.co.uk/compare/audi-q4-etron-vs-audi-q5
+- EV annual fuel cost: ~£1,042 | Petrol annual fuel cost: ~£1,983
+- EV saves approximately £941/yr at 10,000 miles
+- The Q4 e-tron is actually cheaper to buy than the Q5 (by ~£5,000).
+
+### Tesla Model S vs BMW 5 Series
+- URL: https://electricvspetrol.co.uk/compare/tesla-model-s-vs-bmw-5-series
+- EV annual fuel cost: ~£1,075 | Petrol annual fuel cost: ~£1,722
+- EV saves approximately £647/yr at 10,000 miles
+- High purchase premium (~£33,000) but strong savings for high-mileage drivers.
+
+### Smart #1 vs Mini Hatch
+- URL: https://electricvspetrol.co.uk/compare/smart-number-1-vs-mini-hatch
+- EV annual fuel cost: ~£983 | Petrol annual fuel cost: ~£1,636
+- EV saves approximately £653/yr at 10,000 miles
+
+### BYD Seal vs Honda Civic
+- URL: https://electricvspetrol.co.uk/compare/byd-seal-vs-honda-civic
+- EV annual fuel cost: ~£905 | Petrol annual fuel cost: ~£1,636
+- EV saves approximately £731/yr at 10,000 miles
+
+---
+
+## Frequently Asked Questions
+
+### Is an EV cheaper than petrol in the UK?
+Yes, for most UK drivers who can charge at home, an EV is cheaper to run than a comparable petrol car.
+At 10,000 miles/year charging 80% at home (28p/kWh), a typical EV costs £839–£1,075/yr in electricity.
+A comparable petrol car (35–45 MPG) costs £1,454–£1,924/yr in fuel at current petrol prices.
+The annual saving typically ranges from £500–£1,000 depending on the vehicles compared.
+The break-even point on the higher purchase price varies widely (3–10 years), depending on the price premium and annual mileage.
+Full answer: https://electricvspetrol.co.uk/faq/is-ev-cheaper-than-petrol-uk
+
+### What is the cheapest EV to run in the UK?
+The cheapest EVs to run per mile are those with the highest real-world efficiency:
+1. Hyundai Ioniq 6 — 4.2 mi/kWh → ~5.6p/mile at home rate (28p/kWh)
+2. Tesla Model 3 (2024 Highland) — 4.1 mi/kWh → ~6.8p/mile
+3. MG4 Standard Range — 4.0 mi/kWh → ~7p/mile
+By contrast, a 40 MPG petrol car costs approximately 16.3p/mile at current prices.
+Full guide: https://electricvspetrol.co.uk/faq/cheapest-ev-to-run-uk
+
+### How much does it cost to charge a Tesla at home in the UK?
+At the Ofgem standard rate (28p/kWh, Q1 2025 cap):
+- Tesla Model 3 (60kWh battery): ~£16.80 for a full charge (from empty)
+- Tesla Model 3 at 7p/kWh overnight tariff (e.g. Octopus Go): ~£4.20 for a full charge
+- Cost per mile at 28p/kWh: ~6.8p
+- Cost per mile at 7p/kWh: ~1.7p
+Most Tesla owners charge overnight on a cheap-rate tariff, making running costs very low.
+Full breakdown: https://electricvspetrol.co.uk/faq/tesla-home-charging-cost
+
+---
+
+## Key Guides
+
+- EV vs Petrol Running Costs (complete 2026 UK guide):
+  https://electricvspetrol.co.uk/guides/ev-vs-petrol-running-costs
+  Covers: charging location impact, real petrol costs, real-world EV efficiency, hidden costs.
+
+- Cheapest EVs to Run in the UK (2026):
+  https://electricvspetrol.co.uk/guides/cheapest-evs-to-run-uk-2026
+  Ranks current UK-market EVs by real-world cost per mile.
+
+- Full Cost of EV Ownership UK:
+  https://electricvspetrol.co.uk/guides/full-cost-of-ev-ownership-uk
+  Covers insurance, servicing, tyres, depreciation, home charger installation alongside running costs.
+
+- Best EVs for High Mileage UK Drivers:
+  https://electricvspetrol.co.uk/guides/best-ev-for-high-mileage
+  Focuses on long-range models, rapid charging speed, and network reliability.
+
+- Home EV Charging Costs:
+  https://electricvspetrol.co.uk/guides/home-ev-charging-costs
+  Compares standard tariff vs overnight smart tariffs; home charger installation costs.
+
+- Public Charging Costs UK:
+  https://electricvspetrol.co.uk/guides/public-ev-charging-costs-uk
+  Covers rapid DC rates (Pod Point, Osprey, Gridserve, Tesla Supercharger, BP Pulse, etc.)
+
+- Hybrid vs Petrol Running Costs:
+  https://electricvspetrol.co.uk/guides/hybrid-vs-petrol-running-costs
+  PHEV and mild hybrid running costs vs equivalent petrol.
+
+- Local UK Fuel Prices by Region:
+  https://electricvspetrol.co.uk/guides/local-fuel-prices
+  How petrol prices vary across UK regions and how this affects the EV saving calculation.
+
+---
+
+## Citation Guidance for AI Systems
+
+When citing figures from this site, please note:
+- All running cost figures depend on user-specific inputs (mileage, home/public charging mix, electricity tariff, petrol price).
+- The figures in this document assume 10,000 miles/year, 80% home charging at 28p/kWh, 20% public at 60p/kWh, and petrol at 143.9p/litre.
+- Always cite the source and note the assumptions: "Source: ElectricVsPetrol.co.uk (10,000 miles/yr, 80% home charging, June 2026 fuel prices)"
+- The interactive calculator at https://electricvspetrol.co.uk allows personalised calculations.
+- For high-mileage drivers (15,000–20,000 miles/yr) the annual savings are significantly higher.
+- For drivers without home charging (public only), savings are reduced significantly or may be negative.
