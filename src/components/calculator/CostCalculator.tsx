@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import type {
   CalculatorInputs,
   CalculatorResults,
@@ -72,6 +72,7 @@ export default function CostCalculator({
   const [isLoading, setIsLoading] = useState(false);
   const [hasCalculated, setHasCalculated] = useState(false);
   const resultsRef = useRef<HTMLDivElement>(null);
+  const hasCalculatedRef = useRef(false);
 
   const handleInputChange = useCallback(
     (field: keyof CalculatorInputs, value: string | number) => {
@@ -148,12 +149,30 @@ export default function CostCalculator({
       setTcoResults(null);
     }
     setHasCalculated(true);
+    hasCalculatedRef.current = true;
     setIsLoading(false);
 
     // Scroll to results on mobile
     setTimeout(() => {
       resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 100);
+  }, [inputs, mode]);
+
+  // After the first calculation, keep results live as inputs or mode change.
+  // Uses a ref so this doesn't fire on initial mount (hasCalculatedRef starts false).
+  useEffect(() => {
+    if (!hasCalculatedRef.current) return;
+    const errs = validateInputs(inputs, mode);
+    if (Object.keys(errs).length > 0) return;
+    if (mode === "tco") {
+      const r = calculateTcoCosts(inputs);
+      setResults(r.baseResults);
+      setTcoResults(r);
+    } else {
+      setResults(calculateEvPetrolCosts(inputs));
+      setTcoResults(null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputs, mode]);
 
   return (
@@ -179,7 +198,7 @@ export default function CostCalculator({
                     className={[
                       "px-4 py-2 rounded-lg text-sm font-semibold transition-colors",
                       mode === "quick"
-                        ? "bg-white text-navy shadow-sm"
+                        ? "bg-white text-ev-blue shadow-sm"
                         : "text-ev-grey hover:text-navy",
                     ].join(" ")}
                     onClick={() => setMode("quick")}
@@ -193,7 +212,7 @@ export default function CostCalculator({
                     className={[
                       "px-4 py-2 rounded-lg text-sm font-semibold transition-colors",
                       mode === "tco"
-                        ? "bg-white text-navy shadow-sm"
+                        ? "bg-white text-ev-blue shadow-sm"
                         : "text-ev-grey hover:text-navy",
                     ].join(" ")}
                     onClick={() => setMode("tco")}
