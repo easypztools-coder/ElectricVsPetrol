@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Electric Car Fuel Cost UK 2026 | How Much Does It Cost to Charge?",
   description:
-    "What is the fuel cost of an electric car in the UK in 2026? Find out how much it costs to charge per mile, per week, and per year at current UK electricity prices.",
+    "Home charging costs 7–8p per mile. Public rapid charging can reach 20p/mile. See the exact electric car fuel cost per mile, per week and per year based on current 2026 UK electricity prices.",
   alternates: {
     canonical:
       "https://electricvspetrol.co.uk/guides/electric-car-fuel-cost",

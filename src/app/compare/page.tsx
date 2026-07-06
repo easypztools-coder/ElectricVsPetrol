@@ -4,9 +4,9 @@ import { comparisons } from "@/lib/data/comparisons";
 import { findEV, findICE } from "@/lib/data/vehicles";
 
 export const metadata: Metadata = {
-  title: "EV vs Petrol Car Comparisons UK 2026",
+  title: "Electric Car vs Petrol Running Cost Comparison UK 2026 | 30+ Models",
   description:
-    "Compare the running costs of specific electric vs petrol cars — Tesla Model 3 vs BMW 3 Series, MG4 vs Golf, Ioniq 5 vs BMW X3, and more. Real UK fuel prices, not national averages.",
+    "Side-by-side running cost comparisons for specific EV vs petrol models — Tesla Model 3 vs BMW 3 Series, MG4 vs Golf, and 30+ more. Real UK fuel prices, not national averages.",
   alternates: {
     canonical: "https://electricvspetrol.co.uk/compare",
   },

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best EV UK 2026 | Which Electric Car Should You Buy?",
+  title: "Best Electric Cars UK 2026: Top Picks by Category | ElectricVsPetrol",
   description:
-    "What is the best electric car in the UK right now? Our 2026 guide covers the best EVs overall, best value, best range, best for high mileage, and best small EV — with real-world data, not marketing claims.",
+    "Tesla Model 3 (6.8p/mile) is our top overall pick. MG4 from £26,995 is best value. Ioniq 6 leads on range. Our 2026 data-led guide ranks the best UK EVs by category — no marketing, just numbers.",
   alternates: {
     canonical:
       "https://electricvspetrol.co.uk/guides/best-ev-uk-2026",

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Best & Highest Mileage Electric Cars UK 2026 | High Mileage EV Guide",
   description:
-    "Which electric cars get the best real-world range? High mileage drivers save the most from switching to an EV — this guide covers which EVs have the range, charging speed, and efficiency to suit 15,000–30,000 miles per year.",
+    "Tesla Model 3 Long Range (325 miles, 4.2 mi/kWh) and Ioniq 6 Long Range (320 miles) top our 2026 ranking. At 20,000 miles/year an EV saves ~£1,580 vs petrol. Full guide for 15,000–30,000 mile drivers.",
   alternates: {
     canonical: "https://electricvspetrol.co.uk/guides/best-ev-for-high-mileage",
   },

@@ -5,7 +5,7 @@ import CostCalculatorWithParams from "@/components/calculator/CostCalculatorWith
 export const metadata: Metadata = {
   title: "Hybrid vs Petrol Running Cost Calculator UK 2026 | Compare HEV & PHEV",
   description:
-    "Compare hybrid vs petrol car running costs in the UK. Our calculator works for standard hybrids (HEV) and plug-in hybrids (PHEV) — enter your MPG, mileage, and fuel prices to see the real difference.",
+    "A standard hybrid typically saves £350–£400/year vs petrol at 10,000 miles. Use our free UK calculator to see your exact saving — works for HEV and PHEV against any petrol car.",
   alternates: {
     canonical:
       "https://electricvspetrol.co.uk/guides/hybrid-vs-petrol-calculator",

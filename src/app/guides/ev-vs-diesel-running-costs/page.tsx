@@ -3,9 +3,9 @@ import Link from "next/link";
 import CostCalculatorWithParams from "@/components/calculator/CostCalculatorWithParams";
 
 export const metadata: Metadata = {
-  title: "Electric Car vs Diesel Running Cost Calculator UK 2026 | EV vs Diesel",
+  title: "Electric Car vs Diesel Calculator UK 2026 | See Your Exact Saving",
   description:
-    "Compare electric car vs diesel running costs in the UK. Use our calculator to see how much you save with an EV vs a diesel car at current UK fuel prices and electricity rates.",
+    "EVs cost ~8p/mile at home vs ~12.6p/mile for a 55 MPG diesel — saving around £900/year at 10,000 miles. Use our free UK calculator with your own mileage and real local diesel prices.",
   alternates: {
     canonical:
       "https://electricvspetrol.co.uk/guides/ev-vs-diesel-running-costs",
