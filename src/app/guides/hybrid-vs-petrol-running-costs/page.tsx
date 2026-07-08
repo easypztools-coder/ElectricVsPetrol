@@ -184,8 +184,8 @@ export default function HybridVsPetrolRunningCostsPage() {
             If you drive long motorway distances, rarely plug in, or regularly exceed a
             PHEV&apos;s electric range, the advantage gets much smaller. In that case a
             conventional petrol car may be simpler, cheaper to buy, and easier to
-            predict. The answer is not always "buy the most efficient powertrain"; it
-            is "buy the one that fits your actual pattern of use".
+            predict. The answer is not always &quot;buy the most efficient powertrain&quot;; it
+            is &quot;buy the one that fits your actual pattern of use&quot;.
           </p>
         </section>
 
@@ -205,7 +205,7 @@ export default function HybridVsPetrolRunningCostsPage() {
             hybrid is a sensible compromise or just a step that adds complexity.
           </p>
           <p>
-            For a broader comparison, start with the <Link href="/guides/ev-vs-petrol-running-costs" className="text-ev-blue hover:underline">main EV vs petrol guide</Link>, then run your own numbers in the <Link href="/#calculator" className="text-ev-blue hover:underline">calculator</Link>. If local petrol pricing matters to your decision, the <Link href="/guides/local-fuel-prices" className="text-ev-blue hover:underline">local fuel prices guide</Link> shows why postcode-level data changes the result.
+            For a broader comparison, start with the <Link href="/guides/ev-vs-petrol-running-costs" className="text-ev-blue hover:underline">main EV vs petrol guide</Link>, then run your own numbers in the <Link href="/#calculator" className="text-ev-blue hover:underline">calculator</Link>. If local petrol pricing matters to your decision, the <Link href="/guides/local-fuel-prices" className="text-ev-blue hover:underline">local fuel prices guide</Link> shows why postcode-level data changes the result. For a side-by-side breakdown with your own mileage and fuel figures already filled in, use the <Link href="/guides/hybrid-vs-petrol-calculator" className="text-ev-blue hover:underline">hybrid vs petrol calculator</Link>.
           </p>
         </section>
       </div>

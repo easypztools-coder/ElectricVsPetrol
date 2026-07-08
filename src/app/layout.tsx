@@ -87,6 +87,17 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3961806405350437"
           crossOrigin="anonymous"
         />
+        {/* Disable anchor/overlay auto ads — the format most associated with
+            "low value content + intrusive ads" policy flags on lighter pages. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(window.adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-3961806405350437",
+              enable_page_level_ads: true,
+              overlays: { bottom: false }
+            });`,
+          }}
+        />
       </head>
       <body className="min-h-screen flex flex-col antialiased">
         <Header />

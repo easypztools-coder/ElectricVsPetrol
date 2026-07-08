@@ -144,7 +144,7 @@ export default function EvSalarySacrificeUkPage() {
           <p>
             The result is that salary sacrifice is usually straightforward for the
             employee but highly dependent on the employer scheme rules. Before comparing
-            cars, it is worth checking the provider's calculator, the included mileage,
+            cars, it is worth checking the provider&apos;s calculator, the included mileage,
             and whether the package assumes a private-use vehicle or a fleet-style
             arrangement.
           </p>
@@ -218,7 +218,7 @@ export default function EvSalarySacrificeUkPage() {
             Start with the calculator and the main guide
           </h2>
           <p>
-            Read the <Link href="/guides/ev-vs-petrol-running-costs" className="text-ev-blue hover:underline">main EV running costs guide</Link> for the fuel-versus-electricity comparison, then use the <Link href="/#calculator" className="text-ev-blue hover:underline">calculator</Link> to test your own mileage and charging split. If local petrol prices matter to your scheme comparison, the <Link href="/guides/local-fuel-prices" className="text-ev-blue hover:underline">local fuel prices guide</Link> explains why postcode data matters.
+            Read the <Link href="/guides/ev-vs-petrol-running-costs" className="text-ev-blue hover:underline">main EV running costs guide</Link> for the fuel-versus-electricity comparison, then use the <Link href="/#calculator" className="text-ev-blue hover:underline">calculator</Link> to test your own mileage and charging split. If local petrol prices matter to your scheme comparison, the <Link href="/guides/local-fuel-prices" className="text-ev-blue hover:underline">local fuel prices guide</Link> explains why postcode data matters. To work through the actual monthly numbers for a specific lease and tax band, use the <Link href="/guides/ev-salary-sacrifice-calculator" className="text-ev-blue hover:underline">salary sacrifice calculator</Link>.
           </p>
         </section>
       </div>

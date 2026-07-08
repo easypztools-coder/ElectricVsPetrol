@@ -37,9 +37,9 @@ export default function BlogPost() {
 
       {/* Byline */}
       <div className="flex items-center gap-3 mb-8 pb-8 border-b border-border-light">
-        <div className="w-9 h-9 rounded-full bg-ev-blue/10 flex items-center justify-center text-ev-blue font-bold text-sm">EI</div>
+        <Link href="/author/ev-ian" className="w-9 h-9 rounded-full bg-ev-blue/10 flex items-center justify-center text-ev-blue font-bold text-sm hover:bg-ev-blue/20 transition-colors">EI</Link>
         <div>
-          <p className="text-sm font-medium text-navy">EV Ian</p>
+          <Link href="/author/ev-ian" className="text-sm font-medium text-navy hover:text-ev-blue transition-colors">EV Ian</Link>
           <p className="text-xs text-ev-grey">26 October 2024 · 5 min read</p>
         </div>
       </div>
@@ -155,7 +155,7 @@ export default function BlogPost() {
             headline: "Ofgem Dropped the Price Cap. Here's What It Actually Means For Your EV Bill.",
             datePublished: "2024-10-26",
             dateModified: "2024-10-26",
-            author: { "@type": "Person", name: "EV Ian" },
+            author: { "@type": "Person", name: "EV Ian", url: "https://electricvspetrol.co.uk/author/ev-ian" },
             publisher: {
               "@type": "Organization",
               name: "ElectricVsPetrol.co.uk",

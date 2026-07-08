@@ -43,10 +43,17 @@ export default function BlogIndexPage() {
       >
         EV Ian&apos;s Dispatches
       </h1>
-      <p className="text-lg text-ev-grey mb-10 leading-relaxed">
+      <p className="text-lg text-ev-grey mb-4 leading-relaxed">
         Real writing about real EV ownership. Charging queues, Ofgem price caps,
         Chinese rivals, government U-turns — covered with data, British
         understatement, and a mildly concerning spreadsheet habit.
+      </p>
+      <p className="text-sm text-ev-grey mb-10">
+        Written by{" "}
+        <Link href="/author/ev-ian" className="text-ev-blue hover:underline font-medium">
+          EV Ian
+        </Link>
+        {" "}— see how posts are sourced and checked.
       </p>
 
       <div className="space-y-6">

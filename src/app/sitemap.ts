@@ -45,19 +45,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/guides/ev-running-costs-scotland`,
-      lastModified: new Date("2026-06-21"),
+      lastModified: new Date("2026-07-08"),
       changeFrequency: "monthly",
       priority: 0.65,
     },
     {
       url: `${base}/guides/ev-running-costs-wales`,
-      lastModified: new Date("2026-06-21"),
+      lastModified: new Date("2026-07-08"),
       changeFrequency: "monthly",
       priority: 0.65,
     },
     {
       url: `${base}/guides/ev-running-costs-northern-ireland`,
-      lastModified: new Date("2026-06-21"),
+      lastModified: new Date("2026-07-08"),
       changeFrequency: "monthly",
       priority: 0.65,
     },
@@ -123,6 +123,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.65,
     })),
+    {
+      url: `${base}/author/ev-ian`,
+      lastModified: new Date("2026-07-08"),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
     // New guides
     {
       url: `${base}/guides/cheapest-evs-to-run-uk-2026`,

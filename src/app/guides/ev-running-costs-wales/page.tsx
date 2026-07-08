@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "EV Running Costs Wales 2026 | ElectricVsPetrol.co.uk",
   description:
-    "A Wales-specific guide to EV running costs, including rural charging access, home charger support, public charging gaps, and regional fuel price variation.",
+    "EV running costs in Wales: why driveway owners get no home charger grant since 2022, what the UK-wide renters/flat-owners grant actually covers, and rural fuel price variation.",
   alternates: {
     canonical: "https://electricvspetrol.co.uk/guides/ev-running-costs-wales",
   },
@@ -20,8 +20,8 @@ const faqItems = [
     a: "Yes. Fuel prices can vary across Wales, with rural and tourist-heavy areas often paying more than urban forecourts or supermarket sites. That matters because a higher pump price increases the petrol car's annual cost and can improve the EV saving if you can charge cheaply.",
   },
   {
-    q: "Are there Welsh grants or loans for home chargers?",
-    a: "There is not one single Wales-wide support scheme that every driver can rely on in the way people sometimes expect. Instead, availability often depends on UK-wide grant eligibility, local authority programmes, and occasionally regional or energy-provider support. It is worth checking what your council offers before assuming home charging is out of reach.",
+    q: "Is there a Welsh Government grant for home chargers?",
+    a: "Not for homeowners with a driveway — that residential scheme (the old Electric Vehicle Homecharge Scheme) closed UK-wide in April 2022 and has not been replaced. What is available is the UK-wide EV chargepoint grant, which covers 75% of installation cost up to £500, but only for renters and flat owners with dedicated off-street parking, running until 31 March 2027. Welsh Government funding is currently directed at public charging infrastructure, social housing chargepoints and business grants rather than individual driveway installs.",
   },
   {
     q: "Can I use the calculator if I live in a rural Welsh area?",
@@ -48,11 +48,11 @@ export default function EvRunningCostsWalesPage() {
 
       <p className="text-sm text-ev-grey mb-6 flex items-center gap-1.5">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3" /><path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" /></svg>
-        Last updated: June 2026
+        Last updated: July 2026
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">
-        Wales combines some of the UK's best EV adoption opportunities with some of the
+        Wales combines some of the UK&apos;s best EV adoption opportunities with some of the
         toughest access challenges. Along the M4 corridor and in city centres, a driver
         can often find enough charging infrastructure to make an EV straightforward. In
         rural mid-Wales, on the other hand, longer journeys, fewer chargers and higher
@@ -76,16 +76,16 @@ export default function EvRunningCostsWalesPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-navy mb-4 font-display" style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}>Home charger support and local schemes</h2>
-          <p className="mb-4">Wales does not have a single headline interest-free loan scheme that every driver can point to in the same way as a well-known national offer. Instead, support often comes from a mix of UK-wide grant eligibility, local authority initiatives, and occasional energy-provider or community-energy programmes. The mix changes over time, so it is worth checking what is available in your area before assuming the upfront cost is fixed.</p>
-          <p className="mb-4">That variability makes planning harder, but it also means there can be surprise savings if you look beyond the obvious. Even a modest grant or council-supported installation can shorten the payback period enough to make home charging more attractive than relying on public networks. Once home charging is available, the EV running-cost advantage usually becomes much more pronounced.</p>
-          <p>For families in Wales, the key question is often whether a charger can be installed at all, not whether an EV is theoretically cheaper per mile. If the charger works, the economics improve quickly.</p>
+          <h2 className="text-2xl font-bold text-navy mb-4 font-display" style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}>Home charger support: what&apos;s actually available in Wales</h2>
+          <p className="mb-4">If you own your home and have a driveway, there is currently no Welsh or UK grant towards installing a charger — the old Electric Vehicle Homecharge Scheme (EVHS) that covered driveway installs closed UK-wide in April 2022 and has not been replaced (<a href="https://www.gov.uk/government/publications/electric-vehicle-chargepoint-and-infrastructure-grants" className="text-ev-blue hover:underline" target="_blank" rel="noopener noreferrer">GOV.UK</a>). What is still open is the EV chargepoint grant for renters and flat owners with dedicated off-street parking — 75% of the cost up to £500 (raised from £350 on 1 April 2026), running until 31 March 2027 (<a href="https://www.find-government-grants.service.gov.uk/grants/electric-vehicle-chargepoint-grant-for-renters-and-flat-owners-2" className="text-ev-blue hover:underline" target="_blank" rel="noopener noreferrer">GOV.UK</a>).</p>
+          <p className="mb-4">Welsh Government EV funding is currently aimed mostly at infrastructure rather than individual driveways: the Transport for Wales EV Charging Fund supports public and semi-public charge points, there&apos;s a Social Housing EV Charging Programme for housing associations, and Business Wales offers SME grants of up to £75,000 towards workplace charge point installs (<a href="https://businesswales.gov.wales/news-and-blog/grant-funding-install-ev-chargers" className="text-ev-blue hover:underline" target="_blank" rel="noopener noreferrer">Business Wales</a>). None of that helps a homeowner with a driveway pay for their own charger today.</p>
+          <p>For most Welsh homeowners the honest answer is: budget for the full installation cost yourself, and check your eligibility for the renters/flat-owners grant only if that category applies to you. Once a home charger is in, the running-cost advantage becomes much more pronounced regardless of who paid for the install.</p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-navy mb-4 font-display" style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}>Rural miles, tourist traffic and pump prices</h2>
           <p className="mb-4">Wales has a strong seasonal element to fuel demand. Tourist-heavy routes, rural forecourts, and locations far from supermarket competition can all push pump prices higher. That does not just affect petrol drivers; it also matters for comparing an EV to petrol because the higher the local petrol price, the stronger the case for a cheap-to-charge EV.</p>
-          <p className="mb-4">This is why the national-average approach is often too blunt. A driver in a rural county who pays more at the pump may see a much bigger annual saving from an EV than a driver in a city with cheaper forecourts. The calculator's postcode lookup helps you avoid building a decision around a price you do not actually pay.</p>
+          <p className="mb-4">This is why the national-average approach is often too blunt. A driver in a rural county who pays more at the pump may see a much bigger annual saving from an EV than a driver in a city with cheaper forecourts. The calculator&apos;s postcode lookup helps you avoid building a decision around a price you do not actually pay.</p>
           <p>In Wales, local fuel price context is not a minor adjustment. It can change the answer enough to influence whether a car looks worth buying at all.</p>
         </section>
 
@@ -94,6 +94,15 @@ export default function EvRunningCostsWalesPage() {
           <p>Start with the <Link href="/#calculator" className="text-ev-blue hover:underline">calculator</Link> and enter your postcode so the fuel lookup matches your area. Then read the <Link href="/guides/local-fuel-prices" className="text-ev-blue hover:underline">local fuel prices guide</Link> to see why the same car can look different from one county to the next. You can also compare Wales with the other regional guides below.</p>
         </section>
       </div>
+
+      <p className="mt-8 text-xs text-ev-grey/70">
+        Sources:{" "}
+        <a href="https://www.gov.uk/government/publications/electric-vehicle-chargepoint-and-infrastructure-grants" className="text-ev-blue hover:underline" target="_blank" rel="noopener noreferrer">GOV.UK EV chargepoint and infrastructure grants</a>
+        {" · "}
+        <a href="https://www.find-government-grants.service.gov.uk/grants/electric-vehicle-chargepoint-grant-for-renters-and-flat-owners-2" className="text-ev-blue hover:underline" target="_blank" rel="noopener noreferrer">GOV.UK EV chargepoint grant (renters/flat owners)</a>
+        {" · "}
+        <a href="https://businesswales.gov.wales/news-and-blog/grant-funding-install-ev-chargers" className="text-ev-blue hover:underline" target="_blank" rel="noopener noreferrer">Business Wales</a>
+      </p>
 
       <section aria-labelledby="faq-heading" className="mt-12 pt-10 border-t border-border-light">
         <h2 id="faq-heading" className="text-2xl font-bold text-navy mb-6 font-display" style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}>Frequently asked questions</h2>

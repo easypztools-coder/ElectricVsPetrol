@@ -38,6 +38,7 @@ const footerLinks = [
     heading: "Blog & FAQ",
     links: [
       { href: "/blog", label: "EV Ian's Blog" },
+      { href: "/author/ev-ian", label: "About the Author" },
       { href: "/faq/is-ev-cheaper-than-petrol-uk", label: "Is EV cheaper than petrol?" },
       { href: "/faq/cheapest-ev-to-run-uk", label: "Cheapest EV to run UK" },
       { href: "/faq/how-much-does-it-cost-to-charge-a-tesla-at-home-uk", label: "Tesla home charging cost" },
