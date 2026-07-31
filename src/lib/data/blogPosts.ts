@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "petrol-prices-spike-electricity-cap-falls-july-2026",
+    title: "Petrol Just Spiked. Your Electricity Bill Just Fell. Let Me Explain.",
+    excerpt: "Petrol and diesel jumped hard in July 2026 while the Ofgem price cap quietly dropped. EV Ian works out what that combination actually does to the EV vs petrol maths — and why public charging is the exception.",
+    date: "2026-07-30",
+    dateDisplay: "30 July 2026",
+    readingTimeMin: 6,
+    category: "Running Costs",
+  },
+  {
     slug: "the-great-british-supercharger-queue",
     title: "The Great British Supercharger Queue",
     excerpt: "Nothing prepares you for your first motorway rapid-charging stop. EV Ian recounts a formative Grantham experience, armed with a flask, a spreadsheet, and entirely the wrong expectations.",

@@ -28,7 +28,7 @@ const segments = [
   "large family SUV",
 ];
 
-function pencePerMile(milesPerKwh: number, rate = 28): number {
+function pencePerMile(milesPerKwh: number, rate = 26.1): number {
   return (1 / milesPerKwh) * rate;
 }
 
@@ -87,7 +87,7 @@ export default function EVIndexPage() {
         to see detailed running cost analysis.
       </p>
       <p className="text-sm text-ev-grey mb-10">
-        Standard home tariff: 28p/kWh. To see costs on your own tariff,{" "}
+        Standard home tariff: 26.1p/kWh (Ofgem price cap, Jul–Sep 2026). To see costs on your own tariff,{" "}
         <Link href="/#calculator" className="text-ev-blue hover:underline">
           use the calculator
         </Link>
@@ -106,7 +106,7 @@ export default function EVIndexPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {groups[segment].map((ev) => {
                 const ppm = pencePerMile(ev.milesPerKwh);
-                const annualGbp = ((10000 / ev.milesPerKwh) * 28) / 100;
+                const annualGbp = ((10000 / ev.milesPerKwh) * 26.1) / 100;
                 return (
                   <Link
                     key={ev.slug}

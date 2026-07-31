@@ -76,7 +76,7 @@ export default function CalculatorForm({
 
   const fuelLabel = inputs.fuelType === "diesel" ? "Diesel" : "Petrol";
   const fallbackPrice =
-    inputs.fuelType === "diesel" ? 151.9 : 143.9;
+    inputs.fuelType === "diesel" ? 168.6 : 153.5;
   const derivedEvPrice = inputs.petrolPurchasePrice + inputs.evPricePremium;
 
   return (

@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 };
 
 const LITRES_PER_GALLON = 4.54609;
-const PETROL_PRICE = 143.9;
-const HOME_RATE = 28.0;
-const PUBLIC_RATE = 60.0;
+const PETROL_PRICE = 153.5;
+const HOME_RATE = 26.1;
+const PUBLIC_RATE = 79.0;
 
 function annualSavingAt10k(mpg: number, milesPerKwh: number): number {
   const miles = 10000;
@@ -146,7 +146,7 @@ export default function ComparePage() {
         <p className="text-sm text-ev-grey leading-relaxed">
           Annual saving figures use{" "}
           <strong className="text-navy">real-world UK fuel prices</strong> —
-          {PETROL_PRICE}p/litre petrol, 28p/kWh home electricity, and 60p/kWh
+          {PETROL_PRICE}p/litre petrol, {HOME_RATE}p/kWh home electricity, and {PUBLIC_RATE}p/kWh
           public charging — at 10,000 miles per year with 80% of EV charging
           at home. Vehicle efficiency figures are real-world UK averages, not
           official WLTP ratings. Use our{" "}

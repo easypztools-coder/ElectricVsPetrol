@@ -7,8 +7,8 @@ import { findEV, findICE } from "@/lib/data/vehicles";
 // ── Cost calculation ────────────────────────────────────────────────────────
 
 const LITRES_PER_GALLON = 4.54609;
-const PETROL_PRICE = 143.9; // p/litre
-const DIESEL_PRICE = 151.9; // p/litre
+const PETROL_PRICE = 153.5; // p/litre — RAC Fuel Watch, July 2026
+const DIESEL_PRICE = 168.6; // p/litre — RAC Fuel Watch, July 2026
 
 function fuelCost(miles: number, mpg: number, fuelPricePence: number): number {
   return (miles / mpg) * LITRES_PER_GALLON * (fuelPricePence / 100);
@@ -18,8 +18,8 @@ function evCost(
   miles: number,
   milesPerKwh: number,
   homePercent: number,
-  homeRate = 28,
-  publicRate = 60
+  homeRate = 26.1,
+  publicRate = 79
 ): number {
   const kWh = miles / milesPerKwh;
   const blended =
@@ -65,10 +65,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const MILEAGES = [8000, 10000, 12000, 15000, 20000];
 
 const SCENARIOS = [
-  { label: "Overnight EV tariff", homePercent: 100, homeRate: 7, publicRate: 60 },
-  { label: "Standard home (80% home)", homePercent: 80, homeRate: 28, publicRate: 60 },
-  { label: "Mixed (50% home)", homePercent: 50, homeRate: 28, publicRate: 60 },
-  { label: "Public charging only", homePercent: 0, homeRate: 28, publicRate: 60 },
+  { label: "Overnight EV tariff", homePercent: 100, homeRate: 7, publicRate: 79 },
+  { label: "Standard home (80% home)", homePercent: 80, homeRate: 26.1, publicRate: 79 },
+  { label: "Mixed (50% home)", homePercent: 50, homeRate: 26.1, publicRate: 79 },
+  { label: "Public charging only", homePercent: 0, homeRate: 26.1, publicRate: 79 },
 ] as const;
 
 function fmt(n: number): string {
@@ -98,8 +98,8 @@ export default async function ComparisonPage({ params }: Props) {
 
   // Cost per mile
   const icePpm = (pricePence * LITRES_PER_GALLON) / ice.realWorldMpg; // pence/mile
-  const evPpmHome = 28 / ev.milesPerKwh; // standard home tariff
-  const evPpmPublic = 60 / ev.milesPerKwh; // public rapid
+  const evPpmHome = 26.1 / ev.milesPerKwh; // standard home tariff
+  const evPpmPublic = 79 / ev.milesPerKwh; // public rapid
   const evPpmNight = 7 / ev.milesPerKwh; // overnight EV tariff
 
   // Break-even (using 10k/yr saving as reference)
@@ -121,7 +121,7 @@ export default async function ComparisonPage({ params }: Props) {
   const faqItems = [
     {
       q: `How much does a ${ev.displayName} cost to run per mile in the UK?`,
-      a: `At a standard UK home electricity rate of 28p/kWh and a real-world efficiency of ${ev.milesPerKwh} miles/kWh, the ${ev.displayName} costs approximately ${ppm(evPpmHome)} per mile when charging at home. On a dedicated overnight EV tariff (around 7p/kWh) this falls to just ${ppm(evPpmNight)} per mile. Relying entirely on public rapid charging at 60p/kWh raises the cost to ${ppm(evPpmPublic)} per mile.`,
+      a: `At a standard UK home electricity rate of 26.1p/kWh (the Ofgem price cap unit rate for July–September 2026) and a real-world efficiency of ${ev.milesPerKwh} miles/kWh, the ${ev.displayName} costs approximately ${ppm(evPpmHome)} per mile when charging at home. On a dedicated overnight EV tariff (around 7p/kWh) this falls to just ${ppm(evPpmNight)} per mile. Relying entirely on public rapid charging — which averaged 79p/kWh in mid-2026 — raises the cost to ${ppm(evPpmPublic)} per mile.`,
     },
     {
       q: `Is the ${ev.displayName} cheaper to run than the ${ice.displayName}?`,
@@ -144,7 +144,7 @@ export default async function ComparisonPage({ params }: Props) {
       : []),
     {
       q: `What if I can't charge the ${ev.displayName} at home?`,
-      a: `Without home charging, the economics change significantly. Relying on public rapid charging at 60p/kWh puts the ${ev.displayName} at ${ppm(evPpmPublic)} per mile — ${evPpmPublic > icePpm ? `higher than the ${ice.displayName} at ${ppm(icePpm)} per mile` : `still comparable to the ${ice.displayName} at ${ppm(icePpm)} per mile`}. EV running cost savings are almost entirely dependent on home charging access. Drivers without off-street parking should factor this in carefully.`,
+      a: `Without home charging, the economics change significantly. Relying on public rapid charging — which averaged 79p/kWh in mid-2026, up sharply from a couple of years ago — puts the ${ev.displayName} at ${ppm(evPpmPublic)} per mile — ${evPpmPublic > icePpm ? `higher than the ${ice.displayName} at ${ppm(icePpm)} per mile` : `still comparable to the ${ice.displayName} at ${ppm(icePpm)} per mile`}. EV running cost savings are almost entirely dependent on home charging access. Drivers without off-street parking should factor this in carefully.`,
     },
   ];
 
@@ -203,7 +203,7 @@ export default async function ComparisonPage({ params }: Props) {
             strokeLinecap="round"
           />
         </svg>
-        Last updated: June 2026 · Based on current UK fuel prices
+        Last updated: July 2026 · Based on current UK fuel prices
       </p>
 
       {/* Verdict */}
@@ -274,7 +274,7 @@ export default async function ComparisonPage({ params }: Props) {
             {ppm(evPpmHome)}/mile
           </p>
           <p className="text-xs text-ev-grey mt-1">
-            {ev.milesPerKwh} mi/kWh · 28p/kWh
+            {ev.milesPerKwh} mi/kWh · 26.1p/kWh
           </p>
         </div>
       </div>
@@ -292,7 +292,7 @@ export default async function ComparisonPage({ params }: Props) {
           The table below uses{" "}
           <strong className="text-navy">real-world efficiency</strong> figures
           for both vehicles and current UK fuel prices. EV costs assume 80% home
-          charging (28p/kWh) and 20% public rapid charging (60p/kWh).
+          charging (26.1p/kWh) and 20% public rapid charging (79p/kWh).
         </p>
 
         <div className="overflow-x-auto">
@@ -352,8 +352,8 @@ export default async function ComparisonPage({ params }: Props) {
           </table>
         </div>
         <p className="text-xs text-ev-grey mt-3">
-          Petrol: {pricePence}p/litre · Home electricity: 28p/kWh · Public
-          rapid: 60p/kWh
+          Petrol: {pricePence}p/litre · Home electricity: 26.1p/kWh · Public
+          rapid: 79p/kWh
         </p>
       </section>
 

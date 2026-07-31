@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Best & Highest Mileage Electric Cars UK 2026 | High Mileage EV Guide",
   description:
-    "Tesla Model 3 Long Range (325 miles, 4.2 mi/kWh) and Ioniq 6 Long Range (320 miles) top our 2026 ranking. At 20,000 miles/year an EV saves ~£1,580 vs petrol. Full guide for 15,000–30,000 mile drivers.",
+    "Tesla Model 3 Long Range (325 miles, 4.2 mi/kWh) and Ioniq 6 Long Range (320 miles) top our 2026 ranking. At 20,000 miles/year an EV saves ~£1,860 vs petrol. Full guide for 15,000–30,000 mile drivers.",
   alternates: {
     canonical: "https://electricvspetrol.co.uk/guides/best-ev-for-high-mileage",
   },
@@ -16,7 +16,7 @@ const highMileagePicks = [
     efficiency: "4.2 mi/kWh",
     realRange: "325 miles",
     dcCharging: "250kW",
-    annualAt20k: "£1,320",
+    annualAt20k: "£1,243",
     why: "Best-in-class efficiency and the Supercharger network make it the default choice for high mileage. The Long Range variant's 325-mile real-world range minimises charging stops.",
   },
   {
@@ -24,7 +24,7 @@ const highMileagePicks = [
     efficiency: "4.2 mi/kWh",
     realRange: "320 miles",
     dcCharging: "220kW",
-    annualAt20k: "£1,320",
+    annualAt20k: "£1,243",
     why: "Matches the Model 3 on efficiency. The 800V charging architecture is among the fastest available for non-Tesla motorway charging.",
   },
   {
@@ -32,7 +32,7 @@ const highMileagePicks = [
     efficiency: "3.6 mi/kWh",
     realRange: "295 miles",
     dcCharging: "205kW",
-    annualAt20k: "£1,556",
+    annualAt20k: "£1,450",
     why: "The best option for high-mileage company car drivers — 2% BIK rate versus 25%+ for a petrol 3 Series saves thousands per year. Premium driving experience sustained over long distances.",
   },
   {
@@ -40,7 +40,7 @@ const highMileagePicks = [
     efficiency: "3.5 mi/kWh",
     realRange: "310 miles",
     dcCharging: "205kW",
-    annualAt20k: "£1,600",
+    annualAt20k: "£1,491",
     why: "Strong real-world range from the 78kWh battery. Reliable on long motorway runs without range anxiety, and 205kW charging keeps stops under 30 minutes.",
   },
   {
@@ -48,7 +48,7 @@ const highMileagePicks = [
     efficiency: "3.5 mi/kWh",
     realRange: "300 miles",
     dcCharging: "250kW",
-    annualAt20k: "£1,600",
+    annualAt20k: "£1,491",
     why: "The practicality of an SUV with genuinely high-mileage capability. Best for high-mileage families or those who need boot space alongside the efficiency.",
   },
 ];
@@ -56,7 +56,7 @@ const highMileagePicks = [
 const faqItems = [
   {
     q: "Is a high mileage EV cheaper to run than a diesel in 2026?",
-    a: "Yes, in most cases. At 20,000 miles per year and 80% home charging, the best EVs cost around £1,300–£1,600 in electricity. A diesel at 55 MPG and 151.9p/litre (£6.91/gallon) costs approximately £2,510 per year — a saving of £900–£1,200 per year. The saving increases further for company car drivers due to BIK tax differences.",
+    a: "Yes, in most cases — and the saving has grown recently. At 20,000 miles per year charging 100% at home on the current 26.1p/kWh Ofgem price cap rate, the best EVs cost around £1,250–£1,500 in electricity. A diesel at 55 MPG and 168.6p/litre (£7.67/gallon, July 2026) costs approximately £2,787 per year — a saving of £1,300–£1,500 per year. The saving increases further for company car drivers due to BIK tax differences.",
   },
   {
     q: "What real-world range do I need for high mileage EV driving?",
@@ -98,7 +98,7 @@ export default function BestEvForHighMileagePage() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Last updated: June 2026
+        Last updated: July 2026
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">
@@ -154,7 +154,7 @@ export default function BestEvForHighMileagePage() {
             Best EVs for high mileage UK drivers
           </h2>
           <p className="mb-6 text-sm">
-            Annual electricity cost calculated at 20,000 miles, 80% home charging (28p/kWh), 20% public rapid (60p/kWh).
+            Annual electricity cost calculated at 20,000 miles, 100% home charging on the current Ofgem price cap rate (26.1p/kWh).
           </p>
           <div className="space-y-4">
             {highMileagePicks.map((pick, i) => (

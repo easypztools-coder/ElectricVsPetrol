@@ -5,7 +5,7 @@ import CostCalculatorWithParams from "@/components/calculator/CostCalculatorWith
 export const metadata: Metadata = {
   title: "Electric Car vs Diesel Calculator UK 2026 | See Your Exact Saving",
   description:
-    "EVs cost ~8p/mile at home vs ~12.6p/mile for a 55 MPG diesel — saving around £900/year at 10,000 miles. Use our free UK calculator with your own mileage and real local diesel prices.",
+    "EVs cost ~7.5p/mile at home vs ~13.9p/mile for a 55 MPG diesel — saving around £650/year at 10,000 miles. Use our free UK calculator with your own mileage and real local diesel prices.",
   alternates: {
     canonical:
       "https://electricvspetrol.co.uk/guides/ev-vs-diesel-running-costs",
@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "Is an electric car cheaper to run than a diesel in the UK in 2026?",
-    a: "Yes, in most cases. At 10,000 miles per year with 80% home charging at 28p/kWh and a diesel at 55 MPG and 151.9p/litre, the EV saves approximately £700–£1,000 per year in fuel costs. The gap is largest for high-mileage drivers and those on overnight EV tariffs.",
+    a: "Yes, if you charge mainly at home — and less clearly so otherwise, since public charging prices rose sharply through 2026. At 10,000 miles per year with 80% home charging at 26.1p/kWh and a diesel at 55 MPG and 168.6p/litre, the EV saves approximately £350–£650 per year in fuel costs depending on how the remaining 20% is charged. The gap is largest for high-mileage drivers and those on overnight EV tariffs.",
   },
   {
     q: "How much does it cost to run an EV vs diesel per mile?",
-    a: "An EV at 3.5 miles/kWh with 80% home charging (28p/kWh) costs about 8p per mile. A diesel at 55 MPG and 151.9p/litre costs about 12.6p per mile. On an overnight EV tariff (7p/kWh), the EV drops to just 2p per mile.",
+    a: "An EV at 3.5 miles/kWh charging entirely at home (26.1p/kWh) costs about 7.5p per mile. A diesel at 55 MPG and 168.6p/litre costs about 13.9p per mile. On an overnight EV tariff (7p/kWh), the EV drops to just 2p per mile.",
   },
   {
     q: "Are diesels still worth buying for high mileage in 2026?",
@@ -27,7 +27,7 @@ const faqItems = [
   },
   {
     q: "Is EV cheaper than diesel with public charging only?",
-    a: "If you rely entirely on public rapid charging at 60–80p/kWh, the running cost advantage over diesel narrows significantly or disappears. At 70p/kWh and 3.5 mi/kWh, an EV costs 20p/mile — more than a 55 MPG diesel at 12.6p/mile. Home charging is essential for EVs to beat diesel on running costs.",
+    a: "No, not any more — this flipped in 2026. Public rapid charging averaged 79p/kWh across UK networks in mid-2026, up sharply from a couple of years ago. At 79p/kWh and 3.5 mi/kWh, an EV costs 22.6p/mile — noticeably more than a 55 MPG diesel at 13.9p/mile. Home charging is now essential for EVs to beat diesel on running costs; relying on public rapid charging alone no longer clears that bar.",
   },
 ];
 
@@ -87,29 +87,35 @@ export default function EvVsDieselRunningCostsPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
               <div>
                 <p className="text-xs text-ev-grey mb-1">Diesel (55 MPG)</p>
-                <p className="text-xl font-bold text-ev-amber">~£2,510/yr</p>
+                <p className="text-xl font-bold text-ev-amber">~£2,787/yr</p>
                 <p className="text-xs text-ev-grey">20k miles</p>
               </div>
               <div>
                 <p className="text-xs text-ev-grey mb-1">EV (80% home)</p>
-                <p className="text-xl font-bold text-ev-green">~£1,099/yr</p>
-                <p className="text-xs text-ev-grey">~£1,411 saved</p>
+                <p className="text-xl font-bold text-ev-green">~£2,096/yr</p>
+                <p className="text-xs text-ev-grey">~£691 saved</p>
               </div>
               <div>
                 <p className="text-xs text-ev-grey mb-1">EV (50% home)</p>
-                <p className="text-xl font-bold text-ev-green">~£1,714/yr</p>
-                <p className="text-xs text-ev-grey">~£796 saved</p>
+                <p className="text-xl font-bold text-ev-amber">~£3,003/yr</p>
+                <p className="text-xs text-ev-grey">~£216 more than diesel</p>
               </div>
               <div>
                 <p className="text-xs text-ev-grey mb-1">EV (public only)</p>
-                <p className="text-xl font-bold text-ev-amber">~£2,400/yr</p>
-                <p className="text-xs text-ev-grey">~£110 saved</p>
+                <p className="text-xl font-bold text-ev-amber">~£4,514/yr</p>
+                <p className="text-xs text-ev-grey">~£1,727 more than diesel</p>
               </div>
             </div>
           </div>
+          <p className="text-xs text-ev-grey mb-4">
+            Public rapid charging prices rose sharply through 2026 (now averaging
+            79p/kWh) while diesel also rose — but not enough to keep pace. Once
+            public charging makes up half your miles or more, diesel now comes out
+            ahead. Home charging is what makes the EV case work.
+          </p>
           <p className="text-xs text-ev-grey">
-            Based on 20,000 mi/yr. Diesel at 151.9p/litre. EV at 3.5 mi/kWh,
-            28p/kWh home, 60p/kWh public.
+            Based on 20,000 mi/yr. Diesel at 168.6p/litre. EV at 3.5 mi/kWh,
+            26.1p/kWh home, 79p/kWh public.
           </p>
         </section>
 
@@ -129,13 +135,13 @@ export default function EvVsDieselRunningCostsPage() {
             <li className="flex items-start gap-2">
               <span className="text-ev-blue mt-1 flex-shrink-0">1.</span>
               <span>
-                Enter your diesel car's <strong className="text-navy">real-world MPG</strong> in the petrol car fields. Many modern diesel cars achieve 50–65 MPG on motorway runs.
+                Enter your diesel car&apos;s <strong className="text-navy">real-world MPG</strong> in the petrol car fields. Many modern diesel cars achieve 50–65 MPG on motorway runs.
               </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-ev-blue mt-1 flex-shrink-0">2.</span>
               <span>
-                Adjust the <strong className="text-navy">fuel price</strong> to match current UK diesel prices (typically around 151.9p/litre in June 2026).
+                Adjust the <strong className="text-navy">fuel price</strong> to match current UK diesel prices (typically around 168.6p/litre in July 2026).
               </span>
             </li>
             <li className="flex items-start gap-2">
@@ -180,7 +186,7 @@ export default function EvVsDieselRunningCostsPage() {
             itself.
           </p>
           <p>
-            If you're considering an EV, check our{" "}
+            If you&apos;re considering an EV, check our{" "}
             <Link
               href="/guides/best-ev-for-high-mileage"
               className="text-ev-blue hover:underline"

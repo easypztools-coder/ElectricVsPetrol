@@ -143,9 +143,11 @@ export default function MethodologyPage() {
 
         <p className="text-ev-grey text-sm leading-relaxed mt-4">
           The home vs public charging split has a large impact on results.
-          Home charging at 28p/kWh gives roughly 8p per mile for a typical EV.
-          Public rapid charging at 75p/kWh pushes that to around 21p per mile —
-          more expensive than many petrol cars.
+          Home charging at 26.1p/kWh (the Ofgem price cap rate for
+          July–September 2026) gives roughly 7.5p per mile for a typical EV.
+          Public rapid charging averaged 79p/kWh across UK networks in mid-2026
+          and pushes that to around 22.6p per mile — more expensive than many
+          petrol cars.
         </p>
       </Section>
 
@@ -202,23 +204,23 @@ export default function MethodologyPage() {
                 ],
                 [
                   "Petrol price",
-                  "143.9p/litre",
-                  "BEIS / RAC national average (updated manually)",
+                  "153.5p/litre",
+                  "RAC Fuel Watch national average, July 2026",
                 ],
                 [
                   "Diesel price",
-                  "151.9p/litre",
-                  "BEIS / RAC national average (updated manually)",
+                  "168.6p/litre",
+                  "RAC Fuel Watch national average, July 2026",
                 ],
                 [
                   "Home electricity",
-                  "28.0p/kWh",
-                  "Ofgem price cap unit rate (standard variable)",
+                  "26.1p/kWh",
+                  "Ofgem price cap unit rate, July–September 2026",
                 ],
                 [
                   "Public charging",
-                  "60.0p/kWh",
-                  "UK network average fast charging rate",
+                  "79.0p/kWh",
+                  "Zapmap charging price index, rapid/ultra-rapid average, June 2026",
                 ],
                 [
                   "Home charge %",
@@ -273,13 +275,18 @@ export default function MethodologyPage() {
       <Section id="data-sources" title="Data sources">
         <ul className="space-y-2 text-sm text-ev-grey">
           <li>
-            <strong className="text-navy">Fuel prices:</strong> BEIS Weekly Road
-            Fuel Prices, RAC Fuel Watch — updated manually in fallback data.
+            <strong className="text-navy">Fuel prices:</strong> RAC Fuel Watch
+            national averages — updated manually in fallback data.
             Live local prices are fetched via the CMA Fuel Finder API when a postcode is entered.
           </li>
           <li>
             <strong className="text-navy">Electricity rates:</strong> Ofgem
             price cap quarterly updates for standard variable tariff rate.
+          </li>
+          <li>
+            <strong className="text-navy">Public charging rate:</strong>{" "}
+            Zapmap&apos;s UK charging price index, rapid/ultra-rapid weighted
+            average.
           </li>
           <li>
             <strong className="text-navy">Postcode lookup:</strong>{" "}
@@ -306,34 +313,12 @@ export default function MethodologyPage() {
 
       <div className="border-t border-border-light pt-8 mt-8">
         <p className="text-sm text-ev-grey">
-              <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                  __html: JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "BreadcrumbList",
-                    itemListElement: [
-                      {
-                        "@type": "ListItem",
-                        position: 1,
-                        name: "Home",
-                        item: "https://electricvspetrol.co.uk",
-                      },
-                      {
-                        "@type": "ListItem",
-                        position: 2,
-                        name: "Methodology",
-                        item: "https://electricvspetrol.co.uk/methodology",
-                      },
-                    ],
-                  }),
-                }}
-              />
           Something not right? Spotted an error in our methodology?{" "}
           <Link href="/contact" className="text-ev-blue hover:underline">
             Get in touch
           </Link>
-          . We update defaults when official data changes.
+          . We update defaults when official data changes — defaults above
+          were last reviewed in July 2026.
         </p>
       </div>
 

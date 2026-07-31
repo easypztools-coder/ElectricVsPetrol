@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Best Electric Cars UK 2026: Top Picks by Category | ElectricVsPetrol",
   description:
-    "Tesla Model 3 (6.8p/mile) is our top overall pick. MG4 from £26,995 is best value. Ioniq 6 leads on range. Our 2026 data-led guide ranks the best UK EVs by category — no marketing, just numbers.",
+    "Tesla Model 3 (6.4p/mile) is our top overall pick. MG4 from £26,995 is best value. Ioniq 6 leads on range. Our 2026 data-led guide ranks the best UK EVs by category — no marketing, just numbers.",
   alternates: {
     canonical:
       "https://electricvspetrol.co.uk/guides/best-ev-uk-2026",
@@ -16,43 +16,43 @@ const categories = [
     name: "Best overall EV",
     pick: "Tesla Model 3 (Highland) Long Range RWD",
     why: "Combines best-in-class efficiency (4.1 mi/kWh), 360+ mile WLTP range, access to the Supercharger network, competitive pricing from £40,990, and strong residual values. The Highland refresh improved ride quality, reduced wind noise, and added ventilated seats.",
-    costPerMile: "6.8p (home, 28p/kWh)",
+    costPerMile: "6.4p (home, 26.1p/kWh)",
   },
   {
     name: "Best value EV",
     pick: "MG4 Standard Range",
     why: "At £26,995, the MG4 is the cheapest EV that still delivers a proper driving experience. 4.0 mi/kWh efficiency keeps running costs low, and its 51kWh battery provides enough real-world range for daily use. Direct rival to the Volkswagen Golf in size, but £10,000+ cheaper to buy and cheaper to run.",
-    costPerMile: "7.0p (home, 28p/kWh)",
+    costPerMile: "6.5p (home, 26.1p/kWh)",
   },
   {
     name: "Best range EV",
     pick: "Hyundai Ioniq 6 Long Range RWD",
     why: "The Ioniq 6's aerodynamic shape delivers the best real-world efficiency of any EV on sale at 4.2 mi/kWh, translating to 320+ miles of genuine mixed-driving range. The 800V architecture charges from 10–80% in 18 minutes at 220kW+ chargers.",
-    costPerMile: "6.7p (home, 28p/kWh)",
+    costPerMile: "6.2p (home, 26.1p/kWh)",
   },
   {
     name: "Best EV for high mileage",
     pick: "Tesla Model 3 Long Range AWD",
     why: "For drivers covering 20,000+ miles per year, the Model 3 LR AWD combines 4.0 mi/kWh efficiency, 325-mile real-world range, and 250kW Supercharger access — minimising both fuel cost and charging time on long trips.",
-    costPerMile: "7.0p (home, 28p/kWh)",
+    costPerMile: "6.5p (home, 26.1p/kWh)",
   },
   {
     name: "Best small / city EV",
     pick: "MG4 Standard Range",
     why: "For city driving where you rarely exceed 30–50 miles per day, the MG4 is hard to beat. Its efficient powertrain and low purchase price make it the most cost-effective small EV for UK drivers who can charge at home.",
-    costPerMile: "7.0p (home, 28p/kWh)",
+    costPerMile: "6.5p (home, 26.1p/kWh)",
   },
   {
     name: "Best family EV SUV",
     pick: "Tesla Model Y Long Range AWD",
     why: "Combines SUV practicality (854L boot, optional 7 seats) with genuine efficiency (3.5 mi/kWh), 300-mile real-world range, and the Supercharger network. The best option for families who need space without compromising running costs.",
-    costPerMile: "8.0p (home, 28p/kWh)",
+    costPerMile: "7.5p (home, 26.1p/kWh)",
   },
   {
     name: "Best company car EV",
     pick: "BMW i4 eDrive40",
     why: "The 2% BIK rate saves higher-rate taxpayers thousands compared to a 25%+ rated petrol 3 Series. Combined with strong efficiency (3.6 mi/kWh), 295-mile real-world range, and a premium interior, it's the best choice for company car drivers who spend long hours behind the wheel.",
-    costPerMile: "7.8p (home, 28p/kWh)",
+    costPerMile: "7.3p (home, 26.1p/kWh)",
   },
 ];
 
@@ -111,7 +111,7 @@ export default function BestEvUk2026Page() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Last updated: June 2026
+        Last updated: July 2026
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">

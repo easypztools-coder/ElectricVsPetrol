@@ -5,7 +5,7 @@ import CostCalculatorWithParams from "@/components/calculator/CostCalculatorWith
 export const metadata: Metadata = {
   title: "Hybrid vs Petrol Running Cost Calculator UK 2026 | Compare HEV & PHEV",
   description:
-    "A standard hybrid typically saves £350–£400/year vs petrol at 10,000 miles. Use our free UK calculator to see your exact saving — works for HEV and PHEV against any petrol car.",
+    "A standard hybrid typically saves £370–£420/year vs petrol at 10,000 miles. Use our free UK calculator to see your exact saving — works for HEV and PHEV against any petrol car.",
   alternates: {
     canonical:
       "https://electricvspetrol.co.uk/guides/hybrid-vs-petrol-calculator",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "Is a hybrid car cheaper to run than a petrol car in the UK?",
-    a: "A standard hybrid can be 20–30% more fuel-efficient than an equivalent petrol car in stop-start urban driving. At 10,000 miles per year with 60 MPG for a hybrid vs 45 MPG for petrol, the hybrid saves roughly £350–£400 per year in fuel. The saving is smaller on motorway runs where the hybrid system has less opportunity to recover energy.",
+    a: "A standard hybrid can be 20–30% more fuel-efficient than an equivalent petrol car in stop-start urban driving. At 10,000 miles per year with 60 MPG for a hybrid vs 45 MPG for petrol at July 2026 fuel prices, the hybrid saves roughly £370–£420 per year in fuel. The saving is smaller on motorway runs where the hybrid system has less opportunity to recover energy.",
   },
   {
     q: "How much does a plug-in hybrid cost to run per mile?",
@@ -98,7 +98,7 @@ export default function HybridVsPetrolCalculatorPage() {
               <span className="text-ev-blue mt-1 flex-shrink-0">1.</span>
               <span>
                 <strong className="text-navy">For a standard hybrid (HEV):</strong>{" "}
-                Enter the hybrid's real-world MPG in the petrol car fields.
+                Enter the hybrid&apos;s real-world MPG in the petrol car fields.
                 A typical hybrid achieves 55–65 MPG in mixed driving. Compare
                 that to a non-hybrid petrol car at 40–50 MPG.
               </span>
@@ -144,29 +144,29 @@ export default function HybridVsPetrolCalculatorPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
               <div>
                 <p className="text-xs text-ev-grey mb-1">Petrol (45 MPG)</p>
-                <p className="text-xl font-bold text-ev-amber">~£1,450/yr</p>
+                <p className="text-xl font-bold text-ev-amber">~£1,550/yr</p>
                 <p className="text-xs text-ev-grey">10k miles</p>
               </div>
               <div>
                 <p className="text-xs text-ev-grey mb-1">Hybrid HEV (60 MPG)</p>
-                <p className="text-xl font-bold text-ev-green">~£1,090/yr</p>
-                <p className="text-xs text-ev-grey">~£360 saved</p>
+                <p className="text-xl font-bold text-ev-green">~£1,163/yr</p>
+                <p className="text-xs text-ev-grey">~£387 saved</p>
               </div>
               <div>
                 <p className="text-xs text-ev-grey mb-1">PHEV (80% electric)</p>
-                <p className="text-xl font-bold text-ev-green">~£630/yr</p>
-                <p className="text-xs text-ev-grey">~£820 saved</p>
+                <p className="text-xl font-bold text-ev-green">~£604/yr</p>
+                <p className="text-xs text-ev-grey">~£946 saved</p>
               </div>
               <div>
                 <p className="text-xs text-ev-grey mb-1">Full EV (80% home)</p>
-                <p className="text-xl font-bold text-ev-green">~£549/yr</p>
-                <p className="text-xs text-ev-grey">~£900 saved</p>
+                <p className="text-xl font-bold text-ev-green">~£1,048/yr</p>
+                <p className="text-xs text-ev-grey">~£502 saved</p>
               </div>
             </div>
           </div>
           <p className="text-xs text-ev-grey">
-            Based on 10,000 mi/yr. Petrol at 143.9p/litre. EV at 28p/kWh home,
-            60p/kWh public, 3.5 mi/kWh. PHEV assumes 30 mile electric range,
+            Based on 10,000 mi/yr. Petrol at 153.5p/litre. EV at 26.1p/kWh home,
+            79p/kWh public, 3.5 mi/kWh. PHEV assumes 30 mile electric range,
             40 MPG hybrid mode, charged at home.
           </p>
         </section>

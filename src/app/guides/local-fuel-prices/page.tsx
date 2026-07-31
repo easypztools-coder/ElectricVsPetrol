@@ -21,11 +21,11 @@ const faqItems = [
   },
   {
     q: "What is the cheapest way to charge an EV at home in the UK?",
-    a: "A specialist EV overnight tariff such as Octopus Go offers rates as low as 7p/kWh during off-peak hours (typically midnight to 5am). Compared to a standard tariff at ~28p/kWh, this cuts home-charging cost from ~8p/mile to ~2p/mile — making home overnight charging dramatically cheaper than any alternative.",
+    a: "A specialist EV overnight tariff such as Octopus Go offers rates as low as 7p/kWh during off-peak hours (typically midnight to 5am). Compared to the current standard tariff at 26.1p/kWh (the Ofgem price cap rate), this cuts home-charging cost from ~7.5p/mile to ~2p/mile — making home overnight charging dramatically cheaper than any alternative.",
   },
   {
     q: "Is public rapid charging cheaper or more expensive than petrol?",
-    a: "At current UK public rapid-charging prices of 60–80p/kWh, the electricity cost is 17–23p/mile for an EV doing 3.5 miles/kWh — comparable to or more expensive than a petrol car at ~14p/mile. EV economics depend heavily on home-charging access.",
+    a: "At current UK public rapid-charging prices, averaging 79p/kWh in mid-2026, the electricity cost is around 22.6p/mile for an EV doing 3.5 miles/kWh — more expensive than most petrol cars, which cost around 17p/mile at July 2026 prices. EV economics depend heavily on home-charging access.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function LocalFuelPricesGuidePage() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Last updated: June 2026
+        Last updated: July 2026
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">
@@ -129,19 +129,19 @@ export default function LocalFuelPricesGuidePage() {
               {[
                 {
                   region: "Supermarket forecourt, major city",
-                  range: "135–140p/litre",
+                  range: "145–150p/litre",
                 },
                 {
                   region: "Branded forecourt, suburban",
-                  range: "143–150p/litre",
+                  range: "153–160p/litre",
                 },
                 {
                   region: "Motorway service station",
-                  range: "155–165p/litre",
+                  range: "165–175p/litre",
                 },
                 {
                   region: "Remote rural / island areas",
-                  range: "148–165p/litre",
+                  range: "158–175p/litre",
                 },
               ].map((row) => (
                 <div
@@ -184,7 +184,7 @@ export default function LocalFuelPricesGuidePage() {
             Octopus Go off-peak rate).
           </p>
           <p className="mb-4">
-            The difference between charging at 7p/kWh overnight vs paying 75p/kWh
+            The difference between charging at 7p/kWh overnight vs paying 79p/kWh
             at a rapid public charger is dramatic:
           </p>
 
@@ -199,14 +199,14 @@ export default function LocalFuelPricesGuidePage() {
                 },
                 {
                   label: "Standard home tariff",
-                  rate: "28p/kWh",
-                  ppm: "8.0p/mile",
+                  rate: "26.1p/kWh",
+                  ppm: "7.5p/mile",
                   color: "text-ev-blue",
                 },
                 {
                   label: "Public rapid charging",
-                  rate: "75p/kWh",
-                  ppm: "21.4p/mile",
+                  rate: "79p/kWh",
+                  ppm: "22.6p/mile",
                   color: "text-ev-amber",
                 },
               ].map((item) => (
@@ -374,7 +374,7 @@ export default function LocalFuelPricesGuidePage() {
               "Petrol varies by 20p/litre across the UK — enough to shift your annual fuel bill by £200. Discover why local prices (not national averages) give you a far more accurate EV vs petrol result.",
             url: "https://electricvspetrol.co.uk/guides/local-fuel-prices",
             datePublished: "2025-05-01",
-            dateModified: "2026-06-17",
+            dateModified: "2026-07-30",
             author: {
               "@type": "Organization",
               name: "ElectricVsPetrol.co.uk",

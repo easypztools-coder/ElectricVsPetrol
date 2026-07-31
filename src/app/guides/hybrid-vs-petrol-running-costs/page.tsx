@@ -65,7 +65,7 @@ export default function HybridVsPetrolRunningCostsPage() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3" />
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
         </svg>
-        Last updated: June 2026
+        Last updated: July 2026
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">

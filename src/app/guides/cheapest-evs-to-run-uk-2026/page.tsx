@@ -11,34 +11,34 @@ export const metadata: Metadata = {
 };
 
 const cheapestEvs = [
-  { rank: 1, model: "Hyundai Ioniq 6 SR RWD", miPerKwh: 4.2, ppm: 6.7, annual10k: 800, priceGbp: 38995 },
-  { rank: 2, model: "Tesla Model 3 Highland RWD", miPerKwh: 4.1, ppm: 6.8, annual10k: 829, priceGbp: 40990 },
-  { rank: 3, model: "MG4 Standard Range", miPerKwh: 4.0, ppm: 7.0, annual10k: 860, priceGbp: 26995 },
-  { rank: 4, model: "BYD Dolphin Comfort", miPerKwh: 4.0, ppm: 7.0, annual10k: 860, priceGbp: 28490 },
-  { rank: 5, model: "Fiat 500e (42kWh)", miPerKwh: 4.0, ppm: 7.0, annual10k: 860, priceGbp: 34995 },
-  { rank: 6, model: "Mini Cooper E", miPerKwh: 3.8, ppm: 7.4, annual10k: 900, priceGbp: 31110 },
-  { rank: 7, model: "Cupra Born 77kWh", miPerKwh: 3.8, ppm: 7.4, annual10k: 900, priceGbp: 33905 },
-  { rank: 8, model: "Renault Megane E-Tech", miPerKwh: 3.8, ppm: 7.4, annual10k: 900, priceGbp: 34895 },
-  { rank: 9, model: "Kia EV6 SR RWD", miPerKwh: 3.8, ppm: 7.4, annual10k: 900, priceGbp: 38745 },
-  { rank: 10, model: "Polestar 2 LR Single Motor", miPerKwh: 3.5, ppm: 8.0, annual10k: 980, priceGbp: 45900 },
+  { rank: 1, model: "Hyundai Ioniq 6 SR RWD", miPerKwh: 4.2, ppm: 6.2, annual10k: 873, priceGbp: 38995 },
+  { rank: 2, model: "Tesla Model 3 Highland RWD", miPerKwh: 4.1, ppm: 6.4, annual10k: 895, priceGbp: 40990 },
+  { rank: 3, model: "MG4 Standard Range", miPerKwh: 4.0, ppm: 6.5, annual10k: 917, priceGbp: 26995 },
+  { rank: 4, model: "BYD Dolphin Comfort", miPerKwh: 4.0, ppm: 6.5, annual10k: 917, priceGbp: 28490 },
+  { rank: 5, model: "Fiat 500e (42kWh)", miPerKwh: 4.0, ppm: 6.5, annual10k: 917, priceGbp: 34995 },
+  { rank: 6, model: "Mini Cooper E", miPerKwh: 3.8, ppm: 6.9, annual10k: 965, priceGbp: 31110 },
+  { rank: 7, model: "Cupra Born 77kWh", miPerKwh: 3.8, ppm: 6.9, annual10k: 965, priceGbp: 33905 },
+  { rank: 8, model: "Renault Megane E-Tech", miPerKwh: 3.8, ppm: 6.9, annual10k: 965, priceGbp: 34895 },
+  { rank: 9, model: "Kia EV6 SR RWD", miPerKwh: 3.8, ppm: 6.9, annual10k: 965, priceGbp: 38745 },
+  { rank: 10, model: "Polestar 2 LR Single Motor", miPerKwh: 3.5, ppm: 7.5, annual10k: 1048, priceGbp: 45900 },
 ];
 
 const faqItems = [
   {
     q: "What is the cheapest EV to run per mile in the UK in 2026?",
-    a: "The Hyundai Ioniq 6 Standard Range RWD and Tesla Model 3 (2024 Highland) are the most efficient EVs in the UK market at 4.1–4.2 miles per kWh. At a standard home tariff of 28p/kWh, this equates to approximately 6.7–6.8p per mile — roughly half the cost of a 40 MPG petrol car.",
+    a: "The Hyundai Ioniq 6 Standard Range RWD and Tesla Model 3 (2024 Highland) are the most efficient EVs in the UK market at 4.1–4.2 miles per kWh. At the current 26.1p/kWh Ofgem price cap home tariff, this equates to approximately 6.2–6.4p per mile — roughly a third of the cost of a 40 MPG petrol car at July 2026 fuel prices.",
   },
   {
     q: "How much does it cost to run an EV per year in the UK?",
-    a: "At 10,000 miles per year with 80% home charging (28p/kWh) and 20% public rapid charging (60p/kWh), the most efficient EVs cost £700–£900 per year. Average EVs cost £900–£1,200 per year. Less efficient larger EVs and SUVs cost £1,200–£1,600 per year at 10,000 miles.",
+    a: "At 10,000 miles per year with 80% home charging (26.1p/kWh) and 20% public rapid charging (79p/kWh), the most efficient EVs cost £850–£950 per year. Average EVs cost £950–£1,300 per year. Less efficient larger EVs and SUVs cost £1,300–£1,700 per year at 10,000 miles.",
   },
   {
     q: "Is the MG4 the cheapest EV to buy and run?",
-    a: "The MG4 Standard Range at £26,995 offers among the best combination of low purchase price and efficient running costs (4.0 miles/kWh, 7p per mile). It's not the absolute cheapest per mile — the Ioniq 6 and Model 3 are more efficient — but no other EV matches its combination of low price and sub-8p running costs.",
+    a: "The MG4 Standard Range at £26,995 offers among the best combination of low purchase price and efficient running costs (4.0 miles/kWh, 6.5p per mile). It's not the absolute cheapest per mile — the Ioniq 6 and Model 3 are more efficient — but no other EV matches its combination of low price and sub-7p running costs.",
   },
   {
     q: "Do overnight EV tariffs make a significant difference?",
-    a: "Yes, dramatically. On a standard tariff at 28p/kWh, the Ioniq 6 costs 6.7p per mile. On an overnight EV tariff like Octopus Go at 7p/kWh, this drops to 1.7p per mile — less than a quarter of the standard rate. At 10,000 miles per year this difference amounts to £500 annually.",
+    a: "Yes, dramatically. On the current standard tariff at 26.1p/kWh, the Ioniq 6 costs 6.2p per mile. On an overnight EV tariff like Octopus Go at 7p/kWh, this drops to 1.7p per mile — less than a third of the standard rate. At 10,000 miles per year this difference amounts to around £450 annually.",
   },
 ];
 
@@ -68,7 +68,7 @@ export default function CheapestEvsToRunPage() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Last updated: June 2026 · Based on 28p/kWh home charging
+        Last updated: July 2026 · Based on 26.1p/kWh home charging
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">
@@ -98,7 +98,7 @@ export default function CheapestEvsToRunPage() {
             Top 10 cheapest EVs to run: pence per mile ranked
           </h2>
           <p className="text-sm text-ev-grey mb-4">
-            Based on real-world efficiency data. Cost per mile calculated at 28p/kWh home charging. Annual cost at 10,000 miles, 80% home / 20% public (60p/kWh).
+            Based on real-world efficiency data. Cost per mile calculated at 26.1p/kWh home charging. Annual cost at 10,000 miles, 80% home / 20% public (79p/kWh).
           </p>
 
           <div className="overflow-x-auto">
@@ -134,7 +134,7 @@ export default function CheapestEvsToRunPage() {
             </table>
           </div>
           <p className="text-xs text-ev-grey mt-2">
-            Prices correct at June 2026. Real-world efficiency varies with driving style, speed, and temperature.
+            Prices correct at July 2026. Real-world efficiency varies with driving style, speed, and temperature.
           </p>
         </section>
 
@@ -154,7 +154,7 @@ export default function CheapestEvsToRunPage() {
           </p>
           <p>
             The annual saving versus a Volkswagen Golf 1.5 eTSI at 44 MPG is
-            approximately £630. At the £26,995 purchase price, that&apos;s a rapid
+            approximately £670. At the £26,995 purchase price, that&apos;s a rapid
             payback on any premium over an equivalent petrol hatchback.
           </p>
         </section>
@@ -174,8 +174,8 @@ export default function CheapestEvsToRunPage() {
             <div className="grid grid-cols-3 gap-4">
               <div>
                 <p className="text-xs text-ev-grey mb-1">Ioniq 6 — standard tariff</p>
-                <p className="text-xl font-bold text-ev-green">6.7p/mile</p>
-                <p className="text-xs text-ev-grey">£800/year at 10k miles</p>
+                <p className="text-xl font-bold text-ev-green">6.2p/mile</p>
+                <p className="text-xs text-ev-grey">£873/year at 10k miles</p>
               </div>
               <div>
                 <p className="text-xs text-ev-grey mb-1">Ioniq 6 — overnight tariff</p>
@@ -184,13 +184,13 @@ export default function CheapestEvsToRunPage() {
               </div>
               <div>
                 <p className="text-xs text-ev-grey mb-1">Golf petrol (44 MPG)</p>
-                <p className="text-xl font-bold text-ev-amber">14.9p/mile</p>
-                <p className="text-xs text-ev-grey">£1,490/year at 10k miles</p>
+                <p className="text-xl font-bold text-ev-amber">15.8p/mile</p>
+                <p className="text-xs text-ev-grey">£1,583/year at 10k miles</p>
               </div>
             </div>
           </div>
           <p className="text-xs text-ev-grey mt-2">
-            Octopus Go off-peak rate 7p/kWh; standard tariff 28p/kWh; petrol 143.9p/litre.
+            Octopus Go off-peak rate 7p/kWh; standard tariff 26.1p/kWh; petrol 153.5p/litre.
           </p>
         </section>
 
@@ -207,10 +207,10 @@ export default function CheapestEvsToRunPage() {
           </p>
           <ul className="space-y-2 text-sm">
             {[
-              "Kia EV9 (3.0 mi/kWh) — 9.3p/mile home, £1,140/year at 10k miles",
-              "BMW iX3 / iX (2.8–3.2 mi/kWh) — 8.8–10p/mile home",
-              "Audi e-tron / Q8 e-tron (2.5–2.8 mi/kWh) — 10–11.2p/mile home",
-              "Mercedes EQS 580 (2.5 mi/kWh) — 11.2p/mile home",
+              "Kia EV9 (3.0 mi/kWh) — 8.7p/mile home, £1,223/year at 10k miles",
+              "BMW iX3 / iX (2.8–3.2 mi/kWh) — 8.2–9.3p/mile home",
+              "Audi e-tron / Q8 e-tron (2.5–2.8 mi/kWh) — 9.3–10.4p/mile home",
+              "Mercedes EQS 580 (2.5 mi/kWh) — 10.4p/mile home",
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">
                 <span className="text-ev-amber mt-0.5 flex-shrink-0">!</span>

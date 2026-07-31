@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "EV vs Petrol Running Costs UK: The Complete 2026 Guide",
   description:
-    "Could you save £900 a year switching to an EV? This UK guide explains exactly what drives the difference — home vs public charging, real-world efficiency, and the break-even point. Updated 2026.",
+    "Could you save £800 a year switching to an EV? This UK guide explains exactly what drives the difference — home vs public charging, real-world efficiency, and the break-even point. Updated July 2026.",
   alternates: {
     canonical:
       "https://electricvspetrol.co.uk/guides/ev-vs-petrol-running-costs",
@@ -14,19 +14,19 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "How much does it cost per mile to run an EV in the UK?",
-    a: "At typical UK home charging rates of around 28p/kWh and an EV efficiency of 3.5 miles/kWh, the electricity cost is roughly 8p per mile. If you rely heavily on public rapid charging at 70p/kWh, that rises to around 20p per mile — comparable to a petrol car.",
+    a: "At the current UK home electricity rate of 26.1p/kWh (Ofgem price cap, July–September 2026) and an EV efficiency of 3.5 miles/kWh, the electricity cost is roughly 7.5p per mile. If you rely heavily on public rapid charging — which averaged 79p/kWh across UK networks in mid-2026 — that rises to around 22.6p per mile, more expensive than most petrol cars.",
   },
   {
     q: "Is it cheaper to run an electric car than a petrol car?",
-    a: "For most drivers who can charge at home overnight, yes — often significantly cheaper. A typical 10,000-mile-per-year driver charging 80% at home can save £700–£1,200 per year compared to a petrol car. Drivers who rely on public charging see much smaller savings, or in some cases higher costs.",
+    a: "For most drivers who can charge at home overnight, yes — often significantly cheaper, and the gap has widened as electricity prices fell and petrol rose in 2026. A typical 10,000-mile-per-year driver charging 80% at home can save around £500 per year compared to petrol, rising to roughly £800 if charging entirely at home. Drivers who rely more heavily on public charging see much smaller savings, or now higher costs, since public rates have risen sharply.",
   },
   {
     q: "What is the break-even point for buying an EV?",
-    a: "The break-even point depends on the price difference between the EV and your petrol car, and your annual running cost saving. With a £2,500 premium and £900/year saving, break-even is around 2.8 years. With a larger £10,000 premium, it could be 10+ years.",
+    a: "The break-even point depends on the price difference between the EV and your petrol car, and your annual running cost saving. With a £2,500 premium and a £500/year saving (typical for an 80%-home-charging driver vs petrol), break-even is around 5 years. With a larger £10,000 premium, it could be 20 years or more.",
   },
   {
     q: "Does public charging make EVs more expensive than petrol?",
-    a: "Yes, it can. Rapid charging on public networks typically costs 60–80p/kWh. At 80p/kWh with an EV doing 3.5 miles/kWh, the electricity cost is 22.9p/mile — higher than many petrol cars. Home charging overnight is essential for EVs to be economically competitive.",
+    a: "Yes, now more than it used to. Rapid charging on public networks averaged 79p/kWh across the UK in mid-2026, with a range of roughly 62–90p/kWh depending on the network. At the 79p average and 3.5 miles/kWh, the electricity cost is 22.6p/mile — higher than most petrol cars. Home charging overnight is essential for EVs to be economically competitive.",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function EvVsPetrolGuidePage() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Last updated: June 2026
+        Last updated: July 2026
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">
@@ -118,16 +118,18 @@ export default function EvVsPetrolGuidePage() {
           </p>
           <p className="mb-4">
             <strong className="text-navy">Home charging</strong> on a standard
-            tariff costs around 24–32p/kWh in 2026. On a dedicated EV overnight
+            tariff costs around 26.1p/kWh in mid-2026 (the Ofgem price cap rate for
+            July–September). On a dedicated EV overnight
             tariff (like Octopus Go), this can fall to 7–10p/kWh during off-peak
-            hours. At 28p/kWh and 3.5 miles/kWh, home charging costs about{" "}
-            <strong className="text-navy">8p per mile</strong>.
+            hours. At 26.1p/kWh and 3.5 miles/kWh, home charging costs about{" "}
+            <strong className="text-navy">7.5p per mile</strong>.
           </p>
           <p>
             <strong className="text-navy">Public rapid charging</strong> on
             networks like Pod Point, Osprey, or Gridserve typically costs
-            60–80p/kWh. At 75p/kWh, that&apos;s{" "}
-            <strong className="text-navy">21p per mile</strong> — more expensive
+            62–90p/kWh, averaging around 79p/kWh across UK networks in mid-2026.
+            At that average, that&apos;s{" "}
+            <strong className="text-navy">22.6p per mile</strong> — more expensive
             than most petrol cars at current UK pump prices.
           </p>
         </section>
@@ -141,9 +143,9 @@ export default function EvVsPetrolGuidePage() {
             Petrol and diesel running costs
           </h2>
           <p className="mb-4">
-            A petrol car doing 45 MPG at 143.9p/litre costs approximately
-            14.4p per mile in fuel. A diesel at 55 MPG and 151.9p/litre costs
-            around 12.6p per mile.
+            A petrol car doing 45 MPG at 153.5p/litre costs approximately
+            15.5p per mile in fuel. A diesel at 55 MPG and 168.6p/litre costs
+            around 13.9p per mile.
           </p>
           <p className="mb-4">
             Annual fuel costs for a 10,000-mile driver at these figures:
@@ -152,25 +154,31 @@ export default function EvVsPetrolGuidePage() {
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
                 <p className="text-ev-grey mb-1">Petrol — 45 MPG</p>
-                <p className="text-xl font-bold text-ev-amber">~£1,450/yr</p>
+                <p className="text-xl font-bold text-ev-amber">~£1,550/yr</p>
               </div>
               <div>
                 <p className="text-ev-grey mb-1">Diesel — 55 MPG</p>
-                <p className="text-xl font-bold text-ev-amber">~£1,253/yr</p>
+                <p className="text-xl font-bold text-ev-amber">~£1,394/yr</p>
               </div>
               <div>
                 <p className="text-ev-grey mb-1">EV — 80% home charging</p>
-                <p className="text-xl font-bold text-ev-green">~£549/yr</p>
+                <p className="text-xl font-bold text-ev-green">~£1,048/yr</p>
               </div>
               <div>
                 <p className="text-ev-grey mb-1">EV — 50% home charging</p>
-                <p className="text-xl font-bold text-ev-green">~£857/yr</p>
+                <p className="text-xl font-bold text-ev-amber">~£1,502/yr</p>
               </div>
             </div>
           </div>
+          <p className="text-xs text-ev-grey mb-4">
+            Note the reversal at 50% home charging: with public rapid charging
+            now averaging 79p/kWh, an EV charged half the time on public
+            networks costs more than diesel and about the same as petrol. Home
+            charging access is what makes the EV case work in 2026.
+          </p>
           <p className="text-xs text-ev-grey">
-            Based on defaults: 10,000 mi/yr, 3.5 mi/kWh EV efficiency, 28p/kWh
-            home, 60p/kWh public.
+            Based on defaults: 10,000 mi/yr, 3.5 mi/kWh EV efficiency, 26.1p/kWh
+            home, 79p/kWh public.
           </p>
         </section>
 
@@ -312,10 +320,10 @@ export default function EvVsPetrolGuidePage() {
             "@type": "Article",
             headline: "EV vs Petrol Running Costs: The Complete 2026 UK Guide",
             description:
-              "Could you save £900 a year switching to an EV? This UK guide explains exactly what drives the difference — home vs public charging, real-world efficiency, and the break-even point.",
+              "Could you save £800 a year switching to an EV? This UK guide explains exactly what drives the difference — home vs public charging, real-world efficiency, and the break-even point.",
             url: "https://electricvspetrol.co.uk/guides/ev-vs-petrol-running-costs",
             datePublished: "2025-05-01",
-            dateModified: "2026-06-17",
+            dateModified: "2026-07-30",
             author: {
               "@type": "Organization",
               name: "ElectricVsPetrol.co.uk",

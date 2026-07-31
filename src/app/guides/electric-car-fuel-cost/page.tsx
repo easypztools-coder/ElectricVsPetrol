@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Electric Car Fuel Cost UK 2026 | How Much Does It Cost to Charge?",
   description:
-    "Home charging costs 7–8p per mile. Public rapid charging can reach 20p/mile. See the exact electric car fuel cost per mile, per week and per year based on current 2026 UK electricity prices.",
+    "Home charging costs 6.5–8p per mile. Public rapid charging can reach 26p/mile. See the exact electric car fuel cost per mile, per week and per year based on current 2026 UK electricity prices.",
   alternates: {
     canonical:
       "https://electricvspetrol.co.uk/guides/electric-car-fuel-cost",
@@ -14,19 +14,19 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "How much does it cost to 'fuel' an electric car in the UK in 2026?",
-    a: "The cost depends entirely on where you charge. At a standard home tariff of 28p/kWh, a typical EV costs 7–8p per mile. On an overnight EV tariff (7p/kWh), this drops to 2p per mile. At a public rapid charger (60–80p/kWh), it can rise to 17–23p per mile — comparable to or higher than petrol.",
+    a: "The cost depends entirely on where you charge. At the current 26.1p/kWh Ofgem price cap rate, a typical EV costs 6.5–8p per mile. On an overnight EV tariff (7p/kWh), this drops to 2p per mile. At a public rapid charger (62–90p/kWh, averaging 79p/kWh in mid-2026), it can rise to 18–26p per mile — comparable to or higher than petrol.",
   },
   {
     q: "What is the average annual electricity cost for an EV in the UK?",
-    a: "At 10,000 miles per year with 80% home charging at 28p/kWh and 20% public charging at 60p/kWh, the average EV costs around £700–£1,000 per year in electricity. Switching to an overnight tariff can reduce this to £300–£500 per year. At 20,000 miles per year, expect approximately £1,400–£2,000 per year.",
+    a: "At 10,000 miles per year with 80% home charging at 26.1p/kWh and 20% public charging at 79p/kWh, the average EV costs around £850–£1,250 per year in electricity. Switching to an overnight tariff can reduce this to £300–£500 per year. At 20,000 miles per year, expect approximately £1,700–£2,500 per year.",
   },
   {
     q: "Is charging an EV cheaper than petrol or diesel in 2026?",
-    a: "For most home chargers, yes — significantly. An EV at 3.5 miles/kWh and 28p/kWh home charging costs 8p per mile, about half the 14p per mile of a 45 MPG petrol car. Even at 50% home charging, the EV is usually cheaper. Only at 100% public rapid charging does the EV approach or exceed the cost of petrol per mile.",
+    a: "For most home chargers, yes — significantly, and more so than a few months ago. An EV at 3.5 miles/kWh and the current 26.1p/kWh home rate costs 7.5p per mile, about half the 15.5p per mile of a 45 MPG petrol car at July 2026 fuel prices. Even at 50% home charging, the EV is usually cheaper. Only at 100% public rapid charging does the EV now clearly exceed the cost of petrol per mile — public rates rose sharply through 2026.",
   },
   {
     q: "How much does it cost to fully charge an electric car in the UK?",
-    a: "Charging a 60kWh battery from empty to full costs approximately £16.80 at home on a standard tariff (28p/kWh), £4.20 on an overnight EV tariff (7p/kWh), or £36–£48 on a public rapid charger (60–80p/kWh). Most drivers never charge from empty to full — typical top-ups use smaller amounts.",
+    a: "Charging a 60kWh battery from empty to full costs approximately £15.66 at home on the current Ofgem price cap tariff (26.1p/kWh), £4.20 on an overnight EV tariff (7p/kWh), or £37–£54 on a public rapid charger (62–90p/kWh). Most drivers never charge from empty to full — typical top-ups use smaller amounts.",
   },
 ];
 
@@ -66,14 +66,14 @@ export default function ElectricCarFuelCostPage() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Last updated: June 2026
+        Last updated: July 2026
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">
         Unlike a petrol or diesel car where fuel prices are displayed on every
         forecourt, the cost of &ldquo;fuel&rdquo; for an electric car depends on
-        where you charge, when you charge, and which tariff you're on.
-        Here's what you can expect to pay in 2026.
+        where you charge, when you charge, and which tariff you&apos;re on.
+        Here&apos;s what you can expect to pay in 2026.
       </p>
 
       <div className="bg-ev-blue/5 border border-ev-blue/20 rounded-2xl p-5 mb-10">
@@ -112,16 +112,16 @@ export default function ElectricCarFuelCostPage() {
               <div className="bg-white rounded-lg p-3 border border-border-light">
                 <p className="text-xs text-ev-grey mb-1">Home (standard tariff)</p>
                 <p className="text-2xl font-bold text-ev-green font-display" style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}>
-                  8p
+                  7.5p
                 </p>
-                <p className="text-xs text-ev-grey">per mile at 28p/kWh</p>
+                <p className="text-xs text-ev-grey">per mile at 26.1p/kWh</p>
               </div>
               <div className="bg-white rounded-lg p-3 border border-border-light">
                 <p className="text-xs text-ev-grey mb-1">Public rapid charger</p>
                 <p className="text-2xl font-bold text-ev-amber font-display" style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}>
-                  20p
+                  22.6p
                 </p>
-                <p className="text-xs text-ev-grey">per mile at 70p/kWh</p>
+                <p className="text-xs text-ev-grey">per mile at 79p/kWh</p>
               </div>
             </div>
           </div>
@@ -144,25 +144,25 @@ export default function ElectricCarFuelCostPage() {
               <div>
                 <p className="text-xs text-ev-grey mb-1">10,000 miles per year</p>
                 <div className="space-y-1">
-                  <p className="flex justify-between"><span>Petrol (45 MPG)</span><span className="font-bold text-ev-amber">~£1,440/yr</span></p>
-                  <p className="flex justify-between"><span>EV (80% home)</span><span className="font-bold text-ev-green">~£549/yr</span></p>
-                  <p className="flex justify-between"><span>EV (overnight tariff)</span><span className="font-bold text-ev-green">~£171/yr</span></p>
-                  <p className="flex justify-between"><span>EV (public only)</span><span className="font-bold text-ev-amber">~£1,714/yr</span></p>
+                  <p className="flex justify-between"><span>Petrol (45 MPG)</span><span className="font-bold text-ev-amber">~£1,550/yr</span></p>
+                  <p className="flex justify-between"><span>EV (80% home)</span><span className="font-bold text-ev-green">~£1,048/yr</span></p>
+                  <p className="flex justify-between"><span>EV (overnight tariff)</span><span className="font-bold text-ev-green">~£200/yr</span></p>
+                  <p className="flex justify-between"><span>EV (public only)</span><span className="font-bold text-ev-amber">~£2,257/yr</span></p>
                 </div>
               </div>
               <div>
                 <p className="text-xs text-ev-grey mb-1">20,000 miles per year</p>
                 <div className="space-y-1">
-                  <p className="flex justify-between"><span>Petrol (45 MPG)</span><span className="font-bold text-ev-amber">~£2,878/yr</span></p>
-                  <p className="flex justify-between"><span>EV (80% home)</span><span className="font-bold text-ev-green">~£1,099/yr</span></p>
-                  <p className="flex justify-between"><span>EV (overnight tariff)</span><span className="font-bold text-ev-green">~£343/yr</span></p>
-                  <p className="flex justify-between"><span>EV (public only)</span><span className="font-bold text-ev-amber">~£3,429/yr</span></p>
+                  <p className="flex justify-between"><span>Petrol (45 MPG)</span><span className="font-bold text-ev-amber">~£3,101/yr</span></p>
+                  <p className="flex justify-between"><span>EV (80% home)</span><span className="font-bold text-ev-green">~£2,096/yr</span></p>
+                  <p className="flex justify-between"><span>EV (overnight tariff)</span><span className="font-bold text-ev-green">~£400/yr</span></p>
+                  <p className="flex justify-between"><span>EV (public only)</span><span className="font-bold text-ev-amber">~£4,514/yr</span></p>
                 </div>
               </div>
             </div>
           </div>
           <p className="text-xs text-ev-grey">
-            Petrol at 143.9p/litre. EV at 3.5 mi/kWh. Home rate 28p/kWh. Public 60p/kWh. Overnight 7p/kWh (80% home scenario uses 80% home / 20% public split).
+            Petrol at 153.5p/litre. EV at 3.5 mi/kWh. Home rate 26.1p/kWh. Public 79p/kWh. Overnight 7p/kWh (80% home scenario uses 80% home / 20% public split).
           </p>
         </section>
 
@@ -180,19 +180,19 @@ export default function ElectricCarFuelCostPage() {
                 <tr className="border-b border-border-light">
                   <th className="text-left py-2 pr-3 text-xs text-ev-grey font-medium">EV Model</th>
                   <th className="text-right py-2 pr-3 text-xs text-ev-grey font-medium">Battery</th>
-                  <th className="text-right py-2 pr-3 text-xs text-ev-grey font-medium">Home (28p)</th>
+                  <th className="text-right py-2 pr-3 text-xs text-ev-grey font-medium">Home (26.1p)</th>
                   <th className="text-right py-2 pr-3 text-xs text-ev-grey font-medium">Overnight (7p)</th>
-                  <th className="text-right py-2 text-xs text-ev-grey font-medium">Public (70p)</th>
+                  <th className="text-right py-2 text-xs text-ev-grey font-medium">Public (79p)</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { model: "MG4 Standard Range", bat: "51 kWh", home: "£14.28", night: "£3.57", pub: "£35.70" },
-                  { model: "Tesla Model 3 RWD", bat: "60 kWh", home: "£16.80", night: "£4.20", pub: "£42.00" },
-                  { model: "Hyundai Ioniq 5 SR", bat: "58 kWh", home: "£16.24", night: "£4.06", pub: "£40.60" },
-                  { model: "Kia EV6 LR RWD", bat: "77 kWh", home: "£21.56", night: "£5.39", pub: "£53.90" },
-                  { model: "Tesla Model Y LR", bat: "75 kWh", home: "£21.00", night: "£5.25", pub: "£52.50" },
-                  { model: "BMW i4 eDrive40", bat: "81 kWh", home: "£22.68", night: "£5.67", pub: "£56.70" },
+                  { model: "MG4 Standard Range", bat: "51 kWh", home: "£13.31", night: "£3.57", pub: "£40.29" },
+                  { model: "Tesla Model 3 RWD", bat: "60 kWh", home: "£15.66", night: "£4.20", pub: "£47.40" },
+                  { model: "Hyundai Ioniq 5 SR", bat: "58 kWh", home: "£15.14", night: "£4.06", pub: "£45.82" },
+                  { model: "Kia EV6 LR RWD", bat: "77 kWh", home: "£20.10", night: "£5.39", pub: "£60.83" },
+                  { model: "Tesla Model Y LR", bat: "75 kWh", home: "£19.58", night: "£5.25", pub: "£59.25" },
+                  { model: "BMW i4 eDrive40", bat: "81 kWh", home: "£21.14", night: "£5.67", pub: "£63.99" },
                 ].map((row) => (
                   <tr key={row.model} className="border-b border-border-light">
                     <td className="py-2 pr-3 font-medium text-navy">{row.model}</td>

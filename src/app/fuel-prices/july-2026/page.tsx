@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "UK Fuel Prices June 2026: Petrol 143.9p, Diesel 151.9p — EV Running Cost Impact",
+  title: "UK Fuel Prices July 2026: Petrol 153.5p, Diesel 168.6p — EV Running Cost Impact",
   description:
-    "UK petrol prices averaged 143.9p/litre in June 2026 and diesel 151.9p/litre. At these prices a 40 MPG petrol car costs 16.3p per mile — and a home-charging EV costs 8p per mile.",
+    "UK petrol prices jumped to 153.5p/litre in July 2026 and diesel to 168.6p/litre. At these prices a 40 MPG petrol car costs 17.4p per mile — and a home-charging EV costs 7.5p per mile.",
   alternates: {
-    canonical: "https://electricvspetrol.co.uk/fuel-prices/june-2026",
+    canonical: "https://electricvspetrol.co.uk/fuel-prices/july-2026",
   },
 };
 
-export default function FuelPricesJune2026Page() {
-  const PETROL = 143.9;
-  const DIESEL = 151.9;
+export default function FuelPricesJuly2026Page() {
+  const PETROL = 153.5;
+  const DIESEL = 168.6;
   const LITRES_PER_GALLON = 4.54609;
 
   function petrolPpm(mpg: number, ppl: number) {
@@ -28,20 +28,20 @@ export default function FuelPricesJune2026Page() {
           <li aria-hidden="true">/</li>
           <li><Link href="/fuel-prices" className="text-ev-blue hover:underline">Fuel Prices</Link></li>
           <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-navy">June 2026</li>
+          <li aria-current="page" className="text-navy">July 2026</li>
         </ol>
       </nav>
 
       <div className="mb-2">
         <span className="text-xs font-medium bg-ev-amber/10 text-ev-amber px-2.5 py-0.5 rounded-full">
-          June 2026
+          July 2026
         </span>
       </div>
       <h1
         className="text-4xl font-bold text-navy mb-4 font-display leading-tight"
         style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
       >
-        UK Fuel Prices June 2026
+        UK Fuel Prices July 2026
       </h1>
 
       <p className="text-sm text-ev-grey mb-6 flex items-center gap-1.5">
@@ -49,16 +49,19 @@ export default function FuelPricesJune2026Page() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Last updated: 19 June 2026 · Source: CMA Fuel Finder
+        Last updated: 30 July 2026 · Source: RAC Fuel Watch
       </p>
 
-      <div className="bg-off-white border border-border-light rounded-2xl p-5 mb-8">
+      <div className="bg-ev-amber/5 border border-ev-amber/20 rounded-2xl p-5 mb-8">
         <p className="text-sm text-navy leading-relaxed">
-          This is a historical snapshot. Prices have since moved —{" "}
-          <Link href="/fuel-prices/july-2026" className="text-ev-blue hover:underline font-medium">
-            see the current July 2026 fuel prices
-          </Link>{" "}
-          for up-to-date figures.
+          Petrol and diesel both rose sharply through July — diesel climbed
+          around 4p in ten days, petrol nearly 3p — while the Ofgem price cap
+          that took effect on 1 July cut the standard home electricity rate
+          from 28p/kWh to 26.1p/kWh. The combination has pushed the EV home-charging
+          advantage to its widest point in some time. Read the{" "}
+          <Link href="/blog/petrol-prices-spike-electricity-cap-falls-july-2026" className="text-ev-blue hover:underline">
+            full breakdown on the blog
+          </Link>.
         </p>
       </div>
 
@@ -82,7 +85,7 @@ export default function FuelPricesJune2026Page() {
             className="text-2xl font-bold text-navy mb-4 font-display"
             style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
           >
-            What June 2026 fuel prices mean per mile
+            What July 2026 fuel prices mean per mile
           </h2>
           <div className="overflow-x-auto rounded-xl border border-border-light">
             <table className="w-full text-sm">
@@ -108,14 +111,19 @@ export default function FuelPricesJune2026Page() {
                   </tr>
                 ))}
                 <tr className="bg-ev-green/5 border-t-2 border-ev-green/20">
-                  <td className="py-2.5 px-4 font-medium text-navy">EV — home charging (28p/kWh, 3.5 mi/kWh)</td>
-                  <td className="py-2.5 px-4 text-right text-ev-green font-bold">8.0p</td>
-                  <td className="py-2.5 px-4 text-right text-ev-green font-bold">£800</td>
+                  <td className="py-2.5 px-4 font-medium text-navy">EV — home charging (26.1p/kWh, 3.5 mi/kWh)</td>
+                  <td className="py-2.5 px-4 text-right text-ev-green font-bold">7.5p</td>
+                  <td className="py-2.5 px-4 text-right text-ev-green font-bold">£746</td>
                 </tr>
                 <tr className="bg-ev-green/5">
                   <td className="py-2.5 px-4 font-medium text-navy">EV — overnight tariff (7p/kWh, 3.5 mi/kWh)</td>
                   <td className="py-2.5 px-4 text-right text-ev-green font-bold">2.0p</td>
                   <td className="py-2.5 px-4 text-right text-ev-green font-bold">£200</td>
+                </tr>
+                <tr className="bg-ev-amber/5">
+                  <td className="py-2.5 px-4 font-medium text-navy">EV — public rapid only (79p/kWh, 3.5 mi/kWh)</td>
+                  <td className="py-2.5 px-4 text-right text-ev-amber font-bold">22.6p</td>
+                  <td className="py-2.5 px-4 text-right text-ev-amber font-bold">£2,257</td>
                 </tr>
               </tbody>
             </table>
@@ -127,19 +135,27 @@ export default function FuelPricesJune2026Page() {
             className="text-2xl font-bold text-navy mb-4 font-display"
             style={{ fontFamily: "var(--font-display, 'Space Grotesk', sans-serif)" }}
           >
-            Context: UK fuel price history
+            Context: a good month for home charging, a bad one for public-only EV drivers
           </h2>
           <p className="mb-4">
             UK petrol prices peaked at 191p/litre in July 2022 following the
-            Russian invasion of Ukraine and subsequent energy market disruption.
-            Prices fell through 2023 and have stabilised in the 140–155p/litre
-            range through 2025 and into 2026.
+            Russian invasion of Ukraine and subsequent energy market disruption,
+            then fell and stabilised through 2023–2025. The rise to 153.5p/litre
+            this month is the sharpest short-term increase since that period.
+          </p>
+          <p className="mb-4">
+            At current prices the running cost saving of a home-charging EV versus
+            a 40 MPG petrol car is approximately 9.9p per mile — or around £990
+            per year at 10,000 miles — noticeably wider than a month ago, mostly
+            because the Ofgem price cap cut the standard electricity rate at the
+            same time petrol rose.
           </p>
           <p>
-            At current prices the running cost saving of an EV versus a 40 MPG
-            petrol car is approximately 8.3p per mile — or £830 per year at
-            10,000 miles. This saving was as high as £1,400 per year in 2022
-            when petrol prices were near their peak.
+            The picture is very different for drivers who rely entirely on public
+            rapid charging: at 79p/kWh, averaged across UK rapid and ultra-rapid
+            networks in mid-2026, an EV without home charging access now costs
+            more per mile than most petrol cars. Whether an EV saves you money in
+            July 2026 depends more than ever on whether you can charge at home.
           </p>
         </section>
 
@@ -180,9 +196,10 @@ export default function FuelPricesJune2026Page() {
       <div className="mt-10 pt-8 border-t border-border-light">
         <h3 className="text-sm font-semibold text-navy mb-4">Related</h3>
         <ul className="space-y-2 text-sm">
+          <li><Link href="/blog/petrol-prices-spike-electricity-cap-falls-july-2026" className="text-ev-blue hover:underline">Petrol prices spike, electricity cap falls — what it means for EV savings →</Link></li>
+          <li><Link href="/fuel-prices/june-2026" className="text-ev-blue hover:underline">June 2026 fuel prices (previous month) →</Link></li>
           <li><Link href="/guides/local-fuel-prices" className="text-ev-blue hover:underline">Why local fuel prices matter for EV savings →</Link></li>
           <li><Link href="/faq/is-ev-cheaper-than-petrol-uk" className="text-ev-blue hover:underline">Is an EV cheaper than petrol in the UK? →</Link></li>
-          <li><Link href="/guides/ev-vs-petrol-running-costs" className="text-ev-blue hover:underline">EV vs Petrol Running Costs guide →</Link></li>
         </ul>
       </div>
 
@@ -195,7 +212,7 @@ export default function FuelPricesJune2026Page() {
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "https://electricvspetrol.co.uk" },
               { "@type": "ListItem", position: 2, name: "Fuel Prices", item: "https://electricvspetrol.co.uk/fuel-prices" },
-              { "@type": "ListItem", position: 3, name: "June 2026", item: "https://electricvspetrol.co.uk/fuel-prices/june-2026" },
+              { "@type": "ListItem", position: 3, name: "July 2026", item: "https://electricvspetrol.co.uk/fuel-prices/july-2026" },
             ],
           }),
         }}

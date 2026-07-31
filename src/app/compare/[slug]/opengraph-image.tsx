@@ -13,8 +13,8 @@ export async function generateStaticParams() {
 
 // ── Cost helpers (mirrors compare/[slug]/page.tsx) ──────────────
 const LITRES_PER_GALLON = 4.54609;
-const PETROL_PRICE = 143.9;
-const DIESEL_PRICE = 151.9;
+const PETROL_PRICE = 153.5;
+const DIESEL_PRICE = 168.6;
 
 function fuelCost(miles: number, mpg: number, pricePence: number) {
   return (miles / mpg) * LITRES_PER_GALLON * (pricePence / 100);
@@ -22,7 +22,7 @@ function fuelCost(miles: number, mpg: number, pricePence: number) {
 
 function evCost(miles: number, milesPerKwh: number) {
   const kWh = miles / milesPerKwh;
-  const blended = 0.8 * 28 + 0.2 * 60; // 80% home @ 28p, 20% public @ 60p
+  const blended = 0.8 * 26.1 + 0.2 * 79; // 80% home @ 26.1p, 20% public @ 79p
   return kWh * (blended / 100);
 }
 

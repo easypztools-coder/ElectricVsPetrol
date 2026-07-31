@@ -14,18 +14,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const ev = findEVModel(slug);
   if (!ev) return {};
-  const ppm = ((1 / ev.milesPerKwh) * 28).toFixed(1);
+  const ppm = ((1 / ev.milesPerKwh) * 26.1).toFixed(1);
   return {
     title: `${ev.displayName} Running Costs UK 2026: ${ppm}p Per Mile | ElectricVsPetrol`,
-    description: `Real-world running costs for the ${ev.displayName} in the UK — ${ev.milesPerKwh} miles/kWh, ${ppm}p per mile at standard home tariff, ${ev.realWorldRangeMiles}-mile real-world range. Updated June 2026.`,
+    description: `Real-world running costs for the ${ev.displayName} in the UK — ${ev.milesPerKwh} miles/kWh, ${ppm}p per mile at standard home tariff, ${ev.realWorldRangeMiles}-mile real-world range. Updated July 2026.`,
     alternates: {
       canonical: `https://electricvspetrol.co.uk/ev/${slug}`,
     },
   };
 }
 
-const HOME_RATE = 28;
-const PUBLIC_RATE = 60;
+const HOME_RATE = 26.1;
+const PUBLIC_RATE = 79;
 const MILEAGES = [8000, 10000, 12000, 15000, 20000];
 
 function annualCost(miles: number, milesPerKwh: number, homePct: number): number {
@@ -47,7 +47,7 @@ export default async function EVModelPage({ params }: Props) {
   const faqItems = [
     {
       q: `How much does the ${ev.displayName} cost per mile in the UK?`,
-      a: `At a standard home tariff of 28p/kWh, the ${ev.displayName} costs approximately ${ppm.toFixed(1)}p per mile. On an overnight EV tariff at 7p/kWh, this drops to ${((1 / ev.milesPerKwh) * 7).toFixed(1)}p per mile.`,
+      a: `At a standard home tariff of 26.1p/kWh (the Ofgem price cap rate for July–September 2026), the ${ev.displayName} costs approximately ${ppm.toFixed(1)}p per mile. On an overnight EV tariff at 7p/kWh, this drops to ${((1 / ev.milesPerKwh) * 7).toFixed(1)}p per mile.`,
     },
     {
       q: `What is the real-world range of the ${ev.displayName}?`,
@@ -59,7 +59,7 @@ export default async function EVModelPage({ params }: Props) {
     },
     {
       q: `How much does it cost to run a ${ev.displayName} per year in the UK?`,
-      a: `At 10,000 miles per year and 80% home charging (28p/kWh) with 20% public charging (60p/kWh), the ${ev.displayName} costs approximately £${Math.round(annualCost(10000, ev.milesPerKwh, 80))} per year in electricity.`,
+      a: `At 10,000 miles per year and 80% home charging (26.1p/kWh) with 20% public charging (79p/kWh), the ${ev.displayName} costs approximately £${Math.round(annualCost(10000, ev.milesPerKwh, 80))} per year in electricity.`,
     },
   ];
 
@@ -94,13 +94,13 @@ export default async function EVModelPage({ params }: Props) {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Last updated: June 2026
+        Last updated: July 2026
       </p>
 
       {/* Key stats strip */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
         {[
-          { label: "Cost per mile", value: `${ppm.toFixed(1)}p`, sub: "home 28p/kWh" },
+          { label: "Cost per mile", value: `${ppm.toFixed(1)}p`, sub: "home 26.1p/kWh" },
           { label: "Annual (10k mi)", value: `£${Math.round(annualCost(10000, ev.milesPerKwh, 80))}`, sub: "80% home" },
           { label: "Real-world range", value: `${ev.realWorldRangeMiles} mi`, sub: `WLTP: ${ev.wltpRangeMiles} mi` },
           { label: "Peak DC charge", value: `${ev.maxDcChargeKw}kW`, sub: ev.chargePort.split(" ")[0] },
@@ -134,7 +134,7 @@ export default async function EVModelPage({ params }: Props) {
             <thead>
               <tr className="bg-off-white">
                 <th className="text-left py-2.5 px-4 text-xs text-ev-grey font-medium">Annual mileage</th>
-                <th className="text-right py-2.5 px-4 text-xs text-ev-grey font-medium">100% home (28p)</th>
+                <th className="text-right py-2.5 px-4 text-xs text-ev-grey font-medium">100% home (26.1p)</th>
                 <th className="text-right py-2.5 px-4 text-xs text-ev-grey font-medium">80% home / 20% public</th>
                 <th className="text-right py-2.5 px-4 text-xs text-ev-grey font-medium">50/50 split</th>
               </tr>
@@ -152,7 +152,7 @@ export default async function EVModelPage({ params }: Props) {
           </table>
         </div>
         <p className="text-xs text-ev-grey mt-2">
-          Public charging rate: 60p/kWh. Costs calculated on real-world efficiency of {ev.milesPerKwh} mi/kWh.
+          Public charging rate: 79p/kWh. Costs calculated on real-world efficiency of {ev.milesPerKwh} mi/kWh.
         </p>
       </section>
 

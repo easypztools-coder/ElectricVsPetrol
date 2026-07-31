@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "Can I own an EV without a home charger in the UK?",
-    a: "Yes — but it changes the economics significantly. Without home charging you'll rely on public networks, which typically charge 60–80p/kWh versus 24–32p/kWh at home. This narrows or eliminates the running cost saving versus petrol. The convenience picture also changes: instead of 'plug in every night', you're planning charging stops into your routine.",
+    a: "Yes — but it changes the economics significantly, more so than it used to. Without home charging you'll rely on public networks, which averaged 79p/kWh across the UK in mid-2026 versus 26.1p/kWh at home on the current Ofgem price cap rate. This narrows or eliminates the running cost saving versus petrol — and on public rapid charging alone, an EV is now typically more expensive per mile than a petrol car. The convenience picture also changes: instead of 'plug in every night', you're planning charging stops into your routine.",
   },
   {
     q: "How much does public EV charging cost compared to petrol?",
-    a: "At typical public rapid charging rates of 70p/kWh and an EV doing 3.5 miles/kWh, electricity costs 20p per mile — comparable to a petrol car doing 32 MPG at current pump prices. On slower destination AC charging at 30–40p/kWh, costs drop to 8.6–11.4p per mile, which remains cheaper than petrol.",
+    a: "At the current public rapid charging average of 79p/kWh and an EV doing 3.5 miles/kWh, electricity costs 22.6p per mile — comparable to a petrol car doing around 31 MPG at July 2026 pump prices, and more than most petrol cars average. On slower destination AC charging at 30–40p/kWh, costs drop to 8.6–11.4p per mile, which remains cheaper than petrol.",
   },
   {
     q: "What about charging at work or using lamp post chargers?",
@@ -59,7 +59,7 @@ export default function IsEvWorthItWithoutHomeChargerPage() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Last updated: June 2026
+        Last updated: July 2026
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">
@@ -92,28 +92,30 @@ export default function IsEvWorthItWithoutHomeChargerPage() {
             The cost reality of public-only charging
           </h2>
           <p className="mb-4">
-            Home charging in 2026 costs 24–32p/kWh on a standard tariff. Public
-            rapid charging typically costs 60–80p/kWh. This is a 2–3× difference
-            in the price of electricity, which changes the running cost calculation
-            fundamentally.
+            Home charging costs 26.1p/kWh on the current Ofgem price cap rate
+            (July–September 2026). Public
+            rapid charging averaged 79p/kWh across UK networks in mid-2026, with
+            a range of roughly 62–90p/kWh depending on the network. This is a
+            2–3× difference in the price of electricity, which changes the
+            running cost calculation fundamentally.
           </p>
           <div className="bg-off-white border border-border-light rounded-xl p-4 my-4">
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <p className="text-ev-grey mb-1">EV — home charging (28p/kWh)</p>
-                <p className="text-xl font-bold text-ev-green">8p/mile</p>
+                <p className="text-ev-grey mb-1">EV — home charging (26.1p/kWh)</p>
+                <p className="text-xl font-bold text-ev-green">7.5p/mile</p>
               </div>
               <div>
-                <p className="text-ev-grey mb-1">EV — public rapid (70p/kWh)</p>
-                <p className="text-xl font-bold text-ev-amber">20p/mile</p>
+                <p className="text-ev-grey mb-1">EV — public rapid (79p/kWh)</p>
+                <p className="text-xl font-bold text-ev-amber">22.6p/mile</p>
               </div>
               <div>
                 <p className="text-ev-grey mb-1">Petrol — 40 MPG</p>
-                <p className="text-xl font-bold text-ev-amber">16.3p/mile</p>
+                <p className="text-xl font-bold text-ev-amber">17.4p/mile</p>
               </div>
               <div>
-                <p className="text-ev-grey mb-1">Petrol — 50 MPG diesel</p>
-                <p className="text-xl font-bold text-ev-amber">13.8p/mile</p>
+                <p className="text-ev-grey mb-1">Diesel — 50 MPG</p>
+                <p className="text-xl font-bold text-ev-amber">15.3p/mile</p>
               </div>
             </div>
           </div>
@@ -218,9 +220,10 @@ export default function IsEvWorthItWithoutHomeChargerPage() {
             What about the government&apos;s EV chargepoint grant?
           </h2>
           <p className="mb-4">
-            The OZEV Electric Vehicle Chargepoint Grant provides up to 75% of the
-            cost of a home charger installation (capped at £350), but it requires
-            off-street parking. If you don&apos;t have off-street parking, you
+            The EV chargepoint grant provides up to 75% of the
+            cost of a home charger installation (capped at £500, raised from £350
+            in April 2026), but it&apos;s only available to renters and flat owners with
+            dedicated off-street parking. If you don&apos;t have off-street parking, you
             cannot use this grant.
           </p>
           <p>
@@ -298,7 +301,7 @@ export default function IsEvWorthItWithoutHomeChargerPage() {
             headline: "Is an EV Worth It Without a Home Charger? UK Guide 2026",
             url: "https://electricvspetrol.co.uk/guides/is-ev-worth-it-without-home-charger",
             datePublished: "2026-06-19",
-            dateModified: "2026-06-19",
+            dateModified: "2026-07-30",
             author: { "@type": "Organization", name: "ElectricVsPetrol.co.uk", url: "https://electricvspetrol.co.uk" },
             publisher: { "@type": "Organization", name: "ElectricVsPetrol.co.uk", url: "https://electricvspetrol.co.uk" },
           }),

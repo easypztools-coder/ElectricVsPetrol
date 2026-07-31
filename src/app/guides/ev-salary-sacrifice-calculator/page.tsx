@@ -149,23 +149,23 @@ export default function EvSalarySacrificeCalculatorPage() {
               </p>
               <p className="flex justify-between">
                 <span>Petrol fuel cost (45 MPG, 10k mi/yr)</span>
-                <span className="font-bold text-ev-amber">£121/mo</span>
+                <span className="font-bold text-ev-amber">£129/mo</span>
               </p>
               <p className="flex justify-between">
                 <span>EV charging cost (80% home, 3.5 mi/kWh)</span>
-                <span className="font-bold text-ev-green">−£46/mo</span>
+                <span className="font-bold text-ev-green">−£49/mo</span>
               </p>
               <div className="border-t border-border-light pt-1 mt-1">
                 <p className="flex justify-between font-bold">
                   <span>Total monthly benefit</span>
-                  <span className="text-ev-green">~£275/mo saved</span>
+                  <span className="text-ev-green">~£280/mo saved</span>
                 </p>
               </div>
             </div>
           </div>
           <p className="text-xs text-ev-grey">
             Based on £500/mo lease, £500/mo gross salary sacrifice, 40% tax + 2% NI + 13.8% employer NI.
-            Petrol at 143.9p/litre. EV at 28p/kWh home / 60p/kWh public. Running costs are approximate.
+            Petrol at 153.5p/litre. EV at 26.1p/kWh home / 79p/kWh public. Running costs are approximate.
           </p>
         </section>
 
@@ -184,7 +184,7 @@ export default function EvSalarySacrificeCalculatorPage() {
           <ul className="space-y-2 mb-4">
             <li className="flex items-start gap-2">
               <span className="text-ev-blue mt-1 flex-shrink-0">1.</span>
-              <span className="text-sm">Get a salary sacrifice quote from your employer for the EV you're considering.</span>
+              <span className="text-sm">Get a salary sacrifice quote from your employer for the EV you&apos;re considering.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-ev-blue mt-1 flex-shrink-0">2.</span>

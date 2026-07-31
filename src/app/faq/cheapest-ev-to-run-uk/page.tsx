@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Cheapest EV to Run in the UK 2026: Which Electric Car Costs the Least?",
   description:
-    "The cheapest EV to run in the UK in 2026 is the Hyundai Ioniq 6 at 6.7p per mile, closely followed by the Tesla Model 3 at 6.8p per mile. Full ranked list with annual cost at 10,000 miles.",
+    "The cheapest EV to run in the UK in 2026 is the Hyundai Ioniq 6 at 6.2p per mile, closely followed by the Tesla Model 3 at 6.4p per mile. Full ranked list with annual cost at 10,000 miles.",
   alternates: {
     canonical: "https://electricvspetrol.co.uk/faq/cheapest-ev-to-run-uk",
   },
@@ -13,19 +13,19 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "What is the cheapest EV to run in the UK in 2026?",
-    a: "The Hyundai Ioniq 6 Standard Range RWD is the cheapest EV to run per mile in the UK in 2026, at approximately 6.7p per mile on a standard 28p/kWh home tariff. Its real-world efficiency of 4.2 miles per kWh — partly thanks to its world-record 0.21 Cd drag coefficient — gives it the edge over the Tesla Model 3 (6.8p/mile at 4.1 mi/kWh). On an overnight EV tariff at 7p/kWh, both models drop to under 2p per mile.",
+    a: "The Hyundai Ioniq 6 Standard Range RWD is the cheapest EV to run per mile in the UK in 2026, at approximately 6.2p per mile on the current 26.1p/kWh Ofgem price cap home tariff. Its real-world efficiency of 4.2 miles per kWh — partly thanks to its world-record 0.21 Cd drag coefficient — gives it the edge over the Tesla Model 3 (6.4p/mile at 4.1 mi/kWh). On an overnight EV tariff at 7p/kWh, both models drop to under 2p per mile.",
   },
   {
     q: "Which affordable EVs are the cheapest to run?",
-    a: "In the budget EV category (under £30,000), the MG4 and BYD Dolphin both achieve 4.0 miles/kWh — giving a running cost of 7p per mile on a standard home tariff. Both undercut most petrol equivalents by 7–8p per mile. The MG4 Standard Range starts at £26,995, making it the most cost-effective new EV purchase in the UK when combining low purchase price with low running costs.",
+    a: "In the budget EV category (under £30,000), the MG4 and BYD Dolphin both achieve 4.0 miles/kWh — giving a running cost of 6.5p per mile on the current home tariff. Both undercut most petrol equivalents by 10p+ per mile. The MG4 Standard Range starts at £26,995, making it the most cost-effective new EV purchase in the UK when combining low purchase price with low running costs.",
   },
   {
     q: "Is it cheaper to run an EV or a petrol car in the UK in 2026?",
-    a: "For home-charging EV owners, yes — significantly cheaper. At 28p/kWh home charging, the average EV costs 7–9p per mile. A petrol car averaging 40 MPG at 143.9p/litre costs approximately 16.3p per mile. This represents a saving of 7–9p per mile, or £700–£900 per year at 10,000 miles. Drivers without home charging who rely on public rapid charging (70p/kWh) pay around 20p per mile — comparable to a petrol car.",
+    a: "For home-charging EV owners, yes — significantly cheaper, and more so than a few months ago. At the current 26.1p/kWh Ofgem price cap rate, the average EV costs 6–8p per mile. A petrol car averaging 40 MPG at 153.5p/litre (July 2026) costs approximately 17.4p per mile. This represents a saving of roughly 10–11p per mile, or £1,000–£1,100 per year at 10,000 miles. Drivers without home charging who rely on public rapid charging (averaging 79p/kWh) pay around 22–23p per mile — more than a petrol car.",
   },
   {
     q: "How much does it cost to run the cheapest EV per year in the UK?",
-    a: "The Ioniq 6 SR costs approximately £800 per year in electricity at 10,000 miles with 80% home charging at 28p/kWh and 20% public charging at 60p/kWh. On a dedicated overnight tariff (7p/kWh for 100% of charging), the annual cost drops to around £200 — a remarkable figure for any motorised transport.",
+    a: "The Ioniq 6 SR costs approximately £873 per year in electricity at 10,000 miles with 80% home charging at 26.1p/kWh and 20% public charging at 79p/kWh. On a dedicated overnight tariff (7p/kWh for 100% of charging), the annual cost drops to around £200 — a remarkable figure for any motorised transport.",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function CheapestEvToRunUKPage() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Updated June 2026
+        Updated July 2026
       </p>
 
       {/* Direct answer */}
@@ -61,10 +61,10 @@ export default function CheapestEvToRunUKPage() {
         <p className="text-xs font-semibold text-ev-green uppercase tracking-wide mb-2">Quick answer</p>
         <p className="text-sm text-navy leading-relaxed">
           The <strong>Hyundai Ioniq 6 Standard Range RWD</strong> is the cheapest EV to run
-          per mile in the UK at <strong>6.7p per mile</strong> (28p/kWh home tariff).
-          The <strong>Tesla Model 3 Highland</strong> is close behind at <strong>6.8p per mile</strong>.
+          per mile in the UK at <strong>6.2p per mile</strong> (26.1p/kWh home tariff).
+          The <strong>Tesla Model 3 Highland</strong> is close behind at <strong>6.4p per mile</strong>.
           For lowest purchase price + running costs combined, the <strong>MG4</strong> at
-          £26,995 and <strong>7p per mile</strong> is the best budget option.
+          £26,995 and <strong>6.5p per mile</strong> is the best budget option.
         </p>
       </div>
 
@@ -89,14 +89,14 @@ export default function CheapestEvToRunUKPage() {
               </thead>
               <tbody>
                 {[
-                  { rank: 1, model: "Hyundai Ioniq 6 SR RWD", ppm: 6.7, annual: 800, price: "£38,995" },
-                  { rank: 2, model: "Tesla Model 3 RWD (Highland)", ppm: 6.8, annual: 829, price: "£40,990" },
-                  { rank: 3, model: "MG4 Standard Range", ppm: 7.0, annual: 860, price: "£26,995" },
-                  { rank: 4, model: "BYD Dolphin Comfort", ppm: 7.0, annual: 860, price: "£28,490" },
-                  { rank: 5, model: "Fiat 500e (42kWh)", ppm: 7.0, annual: 860, price: "£34,995" },
-                  { rank: 6, model: "Cupra Born 77kWh", ppm: 7.4, annual: 900, price: "£33,905" },
-                  { rank: 7, model: "Mini Cooper E", ppm: 7.4, annual: 900, price: "£31,110" },
-                  { rank: 8, model: "Renault Megane E-Tech EV60", ppm: 7.4, annual: 900, price: "£34,895" },
+                  { rank: 1, model: "Hyundai Ioniq 6 SR RWD", ppm: 6.2, annual: 873, price: "£38,995" },
+                  { rank: 2, model: "Tesla Model 3 RWD (Highland)", ppm: 6.4, annual: 895, price: "£40,990" },
+                  { rank: 3, model: "MG4 Standard Range", ppm: 6.5, annual: 917, price: "£26,995" },
+                  { rank: 4, model: "BYD Dolphin Comfort", ppm: 6.5, annual: 917, price: "£28,490" },
+                  { rank: 5, model: "Fiat 500e (42kWh)", ppm: 6.5, annual: 917, price: "£34,995" },
+                  { rank: 6, model: "Cupra Born 77kWh", ppm: 6.9, annual: 965, price: "£33,905" },
+                  { rank: 7, model: "Mini Cooper E", ppm: 6.9, annual: 965, price: "£31,110" },
+                  { rank: 8, model: "Renault Megane E-Tech EV60", ppm: 6.9, annual: 965, price: "£34,895" },
                 ].map((row) => (
                   <tr key={row.rank} className={row.rank % 2 === 0 ? "bg-off-white/50" : "bg-white"}>
                     <td className="py-3 px-4">
@@ -114,7 +114,7 @@ export default function CheapestEvToRunUKPage() {
             </table>
           </div>
           <p className="text-xs text-ev-grey mt-2">
-            Based on 28p/kWh home charging. Annual cost: 10,000 miles, 80% home / 20% public (60p/kWh).
+            Cost per mile based on 26.1p/kWh home charging. Annual cost: 10,000 miles, 80% home / 20% public (79p/kWh).
           </p>
         </section>
       </div>

@@ -2,12 +2,14 @@ import type { LocalPrices } from "@/lib/types/costCalculator";
 
 // ── Fallback / sample data ────────────────────────────────────────────────────
 // These are approximate UK national averages used when no live data is available.
-// Source: BEIS / UKPIA national fuel price statistics (updated manually).
+// Source: RAC Fuel Watch (fuel, July 2026), Ofgem price cap (electricity, Jul-Sep
+// 2026), Zapmap charging price index (public rapid/ultra-rapid, June 2026).
+// Updated manually — review quarterly alongside the Ofgem price cap change.
 export const FALLBACK_PRICES: LocalPrices = {
-  petrolPencePerLitre: 143.9,
-  dieselPencePerLitre: 151.9,
-  homeElectricityPencePerKwh: 28.0,
-  publicChargingPencePerKwh: 60.0,
+  petrolPencePerLitre: 153.5,
+  dieselPencePerLitre: 168.6,
+  homeElectricityPencePerKwh: 26.1,
+  publicChargingPencePerKwh: 79.0,
   source: "fallback",
 };
 

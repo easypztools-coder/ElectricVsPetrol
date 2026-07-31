@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How Much Does It Cost to Charge a Tesla at Home UK? (2026)",
   description:
-    "Charging a Tesla at home in the UK costs between £4.20 and £11.97 for a full charge depending on your tariff and model. We break down the exact figures for Model 3, Model Y, and Model S.",
+    "Charging a Tesla at home in the UK costs between £4.20 and £35.00 for a full charge depending on your tariff and model. We break down the exact figures for Model 3, Model Y, and Model S.",
   alternates: {
     canonical: "https://electricvspetrol.co.uk/faq/how-much-does-it-cost-to-charge-a-tesla-at-home-uk",
   },
@@ -22,22 +22,22 @@ const teslaModels = [
 
 const tariffs = [
   { label: "Octopus Go (off-peak)", rate: 7 },
-  { label: "Standard tariff", rate: 28 },
+  { label: "Standard tariff", rate: 26.1 },
   { label: "Peak standard tariff", rate: 35 },
 ];
 
 const faqItems = [
   {
     q: "How much does a full charge cost for a Tesla Model 3 at home?",
-    a: "A Tesla Model 3 RWD (Highland, 60kWh battery) costs between £4.20 and £21.00 for a full charge from empty, depending on your electricity tariff. On a standard 28p/kWh tariff, a full charge costs approximately £16.80. On an overnight EV tariff like Octopus Go at 7p/kWh, it costs around £4.20.",
+    a: "A Tesla Model 3 RWD (Highland, 60kWh battery) costs between £4.20 and £21.00 for a full charge from empty, depending on your electricity tariff. On the current 26.1p/kWh Ofgem price cap tariff, a full charge costs approximately £15.66. On an overnight EV tariff like Octopus Go at 7p/kWh, it costs around £4.20.",
   },
   {
     q: "How much does it cost to charge a Tesla Model Y at home?",
-    a: "A Tesla Model Y RWD (75kWh battery) costs between £5.25 and £26.25 for a full charge from empty. At a standard 28p/kWh tariff, a full charge costs approximately £21. On an overnight EV tariff at 7p/kWh, it costs £5.25.",
+    a: "A Tesla Model Y RWD (75kWh battery) costs between £5.25 and £26.25 for a full charge from empty. At the current 26.1p/kWh tariff, a full charge costs approximately £19.58. On an overnight EV tariff at 7p/kWh, it costs £5.25.",
   },
   {
     q: "Is charging a Tesla at home cheaper than petrol?",
-    a: "Yes, significantly cheaper for most drivers. At a standard 28p/kWh tariff, a Tesla Model 3 costs approximately 6.8p per mile to run — versus 16–18p per mile for a comparable petrol saloon. On a cheap overnight tariff at 7p/kWh, this drops to 1.7p per mile.",
+    a: "Yes, significantly cheaper for most drivers — and more so than a few months ago. At the current 26.1p/kWh Ofgem price cap tariff, a Tesla Model 3 costs approximately 6.4p per mile to run — versus 15–20p per mile for a comparable petrol saloon at July 2026 fuel prices. On a cheap overnight tariff at 7p/kWh, this drops to 1.7p per mile.",
   },
   {
     q: "What is the cheapest way to charge a Tesla at home in the UK?",
@@ -69,7 +69,7 @@ export default function TeslaHomeChargingCostPage() {
           <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
           <path d="M7 4v3.5l2 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
-        Updated June 2026 · UK electricity prices current
+        Updated July 2026 · UK electricity prices current
       </p>
 
       <p className="text-lg text-ev-grey mb-8 leading-relaxed">

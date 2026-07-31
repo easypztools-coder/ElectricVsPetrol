@@ -36,21 +36,21 @@ export default function FuelPricesIndexPage() {
 
       {/* Current prices card */}
       <div className="bg-off-white border border-border-light rounded-2xl p-6 mb-8">
-        <p className="text-xs font-semibold text-ev-grey uppercase tracking-wide mb-4">Current UK average prices (June 2026)</p>
+        <p className="text-xs font-semibold text-ev-grey uppercase tracking-wide mb-4">Current UK average prices (July 2026)</p>
         <div className="grid grid-cols-2 gap-6">
           <div>
             <p className="text-xs text-ev-grey mb-1">Unleaded petrol</p>
-            <p className="text-3xl font-bold text-ev-amber">143.9p</p>
+            <p className="text-3xl font-bold text-ev-amber">153.5p</p>
             <p className="text-xs text-ev-grey mt-1">per litre</p>
           </div>
           <div>
             <p className="text-xs text-ev-grey mb-1">Diesel</p>
-            <p className="text-3xl font-bold text-ev-amber">151.9p</p>
+            <p className="text-3xl font-bold text-ev-amber">168.6p</p>
             <p className="text-xs text-ev-grey mt-1">per litre</p>
           </div>
         </div>
         <p className="text-xs text-ev-grey mt-4">
-          Source: CMA Fuel Finder / BEIS pump price data. Updated regularly.
+          Source: RAC Fuel Watch / CMA Fuel Finder pump price data. Updated regularly.
         </p>
       </div>
 
@@ -64,15 +64,17 @@ export default function FuelPricesIndexPage() {
             What current fuel prices mean for EV running costs
           </h2>
           <p className="mb-4">
-            At 143.9p/litre for petrol, a car doing 40 MPG costs{" "}
-            <strong className="text-navy">16.3p per mile</strong> in fuel.
-            A car doing 50 MPG costs <strong className="text-navy">13.1p per mile</strong>.
-            A diesel at 55 MPG costs <strong className="text-navy">12.6p per mile</strong>.
+            At 153.5p/litre for petrol, a car doing 40 MPG costs{" "}
+            <strong className="text-navy">17.4p per mile</strong> in fuel.
+            A car doing 50 MPG costs <strong className="text-navy">14.0p per mile</strong>.
+            A diesel at 55 MPG costs <strong className="text-navy">13.9p per mile</strong>.
           </p>
           <p>
-            At a standard 28p/kWh home tariff, an EV doing 3.5 miles/kWh costs{" "}
-            <strong className="text-navy">8p per mile</strong>. On a dedicated overnight
-            tariff at 7p/kWh, this drops to <strong className="text-navy">2p per mile</strong>.
+            At the current 26.1p/kWh Ofgem price cap rate, an EV doing 3.5 miles/kWh costs{" "}
+            <strong className="text-navy">7.5p per mile</strong> charging at home. On a dedicated overnight
+            tariff at 7p/kWh, this drops to <strong className="text-navy">2p per mile</strong> — but relying
+            on public rapid charging at 79p/kWh pushes it up to{" "}
+            <strong className="text-navy">22.6p per mile</strong>.
           </p>
         </section>
       </div>
@@ -86,6 +88,18 @@ export default function FuelPricesIndexPage() {
           Monthly fuel price updates
         </h2>
         <div className="space-y-3">
+          <Link
+            href="/fuel-prices/july-2026"
+            className="flex items-center justify-between p-4 border border-border-light rounded-xl hover:border-ev-blue/40 transition-colors"
+          >
+            <div>
+              <p className="font-medium text-navy">July 2026</p>
+              <p className="text-sm text-ev-grey">Petrol 153.5p · Diesel 168.6p</p>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="text-ev-grey">
+              <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
           <Link
             href="/fuel-prices/june-2026"
             className="flex items-center justify-between p-4 border border-border-light rounded-xl hover:border-ev-blue/40 transition-colors"
