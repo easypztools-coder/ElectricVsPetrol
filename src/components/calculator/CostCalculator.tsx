@@ -31,6 +31,7 @@ import CostChart from "./CostChart";
 import TcoResultCards from "./TcoResultCards";
 import TcoCostChart from "./TcoCostChart";
 import Card from "@/components/ui/Card";
+import MonetizationPanel from "@/components/layout/MonetizationPanel";
 
 const DEFAULT_INPUTS: CalculatorInputs = {
   postcode: "",
@@ -271,6 +272,7 @@ export default function CostCalculator({
       {hasCalculated && results && mode === "quick" && (
         <div ref={resultsRef} className="mt-10 space-y-6 scroll-mt-24">
           <ResultCards results={results} inputs={inputs} />
+          <MonetizationPanel />
           <CostChart results={results} years={10} />
         </div>
       )}
@@ -278,6 +280,7 @@ export default function CostCalculator({
       {hasCalculated && tcoResults && mode === "tco" && (
         <div ref={resultsRef} className="mt-10 space-y-6 scroll-mt-24">
           <TcoResultCards results={tcoResults} inputs={inputs} />
+          <MonetizationPanel />
           <TcoCostChart results={tcoResults} inputs={inputs} />
         </div>
       )}

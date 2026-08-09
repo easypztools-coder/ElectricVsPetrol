@@ -3,69 +3,151 @@ import { comparisons } from "@/lib/data/comparisons";
 import { evModels } from "@/lib/data/evPageData";
 import { blogPosts } from "@/lib/data/blogPosts";
 
+// ── Ofgem price cap quarterly freshness ──────────────────────────────────────
+// Ofgem updates the energy price cap every 3 months (Jan, Apr, Jul, Oct).
+// Pages that reference live electricity/fuel pricing should carry the most
+// recent price cap update date as their lastModified, so Googlebot treats
+// them as actively maintained rather than stale.
+function currentOfgemQuarterDate(): Date {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth(); // 0-indexed
+
+  // Determine start of current Ofgem quarter (Jan=0, Apr=3, Jul=6, Oct=9)
+  let quarterMonth: number;
+  if (month >= 9) quarterMonth = 9;       // Oct–Dec quarter
+  else if (month >= 6) quarterMonth = 6;  // Jul–Sep quarter
+  else if (month >= 3) quarterMonth = 3;  // Apr–Jun quarter
+  else quarterMonth = 0;                  // Jan–Mar quarter
+
+  return new Date(year, quarterMonth, 1);
+}
+
+const OFGEM_DATE = currentOfgemQuarterDate();
+const TODAY = new Date();
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://electricvspetrol.co.uk";
 
   return [
+    // ── Homepage ──────────────────────────────────────────────────────────────
     {
       url: base,
-      lastModified: new Date(),
+      lastModified: OFGEM_DATE, // refreshes with each price cap quarter
       changeFrequency: "weekly",
       priority: 1.0,
     },
+
+    // ── Guides hub ───────────────────────────────────────────────────────────
     {
       url: `${base}/guides`,
-      lastModified: new Date("2026-06-17"),
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    {
-      url: `${base}/guides/ev-vs-petrol-running-costs`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: OFGEM_DATE,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
+      url: `${base}/guides/ev-running-cost-index-q3-2026`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${base}/guides/ev-vs-petrol-running-costs`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: `${base}/guides/local-fuel-prices`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${base}/guides/hybrid-vs-petrol-running-costs`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/guides/ev-salary-sacrifice-uk`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/guides/ev-running-costs-scotland`,
+      lastModified: OFGEM_DATE,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${base}/guides/hybrid-vs-petrol-running-costs`,
-      lastModified: new Date("2026-07-30"),
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    {
-      url: `${base}/guides/ev-salary-sacrifice-uk`,
-      lastModified: new Date("2026-07-30"),
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    {
-      url: `${base}/guides/ev-running-costs-scotland`,
-      lastModified: new Date("2026-07-08"),
-      changeFrequency: "monthly",
-      priority: 0.65,
-    },
-    {
       url: `${base}/guides/ev-running-costs-wales`,
-      lastModified: new Date("2026-07-08"),
+      lastModified: OFGEM_DATE,
       changeFrequency: "monthly",
-      priority: 0.65,
+      priority: 0.7,
     },
     {
       url: `${base}/guides/ev-running-costs-northern-ireland`,
-      lastModified: new Date("2026-07-08"),
+      lastModified: OFGEM_DATE,
       changeFrequency: "monthly",
-      priority: 0.65,
+      priority: 0.7,
     },
     {
-      url: `${base}/methodology`,
-      lastModified: new Date("2026-07-30"),
+      url: `${base}/guides/cheapest-evs-to-run-uk-2026`,
+      lastModified: OFGEM_DATE,
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.85,
+    },
+    {
+      url: `${base}/guides/best-ev-for-high-mileage`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/guides/is-ev-worth-it-without-home-charger`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/guides/hybrid-vs-petrol-calculator`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${base}/guides/ev-vs-diesel-running-costs`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${base}/guides/electric-car-fuel-cost`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/guides/best-ev-uk-2026`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${base}/guides/ev-salary-sacrifice-calculator`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+
+    // ── Evergreen / info pages ────────────────────────────────────────────────
+    {
+      url: `${base}/methodology`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.65,
     },
     {
       url: `${base}/privacy`,
@@ -85,137 +167,96 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.4,
     },
+
+    // ── Compare hub + programmatic comparison pairs ───────────────────────────
     {
       url: `${base}/compare`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: OFGEM_DATE,
       changeFrequency: "monthly",
-      priority: 0.75,
+      priority: 0.85,
     },
     ...comparisons.map((c) => ({
       url: `${base}/compare/${c.slug}`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: OFGEM_DATE,
       changeFrequency: "monthly" as const,
-      priority: c.tier === 1 ? 0.8 : c.tier === 2 ? 0.7 : 0.6,
+      priority: c.tier === 1 ? 0.85 : c.tier === 2 ? 0.75 : 0.65,
     })),
-    // EV model pages
+
+    // ── EV model hub + programmatic EV pages ─────────────────────────────────
     {
       url: `${base}/ev`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: OFGEM_DATE,
       changeFrequency: "monthly" as const,
-      priority: 0.8,
+      priority: 0.85,
     },
     ...evModels.map((ev) => ({
       url: `${base}/ev/${ev.slug}`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: OFGEM_DATE,
       changeFrequency: "monthly" as const,
-      priority: 0.75,
+      priority: 0.8,
     })),
-    // Blog
+
+    // ── Blog hub + individual posts ───────────────────────────────────────────
     {
       url: `${base}/blog`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: TODAY,
       changeFrequency: "weekly" as const,
-      priority: 0.7,
+      priority: 0.75,
     },
     ...blogPosts.map((post) => ({
       url: `${base}/blog/${post.slug}`,
       lastModified: new Date(post.date),
       changeFrequency: "monthly" as const,
-      priority: 0.65,
+      priority: 0.7,
     })),
+
+    // ── Author ───────────────────────────────────────────────────────────────
     {
       url: `${base}/author/ev-ian`,
       lastModified: new Date("2026-07-08"),
       changeFrequency: "monthly" as const,
       priority: 0.5,
     },
-    // New guides
-    {
-      url: `${base}/guides/cheapest-evs-to-run-uk-2026`,
-      lastModified: new Date("2026-07-30"),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${base}/guides/best-ev-for-high-mileage`,
-      lastModified: new Date("2026-07-30"),
-      changeFrequency: "monthly" as const,
-      priority: 0.75,
-    },
-    {
-      url: `${base}/guides/is-ev-worth-it-without-home-charger`,
-      lastModified: new Date("2026-07-30"),
-      changeFrequency: "monthly" as const,
-      priority: 0.75,
-    },
-    // New Phase 2 pages
-    {
-      url: `${base}/guides/hybrid-vs-petrol-calculator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${base}/guides/ev-vs-diesel-running-costs`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${base}/guides/electric-car-fuel-cost`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.75,
-    },
-    {
-      url: `${base}/guides/best-ev-uk-2026`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${base}/guides/ev-salary-sacrifice-calculator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.75,
-    },
-    // Fuel prices
+
+    // ── Fuel price archive pages ──────────────────────────────────────────────
     {
       url: `${base}/fuel-prices`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: OFGEM_DATE,
       changeFrequency: "weekly" as const,
-      priority: 0.7,
+      priority: 0.75,
     },
     {
       url: `${base}/fuel-prices/july-2026`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: new Date("2026-07-01"),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
       url: `${base}/fuel-prices/june-2026`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: new Date("2026-06-01"),
       changeFrequency: "monthly" as const,
       priority: 0.55,
     },
-    // FAQ pages
+
+    // ── FAQ hub pages ─────────────────────────────────────────────────────────
     {
       url: `${base}/faq/how-much-does-it-cost-to-charge-a-tesla-at-home-uk`,
-      lastModified: new Date("2026-07-30"),
-      changeFrequency: "monthly" as const,
-      priority: 0.75,
-    },
-    {
-      url: `${base}/faq/cheapest-ev-to-run-uk`,
-      lastModified: new Date("2026-07-30"),
-      changeFrequency: "monthly" as const,
-      priority: 0.75,
-    },
-    {
-      url: `${base}/faq/is-ev-cheaper-than-petrol-uk`,
-      lastModified: new Date("2026-07-30"),
+      lastModified: OFGEM_DATE,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
+    {
+      url: `${base}/faq/cheapest-ev-to-run-uk`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${base}/faq/is-ev-cheaper-than-petrol-uk`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    },
   ];
 }
+

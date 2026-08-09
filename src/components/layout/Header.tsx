@@ -7,10 +7,11 @@ import Button from "@/components/ui/Button";
 
 const navLinks = [
   { href: "/#calculator", label: "Calculator" },
-  { href: "/guides/ev-vs-petrol-running-costs", label: "EV Guide" },
+  { href: "/compare", label: "Compare Cars" },
+  { href: "/ev", label: "EV Models" },
+  { href: "/guides", label: "Guides" },
   { href: "/fuel-prices", label: "Fuel Prices" },
-  { href: "/methodology", label: "Methodology" },
-  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Header() {

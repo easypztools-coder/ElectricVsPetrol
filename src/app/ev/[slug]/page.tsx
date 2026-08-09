@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { evModels, findEVModel } from "@/lib/data/evPageData";
 import { comparisons } from "@/lib/data/comparisons";
+import MonetizationPanel from "@/components/layout/MonetizationPanel";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -248,6 +249,8 @@ export default async function EVModelPage({ params }: Props) {
         </Link>
       </div>
 
+      <MonetizationPanel evName={ev.displayName} />
+
       {/* Related comparisons */}
       {relatedComparisons.length > 0 && (
         <section className="mb-10">
@@ -327,6 +330,37 @@ export default async function EVModelPage({ params }: Props) {
               { "@type": "ListItem", position: 2, name: "Electric Cars", item: "https://electricvspetrol.co.uk/ev" },
               { "@type": "ListItem", position: 3, name: ev.displayName, item: `https://electricvspetrol.co.uk/ev/${ev.slug}` },
             ],
+          }),
+        }}
+      />
+      {/* Car entity schema — enables Google knowledge panel associations and
+          rich vehicle spec cards in SERP results for model-specific queries. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Car",
+            name: ev.displayName,
+            brand: { "@type": "Brand", name: ev.make },
+            model: ev.model,
+            vehicleConfiguration: ev.variant,
+            bodyType: ev.body,
+            driveWheelConfiguration: "https://schema.org/AllWheelDriveConfiguration",
+            fuelType: "https://schema.org/Electric",
+            vehicleEngine: {
+              "@type": "EngineSpecification",
+              fuelType: "https://schema.org/Electric",
+            },
+            offers: {
+              "@type": "Offer",
+              price: ev.ukStartPriceGbp,
+              priceCurrency: "GBP",
+              availability: "https://schema.org/InStock",
+              url: `https://electricvspetrol.co.uk/ev/${ev.slug}`,
+            },
+            url: `https://electricvspetrol.co.uk/ev/${ev.slug}`,
+            description: ev.intro,
           }),
         }}
       />

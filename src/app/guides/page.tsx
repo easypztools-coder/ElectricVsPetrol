@@ -12,6 +12,13 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    href: "/guides/ev-running-cost-index-q3-2026",
+    title: "UK EV Running Cost Index: Q3 2026 Report",
+    description:
+      "Comprehensive UK fuel price and electricity index. Programmatic averages, top-5 rankings, and motorist saving metrics.",
+    badge: "Running Costs",
+  },
+  {
     href: "/guides/ev-vs-petrol-running-costs",
     title: "EV vs Petrol Running Costs: The Complete 2026 UK Guide",
     description:
@@ -211,6 +218,32 @@ export default function GuidesIndexPage() {
                 item: "https://electricvspetrol.co.uk/guides",
               },
             ],
+          }),
+        }}
+      />
+      {/* CollectionPage schema — signals to Google that this is a curated hub
+          of topically authoritative articles, improving E-E-A-T classification. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "EV Guides for UK Drivers",
+            description:
+              "Independent, data-led guides to electric car running costs, local fuel prices, and the real economics of switching to an EV in the UK.",
+            url: "https://electricvspetrol.co.uk/guides",
+            publisher: {
+              "@type": "Organization",
+              name: "ElectricVsPetrol.co.uk",
+              url: "https://electricvspetrol.co.uk",
+            },
+            hasPart: guides.map((guide) => ({
+              "@type": "Article",
+              name: guide.title,
+              description: guide.description,
+              url: `https://electricvspetrol.co.uk${guide.href}`,
+            })),
           }),
         }}
       />

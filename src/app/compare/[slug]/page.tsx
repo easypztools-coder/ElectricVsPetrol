@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { comparisons, findComparison } from "@/lib/data/comparisons";
 import { findEV, findICE } from "@/lib/data/vehicles";
+import MonetizationPanel from "@/components/layout/MonetizationPanel";
 
 // ── Cost calculation ────────────────────────────────────────────────────────
 
@@ -204,6 +205,13 @@ export default async function ComparisonPage({ params }: Props) {
           />
         </svg>
         Last updated: July 2026 · Based on current UK fuel prices
+      </p>
+
+      {/* ── Direct Answer — targets Google Featured Snippet (Position Zero) ── */}
+      <p className="text-base text-ev-grey leading-relaxed mb-8 max-w-2xl">
+        {evIsCheaper
+          ? `Running a ${ev.displayName} in the UK costs approximately ${ppm(evPpmHome)} per mile on home electricity, compared to ${ppm(icePpm)} per mile for the ${ice.displayName} on ${ice.fuelType}. At 10,000 miles per year with 80% home charging, the ${ev.displayName} saves approximately ${fmt(refSaving)} per year in fuel costs${breakEven ? ` — breaking even on the higher purchase price in around ${breakEven} years` : ""}.`
+          : `At current UK prices, the ${ice.displayName} costs ${ppm(icePpm)} per mile in ${ice.fuelType}, while the ${ev.displayName} costs ${ppm(evPpmHome)} per mile on home electricity. The fuel cost difference at 10,000 miles per year is approximately ${fmt(Math.abs(refSaving))} — but the ${ev.displayName} is cheaper to run in most home-charging scenarios.`}
       </p>
 
       {/* Verdict */}
@@ -535,6 +543,8 @@ export default async function ComparisonPage({ params }: Props) {
           </svg>
         </Link>
       </div>
+
+      <MonetizationPanel evName={ev.displayName} />
 
       {/* FAQ */}
       <section

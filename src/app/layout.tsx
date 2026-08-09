@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -81,29 +82,28 @@ export default function RootLayout({
       lang="en-GB"
       className={`${inter.variable} ${spaceGrotesk.variable}`}
     >
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3961806405350437"
-          crossOrigin="anonymous"
-        />
-        {/* Disable anchor/overlay auto ads — the format most associated with
-            "low value content + intrusive ads" policy flags on lighter pages. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(window.adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-3961806405350437",
-              enable_page_level_ads: true,
-              overlays: { bottom: false }
-            });`,
-          }}
-        />
-      </head>
+      <head />
       <body className="min-h-screen flex flex-col antialiased">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
         <Analytics />
+        {/* AdSense — loaded after page is interactive to protect Core Web Vitals.
+            lazyOnload defers until the browser is idle, preventing CLS/INP hits
+            that trigger Google's "low value content + intrusive ads" policy flag. */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3961806405350437"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
+        <Script id="adsense-init" strategy="lazyOnload">
+          {`(window.adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3961806405350437",
+            enable_page_level_ads: true,
+            overlays: { bottom: false }
+          });`}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
