@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "the-taxman-finally-caught-up-with-my-ev",
+    title: "The Taxman Finally Caught Up With My EV",
+    excerpt: "A car tax renewal letter with an actual number on it sends EV Ian back to the spreadsheet to check whether VED and BIK changes have dented the case for switching. They haven't.",
+    date: "2026-08-30",
+    dateDisplay: "30 August 2026",
+    readingTimeMin: 6,
+    category: "Running Costs",
+  },
+  {
     slug: "petrol-prices-spike-electricity-cap-falls-july-2026",
     title: "Petrol Just Spiked. Your Electricity Bill Just Fell. Let Me Explain.",
     excerpt: "Petrol and diesel jumped hard in July 2026 while the Ofgem price cap quietly dropped. EV Ian works out what that combination actually does to the EV vs petrol maths — and why public charging is the exception.",

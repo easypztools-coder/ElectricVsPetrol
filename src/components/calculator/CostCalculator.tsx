@@ -56,24 +56,39 @@ const DEFAULT_INPUTS: CalculatorInputs = {
 
 export default function CostCalculator({
   initialOverrides,
+  initialMode = "quick",
 }: {
   initialOverrides?: Partial<CalculatorInputs>;
+  initialMode?: CalculatorViewMode;
 } = {}) {
   const [inputs, setInputs] = useState<CalculatorInputs>({
     ...DEFAULT_INPUTS,
     ...initialOverrides,
   });
-  const [mode, setMode] = useState<CalculatorViewMode>("quick");
-  const [results, setResults] = useState<CalculatorResults | null>(null);
-  const [tcoResults, setTcoResults] = useState<ReturnType<typeof calculateTcoCosts> | null>(null);
+  const [mode, setMode] = useState<CalculatorViewMode>(initialMode);
+  
+  const hasInitialOverrides = initialOverrides && Object.keys(initialOverrides).length > 0;
+
+  const [results, setResults] = useState<CalculatorResults | null>(() => {
+    if (hasInitialOverrides) {
+      return calculateEvPetrolCosts({ ...DEFAULT_INPUTS, ...initialOverrides });
+    }
+    return null;
+  });
+  const [tcoResults, setTcoResults] = useState<ReturnType<typeof calculateTcoCosts> | null>(() => {
+    if (hasInitialOverrides && initialMode === "tco") {
+      return calculateTcoCosts({ ...DEFAULT_INPUTS, ...initialOverrides });
+    }
+    return null;
+  });
   const [postcodeRegion, setPostcodeRegion] = useState<string | null>(null);
   const [localPrices, setLocalPrices] = useState<LocalPrices>(FALLBACK_PRICES);
   const [livePricesApplied, setLivePricesApplied] = useState(false);
   const [errors, setErrors] = useState<ValidationErrors>({});
   const [isLoading, setIsLoading] = useState(false);
-  const [hasCalculated, setHasCalculated] = useState(false);
+  const [hasCalculated, setHasCalculated] = useState(() => !!hasInitialOverrides);
   const resultsRef = useRef<HTMLDivElement>(null);
-  const hasCalculatedRef = useRef(false);
+  const hasCalculatedRef = useRef(!!hasInitialOverrides);
 
   const handleInputChange = useCallback(
     (field: keyof CalculatorInputs, value: string | number) => {
@@ -175,6 +190,14 @@ export default function CostCalculator({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputs, mode]);
+
+  // Trigger local postcode price lookup on mount if a postcode was pre-filled
+  useEffect(() => {
+    if (initialOverrides && initialOverrides.postcode && initialOverrides.postcode.trim()) {
+      handleCalculate();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div id="calculator" className="scroll-mt-20">

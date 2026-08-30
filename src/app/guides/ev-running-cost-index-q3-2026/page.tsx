@@ -350,6 +350,73 @@ export default function EvRunningCostIndexPage() {
           </Link>
         </div>
       </section>
+
+      {/* BreadcrumbList schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://electricvspetrol.co.uk",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Guides",
+                item: "https://electricvspetrol.co.uk/guides",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "UK EV Running Cost Index: Q3 2026 Report",
+                item: "https://electricvspetrol.co.uk/guides/ev-running-cost-index-q3-2026",
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* Article schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "UK EV Running Cost Index: Q3 2026 Report",
+            description:
+              "An independent, database-led calculation of real-world electric car running costs versus petrol and diesel alternatives. Reflects fuel prices and Ofgem electricity price cap rates for Q3 2026.",
+            url: "https://electricvspetrol.co.uk/guides/ev-running-cost-index-q3-2026",
+            datePublished: "2026-07-01",
+            dateModified: "2026-08-01",
+            author: {
+              "@type": "Organization",
+              name: "ElectricVsPetrol.co.uk",
+              url: "https://electricvspetrol.co.uk",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "ElectricVsPetrol.co.uk",
+              url: "https://electricvspetrol.co.uk",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://electricvspetrol.co.uk/favicon.svg",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://electricvspetrol.co.uk/guides/ev-running-cost-index-q3-2026",
+            },
+            image: "https://electricvspetrol.co.uk/opengraph-image",
+          }),
+        }}
+      />
     </div>
   );
 }

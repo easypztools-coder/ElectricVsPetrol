@@ -124,6 +124,49 @@ const guides = [
       "See how salary sacrifice EV leasing stacks with running-cost savings. Calculator and tax-band comparisons for basic, higher, and additional rate taxpayers.",
     badge: "Calculator",
   },
+  // New: August 2026 content & SEO growth round
+  {
+    href: "/guides/electric-car-tax-ved-2026",
+    title: "Electric Car Tax (VED) 2026: What EV Owners Now Pay",
+    description:
+      "EVs lost their VED exemption on 1 April 2025. What electric car owners pay now, how it compares to petrol, and the £40,000 expensive car supplement explained.",
+    badge: "Tax",
+  },
+  {
+    href: "/guides/ev-company-car-tax-bik-2026",
+    title: "EV Company Car Tax (BIK) 2026: Rates & Worked Examples",
+    description:
+      "Pure EVs are taxed at just 4% Benefit-in-Kind in 2026/27 versus up to 37% for petrol — the biggest financial lever for company car and salary sacrifice drivers.",
+    badge: "Tax",
+  },
+  {
+    href: "/guides/public-ev-charging-costs-uk",
+    title: "Public EV Charging Costs UK 2026: Network Prices Compared",
+    description:
+      "Rapid and ultra-rapid network prices compared, pence-per-mile breakdowns, and how public charging changes the EV vs petrol running-cost picture.",
+    badge: "Charging",
+  },
+  {
+    href: "/guides/ev-depreciation-vs-petrol",
+    title: "EV Depreciation vs Petrol: Which Loses Value Faster?",
+    description:
+      "Why early EVs depreciated fast, why that's changed for newer models, and how to factor resale value into total cost of ownership.",
+    badge: "Buying Guide",
+  },
+  {
+    href: "/guides/used-ev-buying-guide-uk",
+    title: "Used EV Buying Guide UK 2026: Battery Health, Warranty & Cost Checks",
+    description:
+      "What to check on battery health, remaining warranty, and charging cables before buying a used electric car — plus why used EVs are often the best-value entry point.",
+    badge: "Buying Guide",
+  },
+  {
+    href: "/guides/ev-running-costs-london-ulez",
+    title: "EV Running Costs London 2026: ULEZ, Congestion Charge & Charging",
+    description:
+      "ULEZ and Congestion Charge exemptions explained, what changed for EVs in late 2025, and how charging without a driveway affects the numbers.",
+    badge: "Region",
+  },
 ];
 
 export default function GuidesIndexPage() {

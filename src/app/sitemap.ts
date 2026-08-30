@@ -141,6 +141,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${base}/guides/electric-car-tax-ved-2026`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${base}/guides/ev-company-car-tax-bik-2026`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${base}/guides/public-ev-charging-costs-uk`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/guides/ev-depreciation-vs-petrol`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${base}/guides/used-ev-buying-guide-uk`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/guides/ev-running-costs-london-ulez`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
 
     // ── Evergreen / info pages ────────────────────────────────────────────────
     {
@@ -226,10 +262,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
+      url: `${base}/fuel-prices/august-2026`,
+      lastModified: new Date("2026-08-01"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${base}/fuel-prices/july-2026`,
       lastModified: new Date("2026-07-01"),
       changeFrequency: "monthly" as const,
-      priority: 0.7,
+      priority: 0.6,
     },
     {
       url: `${base}/fuel-prices/june-2026`,
@@ -256,6 +298,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: OFGEM_DATE,
       changeFrequency: "monthly" as const,
       priority: 0.85,
+    },
+    {
+      url: `${base}/faq/do-electric-cars-pay-road-tax-uk`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    },
+    {
+      url: `${base}/faq/how-much-does-public-ev-charging-cost-uk`,
+      lastModified: OFGEM_DATE,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
     },
   ];
 }

@@ -88,6 +88,18 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <Analytics />
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-23G71BP84P"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-23G71BP84P');`}
+        </Script>
         {/* AdSense — loaded after page is interactive to protect Core Web Vitals.
             lazyOnload defers until the browser is idle, preventing CLS/INP hits
             that trigger Google's "low value content + intrusive ads" policy flag. */}
