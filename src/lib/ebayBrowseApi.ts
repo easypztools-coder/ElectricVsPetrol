@@ -66,15 +66,36 @@ async function getAccessToken(): Promise<string> {
 // unrelated listings whose title happens to contain a word like "Model".
 const CARS_CATEGORY_ID = "9801";
 
+// Sellers routinely abbreviate the manufacturer name in listing titles
+// (e.g. "VW ID4" rather than "Volkswagen ID.4") — without these, a strict
+// make-name match wrongly discards otherwise-relevant listings.
+const MAKE_ALIASES: Record<string, string[]> = {
+  volkswagen: ["vw"],
+  mercedes: ["merc", "mercedesbenz"],
+  chevrolet: ["chevy"],
+};
+
+// Strips everything but letters/digits so "ID.4" and "ID4", or "#1" and "1
+// series", compare equal regardless of punctuation differences.
+function cleanForMatch(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
 /**
- * Searches live UK Buy It Now / auction car listings matching `query`
- * (typically a make + model, e.g. "Tesla Model 3"). eBay's own relevance
- * ranking is loose with short/common tokens (e.g. "Model" or "3" alone
- * matching unrelated cars), so this over-fetches and then keeps only
- * listings whose title contains every significant word of the query.
+ * Searches live UK Buy It Now / auction car listings for a given make and
+ * model (e.g. "Volkswagen" / "ID.4"). eBay's own relevance ranking is loose
+ * with short/common tokens (e.g. "Model" or "2" alone matching unrelated
+ * cars — "Polestar 2" would otherwise match any Volvo listing that mentions
+ * a "Polestar" trim package), so this over-fetches and then keeps only
+ * listings whose title contains the make (or a known abbreviation)
+ * immediately followed by the model name, punctuation/spacing aside —
+ * matching how sellers actually write titles ("VW ID4 ...", "Tesla Model 3
+ * ...", "Smart #1 ...").
  */
-export async function searchEbayLiveListings(query: string, limit = 8): Promise<EbayLiveListing[]> {
+export async function searchEbayLiveListings(make: string, model: string, limit = 8): Promise<EbayLiveListing[]> {
   const token = await getAccessToken();
+
+  const query = `${make} ${model}`.trim();
 
   const url = new URL("https://api.ebay.com/buy/browse/v1/item_summary/search");
   url.searchParams.set("q", query);
@@ -98,14 +119,20 @@ export async function searchEbayLiveListings(query: string, limit = 8): Promise<
   const json = await res.json();
   const items: any[] = json.itemSummaries ?? [];
 
-  const queryTokens = query
-    .toLowerCase()
-    .split(/\s+/)
-    .filter((tok) => tok.length >= 2);
+  const cleanMake = cleanForMatch(make);
+  const cleanModel = cleanForMatch(model);
+  const makeModelPhrases = [cleanMake, ...(MAKE_ALIASES[cleanMake] ?? [])].map((alias) => alias + cleanModel);
+  // Some model names already embed the make (e.g. "MG4" for make "MG") —
+  // sellers often don't repeat the make in that case, so accept the model
+  // name on its own too.
+  if (cleanModel.startsWith(cleanMake)) {
+    makeModelPhrases.push(cleanModel);
+  }
 
   const relevant = items.filter((item) => {
-    const title = String(item.title ?? "").toLowerCase();
-    return item.price?.value != null && queryTokens.every((tok) => title.includes(tok));
+    if (item.price?.value == null) return false;
+    const title = cleanForMatch(String(item.title ?? ""));
+    return makeModelPhrases.some((phrase) => title.includes(phrase));
   });
 
   return relevant.slice(0, limit).map((item) => ({

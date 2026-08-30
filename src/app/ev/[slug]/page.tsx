@@ -115,6 +115,13 @@ export default async function EVModelPage({ params }: Props) {
         ))}
       </div>
 
+      <EbayListingsCarousel
+        make={ev.make}
+        model={ev.model}
+        trackingId={ev.slug}
+        title={`Used ${ev.displayName} listings on eBay`}
+      />
+
       {/* Intro */}
       <div className="prose prose-sm max-w-none text-ev-grey mb-8 leading-relaxed space-y-4">
         <p>{ev.intro}</p>
@@ -251,12 +258,6 @@ export default async function EVModelPage({ params }: Props) {
       </div>
 
       <MonetizationPanel evName={ev.displayName} />
-
-      <EbayListingsCarousel
-        query={ev.displayName}
-        trackingId={ev.slug}
-        title={`Used ${ev.displayName} listings on eBay`}
-      />
 
       {/* Related comparisons */}
       {relatedComparisons.length > 0 && (

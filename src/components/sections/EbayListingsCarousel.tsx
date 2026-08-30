@@ -14,15 +14,18 @@ interface LiveListing {
 }
 
 interface EbayListingsCarouselProps {
-  /** Search query passed to eBay's Browse API, e.g. "Tesla Model 3". */
-  query: string;
+  /** Car make passed to eBay's Browse API, e.g. "Volkswagen". */
+  make: string;
+  /** Car model passed to eBay's Browse API, e.g. "ID.4". */
+  model: string;
   /** Used to build the EPN customid tracking param, e.g. the page slug. */
   trackingId: string;
   title?: string;
 }
 
 export default function EbayListingsCarousel({
-  query,
+  make,
+  model,
   trackingId,
   title = "Shop Live on eBay",
 }: EbayListingsCarouselProps) {
@@ -30,7 +33,7 @@ export default function EbayListingsCarousel({
 
   useEffect(() => {
     let cancelled = false;
-    fetch(`/api/ebay-listings?q=${encodeURIComponent(query)}&limit=10`)
+    fetch(`/api/ebay-listings?make=${encodeURIComponent(make)}&model=${encodeURIComponent(model)}&limit=10`)
       .then((r) => r.json())
       .then((json) => {
         if (!cancelled) setListings(json.listings ?? []);
@@ -41,7 +44,7 @@ export default function EbayListingsCarousel({
     return () => {
       cancelled = true;
     };
-  }, [query]);
+  }, [make, model]);
 
   // Nothing to show yet (still loading) or genuinely no live listings —
   // either way this section just doesn't render rather than showing an

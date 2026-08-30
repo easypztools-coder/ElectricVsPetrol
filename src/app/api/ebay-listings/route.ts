@@ -14,25 +14,26 @@ const cache = new Map<string, CacheEntry>();
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const query = searchParams.get("q")?.trim();
+  const make = searchParams.get("make")?.trim();
+  const model = searchParams.get("model")?.trim();
   const limit = Math.min(Number(searchParams.get("limit")) || 8, 12);
 
-  if (!query) {
+  if (!make || !model) {
     return NextResponse.json({ listings: [] });
   }
 
-  const cacheKey = `${query}::${limit}`;
+  const cacheKey = `${make}::${model}::${limit}`;
   const cached = cache.get(cacheKey);
   if (cached && Date.now() - cached.fetchedAt < CACHE_TTL_MS) {
     return NextResponse.json({ listings: cached.listings });
   }
 
   try {
-    const listings = await searchEbayLiveListings(query, limit);
+    const listings = await searchEbayLiveListings(make, model, limit);
     cache.set(cacheKey, { listings, fetchedAt: Date.now() });
     return NextResponse.json({ listings });
   } catch (err) {
-    console.error(`ebay-listings: search failed for "${query}":`, err);
+    console.error(`ebay-listings: search failed for "${make} ${model}":`, err);
     // Serve stale cache over an empty result if we have one.
     if (cached) {
       return NextResponse.json({ listings: cached.listings });
