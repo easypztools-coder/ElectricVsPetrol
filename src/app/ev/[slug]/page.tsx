@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { evModels, findEVModel } from "@/lib/data/evPageData";
 import { comparisons } from "@/lib/data/comparisons";
 import MonetizationPanel from "@/components/layout/MonetizationPanel";
+import EbayListingsCarousel from "@/components/sections/EbayListingsCarousel";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -250,6 +251,12 @@ export default async function EVModelPage({ params }: Props) {
       </div>
 
       <MonetizationPanel evName={ev.displayName} />
+
+      <EbayListingsCarousel
+        query={ev.displayName}
+        trackingId={ev.slug}
+        title={`Used ${ev.displayName} listings on eBay`}
+      />
 
       {/* Related comparisons */}
       {relatedComparisons.length > 0 && (
